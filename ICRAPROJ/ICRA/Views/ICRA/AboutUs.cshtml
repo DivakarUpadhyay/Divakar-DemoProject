@@ -1,0 +1,343 @@
+﻿@model ICRA.Models.AboutUsResponse
+
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/ICRA_JS/about-us-min.js"></script>
+@{
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImagebanner = bannerObj.ReadImage(Model.aboutUs_Section1.desktop_image);
+
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.aboutUs_Section1.responsive_image);
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.aboutUs_Section1.title1</h1>
+                    <p>@Html.Raw(Model.aboutUs_Section1.title2)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a>About Us
+    </div>
+</div>
+
+@{
+    ICRA.Models.CommonMethods icrajourneyObj = new ICRA.Models.CommonMethods();
+    var getImageicrajourneyObj = icrajourneyObj.ReadImage(Model.aboutUs_Section2[0].image);
+    <section class="section icra_journey_hld">
+        <div class="container">
+            <h2 class="left_line">@Model.aboutUs_Section2[0].title</h2>
+            <div class="journey">
+                <div class="desc">
+
+                    @Html.Raw(Model.aboutUs_Section2[0].description)
+
+
+                    <img src="@getImageicrajourneyObj" alt="@Model.aboutUs_Section2[0].title">
+                </div>
+            </div>
+            <div class="abt_yr_hld">
+                <div class="year_list slider-nav">
+                    @foreach (var item in Model.aboutUs_Section3)
+                    {<div class="item_yr"><span>@item.year</span></div>
+                }
+                </div>
+                <div class="year_det slider-for">
+                    @foreach (var item in Model.aboutUs_Section3)
+                    {
+                        <div class="yr_det_item">
+                            <p>
+                                <span>@item.title</span>
+                                @item.description
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@{
+    ICRA.Models.CommonMethods ourprofileObj = new ICRA.Models.CommonMethods();
+    var getImageourprofileObj = ourprofileObj.ReadImage(Model.aboutUs_Section2[3].image);
+    <section class="abt_icra_hld">
+        <div class="our_profile">
+            <div class="bg_banner"></div>
+            <div class="container">
+                <div class="profile_blurb_con">
+                    <div class="profile_blurb">
+                        <div id="data_op" class="pro">
+                            <h2 class="left_line">@Model.aboutUs_Section2[1].title</h2>
+                            @Html.Raw(Model.aboutUs_Section2[1].description)
+                        </div>
+                        <div id="data_mis" class="pro">
+                            <h2 class="left_line">@Model.aboutUs_Section2[2].title</h2>
+                            @Html.Raw(Model.aboutUs_Section2[2].description)
+                        </div>
+                    </div>
+                    <div class="profile_blurb">
+                        <div id="mis" class="p_service">
+                            @Model.aboutUs_Section2[2].title
+                            <span class="arrow"></span>
+                        </div>
+                        <div id="op" class="p_service">
+                            @Model.aboutUs_Section2[1].title
+                            <span class="arrow"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vision_mission">
+            <div class="bg_banner"></div>
+            <div class="container">
+                <div class="vm_hld">
+                    <div class="vm_blurb vision">
+                        <img src="@getImageourprofileObj" alt="Our Vision">
+                        <div class="abt_vision">
+                            <h2 class="left_line">
+                                @Html.Raw(Model.aboutUs_Section2[3].title)
+                            </h2>
+                            @Html.Raw(Model.aboutUs_Section2[3].description)
+                        </div>
+                        <div class="plane">
+                            <img src="~/Content/images/plane.png" alt="Plane">
+                        </div>
+                    </div>
+                    <div class="vm_blurb abt_sect_desc">
+                        <div class="mission_desc">
+                            <h2 class="left_line">
+                                @Html.Raw(Model.aboutUs_Section2[4].title)
+                            </h2>
+                            @Html.Raw(Model.aboutUs_Section2[4].description)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leadership_team">
+            <div class="bg_banner"></div>
+            <div class="container">
+                <div class="vm_hld">
+                    <div class="vm_blurb team_fet_hld">
+                        <div class="feature_slider_hld">
+                            <div class="fet_item">Serving our customers with high standards of integrity, intellectual rigour &amp; independence</div>
+                            <div class="fet_item">Maintaining high ethical standards, with sound governance practices and being socially responsible </div>
+                            <div class="fet_item">
+                                Creating a stimulating, inclusive and transparent environment for our employees
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vm_blurb abt_sect_desc">
+                        <div class="mission_desc">
+                            <h2 class="left_line">
+                                @Html.Raw(Model.aboutUs_Section2[5].title)
+                            </h2>
+                            @Html.Raw(Model.aboutUs_Section2[5].description)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leader_board">
+            <div class="container">
+                <ul class="leader_type">
+                    <li id="board_of_directors" class="active_tab"><span>Board of Directors</span></li>
+                    <li id="senior_management"><span> Senior Management</span></li>
+                    <li id="chairman_emeritus"><span> Chairman Emeritus</span></li>
+                </ul>
+
+                @{
+                    var boardofdirectors = Model.aboutUs_Section4.Where(m => m.Id == 1);
+                    var SeniorManagement = Model.aboutUs_Section4.Where(m => m.Id == 2);
+                    var ChairmanEmeritus = Model.aboutUs_Section4.Where(m => m.Id == 3);
+                }
+
+                <div id="team_board_of_directors" class="team_persons">
+                    <div class="leader_blurb_hld">
+                        @foreach (var itemleadertype in boardofdirectors)
+                        {
+                            ICRA.Models.CommonMethods boarddirectorobj = new ICRA.Models.CommonMethods();
+                            var boardirector = boarddirectorobj.ReadImage(itemleadertype.image);
+                            if (itemleadertype.Id == 1)
+                            {
+                                <div class="leader_blurb">
+                                    <a class="bod_popup_link" href="@Url.Action("AboutbodUs","ICRA",new {LeaderShipId=@itemleadertype.LeaderShipId})">
+                                        <div class="blurb_det">
+                                            <figure>
+                                                <img src="@boardirector" alt="@itemleadertype.name">
+                                            </figure>
+                                            <div class="profile_info">
+                                                <div class="name">@itemleadertype.name</div>
+                                                <p>@itemleadertype.designation</p>
+                                                <span class="rv_more">Read More<i class="fas fa-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+
+                <div id="team_senior_management" class="team_persons">
+                    <div class="leader_blurb_hld">
+                        @foreach (var itemleadertype in SeniorManagement)
+                        {
+                            ICRA.Models.CommonMethods snrmngobj = new ICRA.Models.CommonMethods();
+                            var seniormanagement = snrmngobj.ReadImage(itemleadertype.image);
+                            if (itemleadertype.Id == 2)
+                            {
+                                <div class="leader_blurb">
+                                    <a class="bod_popup_link" href="@Url.Action("AboutbodUs","ICRA",new {LeaderShipId=@itemleadertype.LeaderShipId})">
+                                        <div class="blurb_det">
+                                            <figure>
+                                                <img src="@seniormanagement" alt="@itemleadertype.name">
+                                            </figure>
+                                            <div class="profile_info">
+                                                <div class="name">@itemleadertype.name</div>
+                                                <p>@itemleadertype.designation</p>
+                                                <span class="rv_more">Read More<i class="fas fa-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+
+                <div id="team_chairman_emeritus" class="team_persons">
+                    <div class="leader_blurb_hld">
+                        @foreach (var itemleadertype in ChairmanEmeritus)
+                        {
+                            ICRA.Models.CommonMethods teamchairmanemeritusobj = new ICRA.Models.CommonMethods();
+                            var teamchairmanemeritus = teamchairmanemeritusobj.ReadImage(itemleadertype.image);
+
+                            if (itemleadertype.Id == 3)
+                            {
+                                <div class="leader_blurb">
+                                    <a class="bod_popup_link" href="@Url.Action("AboutbodUs","ICRA",new {LeaderShipId=@itemleadertype.LeaderShipId})">
+                                        <div class="blurb_det">
+                                            <figure>
+                                                <img src="@teamchairmanemeritus" alt="@itemleadertype.name">
+                                            </figure>
+                                            <div class="profile_info">
+                                                <div class="name">@itemleadertype.name</div>
+                                                <p>@itemleadertype.designation</p>
+                                                <span class="rv_more">Read More<i class="fas fa-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+<section class="section icra_group">
+    <div class="container">
+        <div class="icra_grp_title">
+            <h2 class="left_line">The ICRA Group</h2>
+        </div>
+        <a href="https://www.moodys.com/" target="_blank" class="icra_grp_title">
+            <h2 class="left_line">Moody's</h2>
+        </a>
+    </div>
+    @{
+        ICRA.Models.CommonMethods grouplogoObj = new ICRA.Models.CommonMethods();
+
+        <div class="group_type_hld">
+            @foreach (var itemicra in Model.aboutUs_Section5)
+            {
+                var getImagegrouplogoObj = grouplogoObj.ReadImage(itemicra.logo);
+                <a href="@itemicra.url" target="_blank" class="group_type_blurb">
+                    <div class="grp_overlay"></div>
+                    <div class="group_det">
+                        <div class="group_logo">
+                            <img src="@getImagegrouplogoObj" alt="ICRA Company">
+                        </div>
+                        <p>@Html.Raw(itemicra.description)</p>
+                        <div class="button" @Url.Action(itemicra.url)><span>Learn More</span></div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
+</section>
+<section class="section web_podcast csr_and_env abt_csr_sus">
+    <div class="container">
+        <div class="wp_blurb_con">
+            @{
+
+                ICRA.Models.CommonMethods podcastObj = new ICRA.Models.CommonMethods();
+                var image6Obj = podcastObj.ReadImage(Model.aboutUs_Section2[6].image);
+                var image7Obj = podcastObj.ReadImage(Model.aboutUs_Section2[7].image);
+
+                <div class="wp_blurb">
+                    <a href="@Url.Action("CSR","ICRA")">
+                        <img src="@image6Obj" alt="@Html.Raw(Model.aboutUs_Section2[6].title)" />
+                        <div class="wp_det_con">
+                            <div class="overlay"></div>
+                            <h2 class="left_line">
+                                @Html.Raw(Model.aboutUs_Section2[6].title)
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="wp_blurb">
+                    <a href="@Url.Action("CSR","ICRA")">
+                        <img src="@image7Obj" alt="@Html.Raw(Model.aboutUs_Section2[7].title)" />
+                        <div class="wp_det_con">
+                            <div class="overlay"></div>
+                            <h2 class="left_line">
+                                @Html.Raw(Model.aboutUs_Section2[7].title)
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="section full_frame">
+    <div class="container">
+        <h2 class="center_line">@Html.Raw(Model.aboutUs_Section2[8].title)</h2>
+        @Html.Raw(Model.aboutUs_Section2[8].description)
+
+        @{
+            ICRA.Models.CommonMethods lifebannerObj = new ICRA.Models.CommonMethods();
+            var image9Obj = lifebannerObj.ReadImage(Model.aboutUs_Section2[8].image);
+            var image10Obj = lifebannerObj.ReadImage("/Images/banner-life-at-icra-mob.jpg");
+            <div class="life_banner">
+                <picture>
+                    <source media="(max-width:767px)" srcset="@image10Obj" />
+                    <img src="@image9Obj" alt="@Model.aboutUs_Section2[8].title" />
+                </picture>
+                <div class="life_banner_det">
+                    <h3>@Html.Raw(Model.aboutUs_Section2[8].title)</h3>
+                    <a href="#" class="button"><span>Know More</span></a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+

@@ -1,0 +1,823 @@
+﻿@model ICRA.Models.ResearchResponse
+@{
+    ViewBag.Title = "Research";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/ICRA_JS/research-min.js"></script>
+
+@{
+
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImagebanner = bannerObj.ReadImage(Model.research_Section1.desktop_image);
+
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.research_Section1.responsive_image);
+
+
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="ICRA Research" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.research_Section1.title1</h1>
+                    <p>@Html.Raw(Model.research_Section1.title2)</p>
+                </div>
+               @Html.Partial("_Audio")
+
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index", "ICRA")">Home</a>Research Services
+        </div>
+    </div>
+
+    <section class="section abt_rating">
+        <div class="container">
+            <h2 class="left_line">About @Model.research_Section1.title1</h2>
+            <div class="abt_res_desc">
+                @Html.Raw(Model.research_Section1.Description)
+                @Html.Partial("_GetFreeAlerts")
+            </div>
+           @Html.Partial("_ToSubscribe")
+            <div class="res_offer_hld">
+                <h2 class="left_line">ICRA Research Offerings</h2>
+                <div class="res_offer_con">
+                    <div class="res_offer_blurb">
+                        <a href="@Url.Action("ResearchCorporateSector", "ICRA", new { Industry_Id = Model.research_Section2[3].industry_Id })">
+                            <img src="~/Content/images/banner-res-economy.jpg" alt="Company">
+                            <div class="offer_title">@Model.research_Section2[3].industry_Name</div>
+                        </a>
+                    </div>
+                    <div class="res_offer_blurb">
+                        <ul>
+                            <li>
+                                @{
+                                    int i = 1;
+                                    foreach (var item in Model.research_Section2)
+                                    {
+                                        if (item.industry_Id != 4)
+                                        {
+                                            var name = "";
+                                            var type = "";
+                                            if (item.industry_Id == 1)
+                                            {
+                                                name = "corporate";
+                                                type = ".png";
+                                            }
+                                            if (item.industry_Id == 2)
+                                            {
+                                                name = "banking-finance";
+                                                type = ".png";
+                                            }
+                                            if (item.industry_Id == 3)
+                                            {
+                                                name = "structured-finance";
+                                                type = ".png";
+                                            }
+                                            if (i <= 3)
+                                            {
+                                                <a href="@Url.Action("ResearchCorporateSector", "ICRA", new { Industry_Id = item.industry_Id })">
+                                                    <div class="offer_type">
+                                                        <img src="~/Content/images/icon-tab-@name@type" alt="@name">
+                                                        <img src="~/Content/images/icon-tab-@name-hover.png" alt="@name">
+                                                        <p>@item.industry_Name</p>
+                                                    </div>
+                                                    <div class="rv_more white">View More <i class="fas fa-arrow-right"></i></div>
+                                                </a>
+                                            }
+                                            i = i + 1;
+                                        }
+                                    }
+
+                                }
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="res_offer_blurb">
+                        <a href="#">
+                            <img src="~/Content/images/banner-res-economy.jpg" alt="Economy">
+                            <div class="offer_title">Company</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a href="@Url.Action("Researchsubscribereportspopup","ICRA")" class="subscribe_rating_reports">
+            <img src="~/Content/images/icon-subscribe-rating.png" alt="">
+            <p>Want to get Rated</p>
+        </a>
+    </section>
+
+    <section class="section res_report_hld">
+        <img src="~/Content/images/bg-research-report.jpg" alt="Research Reports" class="bg-Img">
+        <div class="container">
+            <div class="tiles_hld">
+                <div class="tiles col">
+                    <h2 class="left_line">Research Reports</h2>
+                    <div class="tiles_con">
+                        @if (Model.research_Section6 != null)
+                        {
+                            int heart = 1;
+
+                            int topFive = 1;
+                            foreach (var item in Model.research_Section6)
+                            {
+                                if (topFive <= 5)
+                                {
+                                    var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+                                    <div class="cpr_blurb">
+                                        <div class="cpr_info">
+                                            <div class="date">
+                                                @item.Report_Date
+
+                                                @if (item.Is_Special_Comments == false)
+                                                {
+                                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+
+                                                }
+                                                @if (item.Is_Special_Comments == false)
+                                                {
+
+                                                    if (heart == 1)
+                                                    {
+                                                        <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                                                        heart = heart + 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="heart-icon"><i class="fas fa-heart"></i></span>
+
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if (heart == 1)
+                                                    {
+                                                        <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                        heart = heart + 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                                    }
+
+
+                                                }
+                                            </div>
+
+                                            <div class="rep_det_con">
+                                                <a href="@url">
+                                                    <p>
+                                                        @{
+                                                            const int MaxLength = 152;
+                                                            var FinalTitle = "";
+                                                            if (item.Report_Title.Length > MaxLength)
+                                                            {
+                                                                FinalTitle = item.Report_Title.Substring(0, MaxLength);
+                                                                string dot = " ...";
+                                                                @FinalTitle@dot
+                                                            }
+                                                            else
+                                                            {
+                                                                @item.Report_Title
+                                                            }
+
+                                                        }
+                                                    </p>
+                                                </a>
+
+                                                @{
+                                                    const int MaxLengthToolTip = 152;
+                                                    if (item.Report_Title.Length > MaxLengthToolTip)
+                                                    {<div class="tootip_con">
+                                                            @item.Report_Title
+                                                        </div>
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        </div>
+
+
+                                        @if (item.Is_Special_Comments == true)
+                                        {
+                                            var name = "Download";
+                                            var urlFull = "";
+                                            if (string.IsNullOrEmpty(item.Summary_Report_Name) == false)
+                                            {
+                                                urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Summary_Report_Name;
+
+                                            }
+                                            else
+                                            {
+                                                urlFull = "#";
+                                            }
+
+
+                                            <div class="cta_con">
+                                                <a href="@urlFull" class="download" target="_blank"> <img src="~/Content/images/icon-download.png" alt=""> <span>@name</span></a>
+                                                <div class="sharing_icons_con">
+                                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            var name = "Subscribe";
+                                            <div class="cta_con">
+                                                <a href="#" class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>@name</span></a>
+                                                <div class="sharing_icons_con">
+                                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                                </div>
+                                            </div>
+                                        }
+
+
+
+
+
+                                    </div>
+                                }
+                                topFive = topFive + 1;
+                            }
+                        }
+                    </div>
+                    @if (Model.research_Section6 != null)
+                    {
+                        if (Model.research_Section6.Count > 5)
+                        {
+                            <a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="trending_reports">
+                <img src="~/Content/images/bg-trending-res-reports.jpg" alt="" class="bg-Img">
+                <h2 class="left_line">Most Trending Research Reports</h2>
+                <div class="tiles_hld">
+                    @if (Model.research_Section7 != null)
+                    {
+
+                        int heartmost = 1;
+                        foreach (var item in Model.research_Section7)
+                        {
+                            var ReportURL = bannerObj.ReadImage(item.Summary_Report_Name);
+                            var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+
+                            <div class="tiles_con">
+
+                                <div class="cpr_blurb">
+                                    <div class="cpr_info">
+                                        <div class="date">
+                                            @item.Report_Date
+                                            @if (item.Is_Special_Comments == false)
+                                            {<span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                            }
+                                            @if (item.Is_Special_Comments == false)
+                                            {
+
+                                                if (heartmost == 1)
+                                                {
+                                                    <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                                                    heartmost = heartmost + 1;
+                                                }
+                                                else
+                                                {
+                                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                if (heartmost == 1)
+                                                {
+                                                    <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                    heartmost = heartmost + 1;
+                                                }
+                                                else
+                                                {
+                                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                                }
+
+
+                                            }
+                                        </div>
+                                        <div class="rep_det_con">
+                                            <a href="@url">
+                                                <p>
+                                                    @{
+                                                        const int MaxLength = 120;
+                                                        var FinalTitle = "";
+                                                        if (item.Report_Title.Length > MaxLength)
+                                                        {
+                                                            FinalTitle = item.Report_Title.Substring(0, MaxLength);
+                                                            string dot = " ...";
+                                                            @FinalTitle@dot
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.Report_Title
+                                                        }
+                                                    }
+
+                                                </p>
+                                            </a>
+
+                                            @*@{
+                                                    const int MaxLengthToolTip = 120;
+                                                    if (item.Report_Title.Length > MaxLengthToolTip)
+                                                    { <div class="tootip_con">
+                                                            @item.Report_Title
+                                                        </div>
+                                                    }
+                                                }*@
+
+                                        </div>
+                                    </div>
+                                    @if (item.Is_Special_Comments == true)
+                                    {
+                                        var name = "Download";
+                                        var urlFull = "";
+                                        if (string.IsNullOrEmpty(item.Summary_Report_Name) == false)
+                                        {
+                                            urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Summary_Report_Name;
+
+                                        }
+                                        else
+                                        {
+                                            urlFull = "#";
+                                        }
+                                        <div class="cta_con">
+                                            <a href="@urlFull" class="download" target="_blank"><img src="~/Content/images/icon-download.png" alt=""> <span> @name</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        var name = "Subscribe";
+                                        <div class="cta_con">
+                                            <div class="subscribe"><img src="~/Content/images/icon-sbscribe.png" alt=""> <span> @name</span></div>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+
+
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section remove_sect_bot_pad">
+        <div class="credit_reports res_cpr">
+            <img src="~/Content/images/bg-research-cpr.jpg" alt="" class="bg-Img">
+            <div class="credir_info">
+                <h2 class="left_line">Credit Perspective Reports</h2>
+                <p>ICRA's 'Credit Perspectives' provide detailed analysis on ratings assigned. These reports broadly cover the following areas: Key rating considerations, Rating sensitivity factors, Rating rationale, Company profile, Business update, Business outlook, Financial update, Financial outlook, etc.</p>
+                <div class="btn_hld">
+                    <a href="@Url.Action("CPR","ICRA")" target="_blank">
+                        <button class="button prime"><span>Know more</span></button>
+                    </a>
+                    <a target="_blank" href="~/Content/pdf/HindustanPetroleumCorporationLimitedCPR.pdf" class="button"><span>View Sample Report</span></a>
+                </div>
+            </div>
+
+            <div class="video_hld">
+                <img src="~/Content/images/res-cpr-video-thumb.jpg" alt="Video">
+                <a href="https://www.youtube.com/watch?v=BGXQUsHM03E?autoplay=1" class="popup-youtube">
+                    <div class="play">
+                        <img src="~/Content/images/icon-play.png" alt="Play">
+                    </div>
+                </a>
+            </div>
+
+            <div class="latest_cpr">
+                <h2 class="left_line">What's latest in CPR</h2>
+                <div class="cpr_hld">
+                    <div class="crp_slider_con">
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">05 Oct 2021 <img src="~/Content/images/icon-prime.png" alt="" class="icon_prime" /></div>
+                                <p>Aditya Birla Fashion and Retail Limited</p>
+                            </div>
+                            <div class="rv_more"></div>
+                        </a>
+                    </div>
+                    <div class="gardient"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("UpcomingWebinarEventsAndRecordings")
+
+    <section class="section events-podcast">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5">
+                    <div class="av-podcasts">
+                        <h2 class="left_line">Analyst Views & Podcasts</h2>
+                        <div class="podcasts-slider" id="podcasts">
+                            <div class="item">
+                                <div class="gallery-list">
+                                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                        <div class="thumb">
+                                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            <span class="date">05 Oct 2021</span>
+                                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="gallery-list">
+                                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                        <div class="thumb">
+                                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            <span class="date">05 Oct 2021</span>
+                                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="@Url.Action("Analystviews","ICRA")" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="webinar-events">
+                        <h2 class="left_line">Media Releases</h2>
+                        <div class="webinar-list">
+
+                            <div class="form-row align-items-center">
+                                <div class="col-sm">
+                                    <p class="date">06 Oct 2021</p>
+                                    <p>
+                                        <a href="#">
+                                            Domestic passenger traffic accelerates in September 2021 with a sequential growth of 2-3% as Covid-19 infection trajectory dips
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <p>Resilient earnings in FY2021; Covid 2.0 impacts asset quality in Q1 FY2022</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="@Url.Action("Mediareleases","ICRA")" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gray_bg">
+        <div class="container">
+            <div class="rs_ratings_rationals">
+                <h2 class="left_line">Rating <br /> Rationales</h2>
+                <div class="tiles_hld">
+                    <div class="tiles_con">
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">15 Nov 2021</div>
+                                <p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p>
+                            </div>
+                            <div class="download"> <img src="~/Content/images/icon-download-gray.png" alt=""> <span>Download</span></div>
+                        </a>
+                    </div>
+                    <div class="tiles_con">
+                        <a href="#" class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">15 Nov 2021</div>
+                                <p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p>
+                            </div>
+                            <div class="download"> <img src="~/Content/images/icon-download-gray.png" alt=""> <span>Download</span></div>
+                        </a>
+                    </div>
+                </div>
+                <a href="@Url.Action("AllRatingRationals","ICRA")" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    @Html.Partial("_AskOurIndustryBusinessRepresentative", "Research")
+    @Html.Partial("_OurSocialFeeds")
+}
+
+<script type="text/javascript">
+    function KeyUpevent() {
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry Start----------------
+        $("#txtName").keyup(function () {
+
+            console.log("testdata");
+            if ($.trim($("#txtName").val()) == "") {
+
+                $("#lblName").css('display', 'block');
+                $("#lblName").text("Please Enter Name")
+                $("#txtName").focus();
+                return false;
+            } else {
+
+                $("#lblName").css('display', 'none');
+            }
+
+        })
+
+        $("#txtEmail").keyup(function () {
+            if ($("#txtEmail").val() == "") {
+                $("#lblEmail").css('display', 'block');
+                $("#lblEmail").text("Please Enter Email Id")
+                $("#txtEmail").focus();
+                return false;
+            } else {
+                var email = $("#txtEmail").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmail").css('display', 'none');
+                } else {
+                    $("#lblEmail").css('display', 'block');
+                    $("#lblEmail").text("Please Enter Valid Email Id");
+                }
+
+            }
+
+
+        })
+        $("#txtContactNumber").keyup(function () {
+            if ($("#txtContactNumber").val() == "") {
+                $("#lblContactNumber").css('display', 'block');
+                $("#lblContactNumber").text("Please Enter Contact Number")
+                $("#txtContactNumber").focus();
+                return false;
+            } else {
+
+                $("#lblContactNumber").css('display', 'none');
+            }
+
+
+        })
+
+        $("#txtCompanyName").keyup(function () {
+            if ($.trim($("#txtCompanyName").val()) == "") {
+                $("#lblCompanyName").css('display', 'block');
+                $("#lblCompanyName").text("Please Enter Company Name")
+                $("#txtCompanyName").focus();
+                return false;
+            } else {
+
+                $("#lblCompanyName").css('display', 'none');
+            }
+
+        })
+        $("#txtMessage").keyup(function () {
+            if ($("#txtMessage").val() == "") {
+                $("#lblMessage").css('display', 'block');
+                $("#lblMessage").text("Please Enter Message")
+                $("#txtMessage").focus();
+                return false;
+            } else {
+
+                $("#lblMessage").css('display', 'none');
+            }
+
+        })
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry End----------------
+
+    }
+    function GetRatedInsert() {
+
+        if ($.trim($("#txtName").val()) == "") {
+
+            $("#lblName").css('display', 'block');
+            $("#lblName").text("Please Enter Name")
+            $("#lblName").attr("Name");
+            $("#txtName").focus();
+            return false;
+        } else {
+            $("#lblName").css('display', 'none');
+        }
+
+        if ($.trim($("#txtEmail").val()) == "") {
+            $("#lblEmail").css('display', 'block');
+            $("#lblEmail").text("Please Enter Email Id")
+            $("#txtEmail").focus();
+            return false;
+        } else {
+            var email = $("#txtEmail").val();
+            if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                $("#lblEmail").css('display', 'none');
+            } else {
+                $("#lblEmail").css('display', 'block');
+                $("#lblEmail").text("Please Enter Valid Email Id");
+            }
+        }
+
+
+        if ($.trim($("#txtContactNumber").val()) == "") {
+            $("#lblContactNumber").css('display', 'block');
+            $("#lblContactNumber").text("Please Enter Contact Number")
+            $("#txtContactNumber").focus();
+            return false;
+        } else {
+
+            $("#lblContactNumber").css('display', 'none');
+        }
+        if ($.trim($("#txtCompanyName").val()) == "") {
+            $("#lblCompanyName").css('display', 'block');
+            $("#lblCompanyName").text("Please Enter Company Name")
+            $("#txtCompanyName").focus();
+            return false;
+        } else {
+
+            $("#lblCompanyName").css('display', 'none');
+        }
+
+
+
+        if ($.trim($("#txtMessage").val()) == "") {
+            $("#lblMessage").css('display', 'block');
+            $("#lblMessage").text("Please Enter Message")
+            $("#txtMessage").focus();
+            return false;
+        } else {
+
+            $("#lblMessage").css('display', 'none');
+        }
+
+        var data = {
+            Name: $("#txtName").val(),
+            Email: $("#txtEmail").val(),
+            ContactNumber: $("#txtContactNumber").val(),
+            CompanyName: $("#txtCompanyName").val(),
+            Message: $("#txtMessage").val(),
+            WebPageName: "Research"
+        };
+
+
+        console.log(data)
+        var json = JSON.stringify(data);
+        console.log(json)
+        $.ajax({
+            type: "POST",
+            url: "/ICRA/InsertGetRated",
+            data: json,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.Status == 200) {
+                    $("#msgResponse").css({
+                        "text-align": 'center', "font-size": '15px', "font-weight": 'bold', "display": 'block', "color": '#ff0000', "padding": '0 15px'
+                    });
+                    $("#msgResponse").text("");
+                    $("#msgResponse").text("Thank You! We will contact you shortly.")
+
+                    $("#txtName").val('')
+                    $("#txtCompanyName").val('')
+                    $("#txtEmail").val('')
+                    $("#txtContactNumber").val('')
+                    $("#txtMessage").val('')
+
+                } else {
+
+                    $("#msgResponse").css('display', 'none');
+                    $("#msgResponse").text("");
+                    $("#msgResponse").text("Data Save Failed")
+                }
+            }
+        });
+    }
+    function alphaOnly(evt) {
+        var charCode = (evt.which) ? evt.which : window.event.keyCode;
+
+        if (charCode <= 13) {
+            return true;
+        }
+        else {
+            var keyChar = String.fromCharCode(charCode);
+            var re = /^[a-zA-Z- ]+(\s+[a-zA-Z]+)*$/;
+            return re.test(keyChar);
+        }
+    }
+    function isNumberOnly(evt) {
+        var charCode = (evt.which) ? evt.which : window.event.keyCode;
+
+        if (charCode <= 13) {
+            return true;
+        }
+        else {
+            var keyChar = String.fromCharCode(charCode);
+            var re = /^\d+$/;
+            return re.test(keyChar);
+        }
+    }
+
+</script>
+

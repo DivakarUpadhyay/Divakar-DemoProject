@@ -1,0 +1,39 @@
+﻿@*@model string*@
+@{
+    Layout = null;
+}
+
+<div class="login_popup subscribe_reports_popup clearfix">
+    <h2 class="left_line">Get Rated</h2>
+    @*@if (Model != null)
+        {
+            @Model = "Rating";
+               <input type="hidden" id="PageName" value="@Model" />
+        }*@
+
+
+    <div class="errMsg" id="msgResponse"></div>
+    <div class="wp_controlers">
+        <div class="wp_control width_half">
+            <input type="text" placeholder="Name" onkeyup="return KeyUpevent();" onkeypress="return alphaOnly(this);" id="txtName" class="textBox" />
+            <div class="errMsg" id="lblName" style="display:none"></div>
+        </div>
+        <div class="wp_control width_half">
+            <input type="text" placeholder="Email" onkeyup="return KeyUpevent();" id="txtEmail" class="textBox" />
+            <div class="errMsg" id="lblEmail" style="display:none"></div>
+        </div>
+        <div class="wp_control width_half">
+            <input type="text" placeholder="Mobile"  onkeyup="return KeyUpevent();" maxlength="15" onkeypress="return isNumberOnly(this);" minlength="10" id="txtContactNumber" class="textBox" />
+            <div class="errMsg" id="lblContactNumber" style="display:none"></div>
+        </div>
+        <div class="wp_control width_half">
+            <input type="text" placeholder="Company Name" onkeyup="return KeyUpevent();" maxlength="150" id="txtCompanyName" class="textBox" />
+            <div class="errMsg" id="lblCompanyName" style="display:none"></div>
+        </div>
+        <div class="wp_control">
+            <textarea placeholder="Message" onkeyup="return KeyUpevent();" id="txtMessage" class="textArea"></textarea>
+            <div class="errMsg" id="lblMessage" style="display:none"></div>
+        </div>
+    </div>
+    <div class="button" onclick="return GetRatedInsert();"><span>Submit</span></div>
+</div>

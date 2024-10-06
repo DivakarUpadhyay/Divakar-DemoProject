@@ -1,0 +1,307 @@
+﻿
+@{
+    ViewBag.Title = "Subscriptionsummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/ICRA_JS/cpr-min.js"></script>
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research Services</a>
+        <a href="#">Credit Perspective Reports</a>
+        Subscription Summary
+    </div>
+</div>
+
+<section class="section subscription_summary">
+    <div class="container">
+        <div class="back_heading">
+            <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <h2 class="left_line">Cart Summary</h2>
+        </div>
+        <div class="entity_tbl_hld sorting_table subscription_table">
+            <table id="subscriptionTable" class="" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Report Type</th>
+                        <th>Sector</th>
+                        <th>Subsector</th>
+                        <th>Company</th>
+                        <th>Report</th>
+                        <th>Subscription</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Research </td>
+                        <td>Banking & Financial</td>
+                        <td>All</td>
+                        <td>Indraprastha Automobiles Private Limited</td>
+                        <td>All</td>
+                        <td>
+                            <div class="wp_control">
+                                <select class="selectBox">
+                                    <option>1 Year</option>
+                                    <option>2 Year</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>XXXXXX</td>
+                        <td>
+                            <a href="javascript:void(0)" class="icra_close">
+                                <span>&times;</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Credit Perspective</td>
+                        <td>Agriculture Produce</td>
+                        <td>Asset Management Company</td>
+                        <td>National Bank for Agriculture and Rural Development</td>
+                        <td>All</td>
+                        <td>
+                            <div class="wp_control">
+                                <select class="selectBox">
+                                    <option>1 Year</option>
+                                    <option>2 Year</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>XXXXXX</td>
+                        <td>
+                            <a href="javascript:void(0)" class="icra_close">
+                                <span>&times;</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Research</td>
+                        <td>Automobile</td>
+                        <td>All</td>
+                        <td>Indraprastha Automobiles Private Limitedrt</td>
+                        <td>
+                            Indian Automobile Industry – Passenger Vehicles;  Enquiries At
+                            Dealerships Are Improving, But Full Recovery Is Still Sometime Away
+                        </td>
+                        <td>
+                            <div class="wp_control">
+                                <select class="selectBox">
+                                    <option>1 Year</option>
+                                    <option>2 Year</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>XXXXXX</td>
+                        <td>
+                            <a href="javascript:void(0)" class="icra_close">
+                                <span>&times;</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Credit Perspective </td>
+                        <td>Banks</td>
+                        <td>Co-operative Bank</td>
+                        <td>National Bank for Agriculture and Rural Development</td>
+                        <td>All</td>
+                        <td>
+                            <div class="wp_control">
+                                <select class="selectBox">
+                                    <option>1 Year</option>
+                                    <option>2 Year</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>XXXXXX</td>
+                        <td>
+                            <a href="javascript:void(0)" class="icra_close">
+                                <span>&times;</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Private Sector Bank</td>
+                        <td>National Bank for Agriculture and Rural Development</td>
+                        <td>All</td>
+                        <td>
+                            <div class="wp_control">
+                                <select class="selectBox">
+                                    <option>1 Year</option>
+                                    <option>2 Year</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>XXXXXX</td>
+                        <td>
+                            <a href="javascript:void(0)" class="icra_close">
+                                <span>&times;</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="subscription_total">
+            <div class="total_row">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Sub-Total</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="price">XXXXXX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="total_row">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Discount</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="price">XX%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="total_row">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Tax (GST)</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="price">XX%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="total_row total_amount">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Total</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="price">XXXXXX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subscription_discount">
+            <span>10% Discount Add 1 More Reports</span>
+        </div>
+        <div class="terms_conditions">
+            <h6>Terms & Condition</h6>
+            <div class="row align-items-center">
+                <div class="col-md">
+                    <div class="tnc_check">
+                        <input type="checkbox" name="Tnc" id="Tnc">
+                        <label for="Tnc">I accept the terms & condition </label>
+                    </div>
+                </div>
+                <div class="col-md-auto">
+                    <a href="#" class="button prime"><span>Proceed to Pay</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section subscribe_reports">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <div class="sr_list">
+                    <div class="sr_content">
+                        <h2 class="left_line">Don’t Miss Our<br> Research Reports</h2>
+                        <a href="#" class="button prime"><span>Subscribe Now</span></a>
+                    </div>
+                    <img src="~/Content/images/bg-research-report-sm.jpg" alt="" class="sr_banner">
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="sr_list">
+                    <div class="sr_content">
+                        <h2 class="left_line">Don’t Miss Our<br> Credit Prespective Reports</h2>
+                        <a href="#" class="button prime"><span>Subscribe Now</span></a>
+                    </div>
+                    <img src="~/Content/images/bg-credit-prespective-reports-sm.jpg" alt="" class="sr_banner">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section reports_interested_in">
+    <div class="container">
+        <h2 class="left_line">You may also be interested in</h2>
+        <div class="tiles_hld">
+            <div class="tiles">
+                <img src="~/Content/images/bg-rating-crediet-reports.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Credit Prespective Reports</h2>
+                <div class="tiles_con">
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">12 Nov 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                            <p>Tata Sons Private Limited</p>
+                        </div>
+                        <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                    </a>
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">07 Oct 2021</div>
+                            <p>TP Western Odisha Distribution Limited</p>
+                        </div>
+                        <div class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></div>
+                    </a>
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">29 Sep 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                            <p>Rainbow Children’s Medicare Private Limited</p>
+                        </div>
+                        <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                    </a>
+                </div>
+                <a href="#" class="link-button">View More</a>
+            </div>
+            <div class="tiles">
+                <img src="~/Content/images/bg-similer-sector-reports.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Similar Sector Research Reports</h2>
+                <div class="tiles_con">
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">04 Nov 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                            <p>Focus on quality likely to provide some respite to producers from the impact of sharp increase in wage rates and declining prices as production recovers</p>
+                        </div>
+                        <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                    </a>
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">29 Oct 2021</div>
+                            <p>China’s plans to steer the economy away from a property-driven model of growth could signal the start of mean-reversion for the steel industry</p>
+                        </div>
+                        <div class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></div>
+                    </a>
+                    <a href="#" class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">04 Oct 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                            <p>M&A activity driven by developers’ intent to unlock equity to bid for new projects and to improve liquidity; ~/Content worth `207 billion on the block</p>
+                        </div>
+                        <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                    </a>
+                </div>
+                <a href="#" class="link-button">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Content/js/dataTables-min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#subscriptionTable').DataTable({
+            "ordering": false,
+            "paging": false,
+        });
+    });
+</script>

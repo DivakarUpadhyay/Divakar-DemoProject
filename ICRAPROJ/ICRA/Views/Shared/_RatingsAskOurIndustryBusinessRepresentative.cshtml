@@ -1,0 +1,404 @@
+﻿<div class="ask_expert">
+    <img src="~/Content/images/banner-ask-expert.jpg" alt="" class="ae_banner">
+    <div class="ae_form_hld">
+        <div id="tabdata_02">
+            <div class="switch_tab_hld">
+                <div class="slider"></div>
+                <div class="tab active" tabId="industry_analyst">Ask Our Industry Analyst</div>
+                <div class="tab" tabId="buss_representative">Get in touch with our Business Representative</div>
+            </div>
+            <div class="switch_det_panel show" id="tab_industry_analyst">
+                <div class="wp_controlers">
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtNameAskOurIndustry" placeholder="Name*" onkeypress="return isAlfa(this);" class="textBox">
+                        <div class="errMsg" id="lblNameAskOurIndustry" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtCompanyNameAskOurIndustry" placeholder="Company Name*" class="textBox">
+                        <div class="errMsg" id="lblCompanyNameAskOurIndustry" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtEmailIdAskOurIndustry" placeholder="Email ID*" class="textBox">
+                        <div class="errMsg" id="lblEmailIdAskOurIndustry" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtContactNumberAskOurIndustry" pattern="^[0-9]*$" maxlength="15" onkeypress="return onlyNumberKey(this);" placeholder="Contact Number*" class="textBox">
+                        <div class="errMsg" id="lblContactNumberAskOurIndustry" style="display:none"></div>
+
+                    </div>
+                    <div class="wp_control">
+                        <input type="text" id="txtWriteQueryAskOurIndustry" placeholder="Write Your Query*" class="textBox">
+                        <div class="errMsg" id="lblWriteQueryAskOurIndustry" style="display:none"></div>
+                    </div>
+                    <div class="note">(*It is compulsory field)</div>
+                </div>
+                <div class="button" id="btnSubmitindustry" onclick="return EmailInsert('askIndustry');"><span>Submit</span></div>
+
+            </div>
+
+            <div class="switch_det_panel" id="tab_buss_representative">
+                <div class="wp_controlers">
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtNameBusinessRepresentative" onkeypress="return isAlfa(this);" placeholder="Name*" class="textBox">
+                        <div class="errMsg" id="lblNameBusinessRepresentative" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtCompanyNameBusinessRepresentative" placeholder="Company Name*" class="textBox">
+                        <div class="errMsg" id="lblCompanyNameBusinessRepresentative" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtEmailIDBusinessRepresentative" placeholder="Email ID*" class="textBox">
+                        <div class="errMsg" id="lblEmailIDBusinessRepresentative" style="display:none"></div>
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" id="txtContactNumberBusinessRepresentative" placeholder="Contact Number*" class="textBox">
+                        <div class="errMsg" id="lblContactNumberBusinessRepresentative" style="display:none"></div>
+                    </div>
+                    <div class="wp_control">
+                        <input type="text" id="txtWriteQueryBusinessRepresentative" placeholder="Write Your Query*" class="textBox">
+                        <div class="errMsg" id="lblWriteQueryBusinessRepresentative" style="display:none"></div>
+                    </div>
+                    <div class="note">(*It is compulsory field)</div>
+                </div>
+                <div class="button" id="btnSubmitbusinessRepresentative" onclick="return EmailInsert('BusinessRepresentative');"><span>Submit</span></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script type="text/javascript">
+
+    //----------Divakar Upadhyay 22 Jan 2022 Ask Industry Start----------------
+    $("#txtNameAskOurIndustry").keyup(function () {
+        if ($("#txtNameAskOurIndustry").val() == "") {
+            $("#lblNameAskOurIndustry").css('display', 'block');
+            $("#lblNameAskOurIndustry").text("Please Enter Name")
+            $("#txtNameAskOurIndustry").focus();
+            return false;
+        } else {
+
+            $("#lblNameAskOurIndustry").css('display', 'none');
+        }
+
+    })
+
+    $("#txtCompanyNameAskOurIndustry").keyup(function () {
+        if ($("#txtCompanyNameAskOurIndustry").val() == "") {
+            $("#lblCompanyNameAskOurIndustry").css('display', 'block');
+            $("#lblCompanyNameAskOurIndustry").text("Please Enter Company Name")
+            $("#txtCompanyNameAskOurIndustry").focus();
+            return false;
+        } else {
+
+            $("#lblCompanyNameAskOurIndustry").css('display', 'none');
+        }
+
+    })
+
+    $("#txtEmailIdAskOurIndustry").keyup(function () {
+        if ($("#txtEmailIdAskOurIndustry").val() == "") {
+            $("#lblEmailIdAskOurIndustry").css('display', 'block');
+            $("#lblEmailIdAskOurIndustry").text("Please Enter Email Id")
+            $("#txtEmailIdAskOurIndustry").focus();
+            return false;
+        } else {
+            var email = $("#txtEmailIdAskOurIndustry").val();
+
+            if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                $("#lblEmailIdAskOurIndustry").css('display', 'none');
+            } else {
+                $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                $("#lblEmailIdAskOurIndustry").text("Please Enter Valid Email Id");
+            }
+
+        }
+
+
+    })
+    $("#txtContactNumberAskOurIndustry").keyup(function () {
+        if ($("#txtContactNumberAskOurIndustry").val() == "") {
+            $("#lblContactNumberAskOurIndustry").css('display', 'block');
+            $("#lblContactNumberAskOurIndustry").text("Please Enter Contact Number")
+            $("#txtContactNumberAskOurIndustry").focus();
+            return false;
+        } else {
+
+            $("#lblContactNumberAskOurIndustry").css('display', 'none');
+        }
+
+
+    })
+
+    $("#txtWriteQueryAskOurIndustry").keyup(function () {
+        if ($("#txtWriteQueryAskOurIndustry").val() == "") {
+            $("#lblWriteQueryAskOurIndustry").css('display', 'block');
+            $("#lblWriteQueryAskOurIndustry").text("Please Enter Query")
+            $("#txtWriteQueryAskOurIndustry").focus();
+            return false;
+        } else {
+
+            $("#lblWriteQueryAskOurIndustry").css('display', 'none');
+        }
+
+    })
+    //----------Divakar Upadhyay 22 Jan 2022 Ask Industry End----------------
+
+    //----------Divakar Upadhyay 22 Jan 2022 Ask BD Start----------------
+    $("#txtNameBusinessRepresentative").keyup(function () {
+        if ($("#txtNameBusinessRepresentative").val() == "") {
+            $("#lblNameBusinessRepresentative").css('display', 'block');
+            $("#lblNameBusinessRepresentative").text("Please Enter Name")
+            $("#txtNameBusinessRepresentative").focus();
+            return false;
+        } else {
+
+            $("#lblNameBusinessRepresentative").css('display', 'none');
+        }
+
+    })
+    $("#txtCompanyNameBusinessRepresentative").keyup(function () {
+        if ($("#txtCompanyNameBusinessRepresentative").val() == "") {
+            $("#lblCompanyNameBusinessRepresentative").css('display', 'block');
+            $("#lblCompanyNameBusinessRepresentative").text("Please Enter Company Name")
+            $("#txtCompanyNameBusinessRepresentative").focus();
+            return false;
+        } else {
+            $("#lblCompanyNameBusinessRepresentative").css('display', 'none');
+        }
+
+    })
+    $("#txtEmailIDBusinessRepresentative").keyup(function () {
+        if ($("#txtEmailIDBusinessRepresentative").val() == "") {
+            $("#lblEmailIDBusinessRepresentative").css('display', 'block');
+            $("#lblEmailIDBusinessRepresentative").text("Please Enter Email Id")
+            $("#txtEmailIDBusinessRepresentative").focus();
+            return false;
+        } else {
+            var email = $("#txtEmailIDBusinessRepresentative").val();
+
+            if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                $("#lblEmailIDBusinessRepresentative").css('display', 'none');
+            } else {
+                $("#lblEmailIDBusinessRepresentative").css('display', 'block');
+                $("#lblEmailIDBusinessRepresentative").text("Please Enter Valid Email Id");
+            }
+
+        }
+
+
+    })
+    $("#txtContactNumberBusinessRepresentative").keyup(function () {
+        if ($("#txtContactNumberBusinessRepresentative").val() == "") {
+            $("#lblContactNumberBusinessRepresentative").css('display', 'block');
+            $("#lblContactNumberBusinessRepresentative").text("Please Enter Contact Number")
+            $("#txtContactNumberBusinessRepresentative").focus();
+            return false;
+        } else {
+            $("#lblContactNumberBusinessRepresentative").css('display', 'none');
+        }
+
+
+    })
+    $("#txtWriteQueryBusinessRepresentative").keyup(function () {
+        if ($("#txtWriteQueryBusinessRepresentative").val() == "") {
+            $("#lblWriteQueryBusinessRepresentative").css('display', 'block');
+            $("#lblWriteQueryBusinessRepresentative").text("Please Enter Query")
+            $("#txtCompanyNameBusinessRepresentative").focus();
+            return false;
+        } else {
+            $("#lblWriteQueryBusinessRepresentative").css('display', 'none');
+        }
+
+    })
+    //----------Divakar Upadhyay 22 Jan 2022 Ask BD End----------------
+    function EmailInsert(section) {
+        if (section == 'askIndustry') {
+            if ($("#txtNameAskOurIndustry").val() == "") {
+                $("#lblNameAskOurIndustry").css('display', 'block');
+                $("#lblNameAskOurIndustry").text("Please Enter Name")
+                $("#txtNameAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblNameAskOurIndustry").css('display', 'none');
+            }
+            if ($("#txtCompanyNameAskOurIndustry").val() == "") {
+                $("#lblCompanyNameAskOurIndustry").css('display', 'block');
+                $("#lblCompanyNameAskOurIndustry").text("Please Enter Company Name")
+                $("#txtCompanyNameAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblCompanyNameAskOurIndustry").css('display', 'none');
+            }
+            if ($("#txtEmailIdAskOurIndustry").val() == "") {
+                $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                $("#lblEmailIdAskOurIndustry").text("Please Enter Email Id")
+                $("#txtEmailIdAskOurIndustry").focus();
+                return false;
+            } else {
+                var email = $("#txtEmailIdAskOurIndustry").val();
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmailIdAskOurIndustry").css('display', 'none');
+                } else {
+                    $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                    $("#lblEmailIdAskOurIndustry").text("Please Enter Valid Email Id");
+                }
+            }
+
+
+            if ($("#txtContactNumberAskOurIndustry").val() == "") {
+                $("#lblContactNumberAskOurIndustry").css('display', 'block');
+                $("#lblContactNumberAskOurIndustry").text("Please Enter Contact Number")
+                $("#txtContactNumberAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblContactNumberAskOurIndustry").css('display', 'none');
+            }
+
+
+            if ($("#txtWriteQueryAskOurIndustry").val() == "") {
+                $("#lblWriteQueryAskOurIndustry").css('display', 'block');
+                $("#lblWriteQueryAskOurIndustry").text("Please Enter Query")
+                $("#txtWriteQueryAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblWriteQueryAskOurIndustry").css('display', 'none');
+            }
+
+            var data = {
+                Category_Id: "7",
+                Name: $("#txtNameAskOurIndustry").val(),
+                Email: $("#txtEmailIdAskOurIndustry").val(),
+                ContactNumber: $("#txtContactNumberAskOurIndustry").val(),
+                CompanyName: $("#txtCompanyNameAskOurIndustry").val(),
+                WriteQuery: $("#txtWriteQueryAskOurIndustry").val(),
+                WebPageName: "Research"
+            };
+
+        } else {
+            if ($("#txtNameBusinessRepresentative").val() == "") {
+                $("#lblNameBusinessRepresentative").css('display', 'block');
+                $("#lblNameBusinessRepresentative").text("Please Enter Name")
+                $("#txtNameBusinessRepresentative").focus();
+                return false;
+            } else {
+
+                $("#lblNameBusinessRepresentative").css('display', 'none');
+            }
+
+            if ($("#txtCompanyNameBusinessRepresentative").val() == "") {
+                $("#lblCompanyNameBusinessRepresentative").css('display', 'block');
+                $("#lblCompanyNameBusinessRepresentative").text("Please Enter Company Name")
+                $("#txtCompanyNameBusinessRepresentative").focus();
+                return false;
+            } else {
+                $("#lblCompanyNameBusinessRepresentative").css('display', 'none');
+            }
+
+            if ($("#txtEmailIDBusinessRepresentative").val() == "") {
+                $("#lblEmailIDBusinessRepresentative").css('display', 'block');
+                $("#lblEmailIDBusinessRepresentative").text("Please Enter Email Id")
+                $("#txtEmailIDBusinessRepresentative").focus();
+                return false;
+            } else {
+                var email = $("#txtEmailIDBusinessRepresentative").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmailIDBusinessRepresentative").css('display', 'none');
+                } else {
+                    $("#lblEmailIDBusinessRepresentative").css('display', 'block');
+                    $("#lblEmailIDBusinessRepresentative").text("Please Enter Valid Email Id");
+                }
+
+            }
+
+            if ($("#txtContactNumberBusinessRepresentative").val() == "") {
+                $("#lblContactNumberBusinessRepresentative").css('display', 'block');
+                $("#lblContactNumberBusinessRepresentative").text("Please Enter Contact Number")
+                $("#txtContactNumberBusinessRepresentative").focus();
+                return false;
+            } else {
+                $("#lblContactNumberBusinessRepresentative").css('display', 'none');
+            }
+
+            if ($("#txtWriteQueryBusinessRepresentative").val() == "") {
+                $("#lblWriteQueryBusinessRepresentative").css('display', 'block');
+                $("#lblWriteQueryBusinessRepresentative").text("Please Enter Query")
+                $("#txtCompanyNameBusinessRepresentative").focus();
+                return false;
+            } else {
+                $("#lblWriteQueryBusinessRepresentative").css('display', 'none');
+            }
+
+            var data = {
+                Category_Id: "9",
+                Name: $("#txtNameBusinessRepresentative").val(),
+                Email: $("#txtEmailIDBusinessRepresentative").val(),
+                ContactNumber: $("#txtContactNumberBusinessRepresentative").val(),
+                CompanyName: $("#txtCompanyNameBusinessRepresentative").val(),
+                WriteQuery: $("#txtWriteQueryBusinessRepresentative").val(),
+                WebPageName: "Rating"
+            };
+
+        }
+        console.log(data)
+        var json = JSON.stringify(data);
+        console.log(json)
+        $.ajax({
+            type: "POST",
+            url: "/ICRA/InsertContactUs_Email",
+            data: json,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.Status == 200) {
+                    alert("Data Saved Successfully")
+
+                    $("#txtNameAskOurIndustry").val('')
+                    $("#txtCompanyNameAskOurIndustry").val('')
+                    $("#txtEmailIdAskOurIndustry").val('')
+                    $("#txtContactNumberAskOurIndustry").val('')
+                    $("#txtWriteQueryAskOurIndustry").val('')
+
+                    $("#txtNameBusinessRepresentative").val('')
+                    $("#txtCompanyNameBusinessRepresentative").val('')
+                    $("#txtEmailIDBusinessRepresentative").val('')
+                    $("#txtContactNumberBusinessRepresentative").val('')
+                    $("#txtWriteQueryBusinessRepresentative").val('')
+
+                } else {
+                    alert("Data Save Failed")
+                }
+            }
+        });
+    }
+    function isAlfa(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 32 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
+            return false;
+        }
+        return true;
+    }
+
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+    function onlyNumberKey(evt) {
+
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>

@@ -1,0 +1,998 @@
+﻿@model ICRA.Models.ResearchResponse
+@{
+    ViewBag.Title = "Allresearchreports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="~/Scripts/ICRA_JS/research-min.js"></script>
+@{
+
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImagebanner = bannerObj.ReadImage(Model.research_Section1.desktop_image);
+
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.research_Section1.responsive_image);
+
+
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="ICRA Research" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.research_Section1.title1</h1>
+                    <p>@Html.Raw(Model.research_Section1.title2)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index", "ICRA")">Home</a><a href="@Url.Action("Research", "ICRA")">Research Services </a>Research Reports
+        </div>
+    </div>
+    <section class="section abt_rating res_corporate">
+        <div class="container">
+            <h2 class="left_line">About @Model.research_Section1.title1</h2>
+            <div class="abt_res_desc">
+                @Html.Raw(Model.research_Section1.Description)
+                <div class="free_alert">
+                    <img src="~/Content/images/bg-free-alert.jpg" alt="Get Free Alerts on Sector / Company Updates">
+                    <div class="free_alert_msg">
+                        <img src="~/Content/images/icon-alert.png" alt="Free Alert" class="icon_free_alert">
+                        Get Free Alerts on Sector / Company Updates
+                    </div>
+                </div>
+            </div>
+
+            <div class="subscribe_sector">
+                <img src="~/Content/images/thumb-sector-subscribe.jpg" alt="">
+                <div class="desc_hld">
+                    <div class="copy">To subscribe a sector</div>
+                    <a href="#" class="button">
+                        <span> Click Here</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rating_filter_box_hld">
+                <div class="rating_filter_box">
+                    <div class="wp_control">
+                        @Html.DropDownList("ListItemsCat", Model.ListItemsCat, "Category", new { @class = "selectBox" })
+
+                    </div>
+                    <div class="wp_control">
+                        @Html.DropDownList("ListItemsSector", Model.ListItemsSector, "Sector", new { @class = "selectBox" })
+
+                    </div>
+                    @*<div class="wp_control">
+                            <select class="selectBox">
+                                <option>Sub Sector</option>
+                            </select>
+                        </div>*@
+                    <div class="wp_control">
+                        @Html.DropDownList("ListItemsReportType", Model.ListItemsReportType, "Type", new { @class = "selectBox" })
+
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="From" autocomplete="off" class="form-control" id="fromDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="To" autocomplete="off" class="form-control" id="toDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button" id="btnSearch"><span>Search</span></div>
+            </div>
+        </div>
+        <a href="@Url.Action("Researchsubscribereportspopup","ICRA")" class="subscribe_rating_reports">
+            <img src="~/Content/images/icon-subscribe-rating.png" alt="">
+            <p>Want to Get Rated</p>
+        </a>
+    </section>
+
+    <section class="section remove_sect_top_pad research_table">
+        <div class="container">
+            <div class="reports_tbl_hld sorting_table">
+                <table id="reports_data_table" class="" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Date</th>
+                            <th>Reports</th>
+                            <th>Type of Reports</th>
+                            <th>Summary</th>
+                            <th>Reports</th>
+
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+            <a href="#" class="button prime"><span>Subscribe Now</span></a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tiles_hld">
+                <div class="tiles">
+                    <img src="~/Content/images/bg-rating-research.jpg" alt="" class="bg_img">
+                    <h2 class="left_line">Most Trending Research Reports</h2>
+                    <div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    15 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p></a>
+                                    <div class="tootip_con">
+                                        Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    15 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</p></a>
+                                    <div class="tootip_con">Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    04 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</p></a>
+                                    <div class="tootip_con">Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="link-button">View More</a>
+                </div>
+                <div class="tiles">
+                    <img src="~/Content/images/bg-rating-crediet-reports.jpg" alt="" class="bg_img">
+                    <h2 class="left_line">Credit Prespective Reports</h2>
+                    <div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    12 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Tata Sons Private Limited</p></a>
+                                    <div class="tootip_con">Tata Sons Private Limited</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    21 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>TP Western Odisha Distribution Limited</p></a>
+                                    <div class="tootip_con">TP Western Odisha Distribution Limited</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    29 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Rainbow Children’s Medicare Private Limited</p></a>
+                                    <div class="tootip_con">Rainbow Children’s Medicare Private Limited</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    29 Nov 2021
+                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Rainbow Children’s Medicare Private Limited</p></a>
+                                    <div class="tootip_con">Rainbow Children’s Medicare Private Limited</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="link-button">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tiles_hld">
+                <div class="tiles col">
+                    <img src="~/Content/images/bg-rating-entity-specific.jpg" alt="" class="bg_img">
+                    <h2 class="left_line">Rating Rationales</h2>
+                    <div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">04 Nov 2021 <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span></div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p></a>
+                                    <div class="tootip_con">Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">04 Nov 2021 <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span></div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</p></a>
+                                    <div class="tootip_con">Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">04 Nov 2021 <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span></div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</p></a>
+                                    <div class="tootip_con">Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="link-button">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section remove_sect_bot_pad">
+        <div class="subscription_offerings">
+            <img src="~/Content/images/banner-sbscription-offer.jpg" alt="">
+            <div class="button"><span>View Our Subscription Offerings</span></div>
+        </div>
+    </section>
+
+    @*<section class="section full_wid_ia extent_sect_top_pad gray_bg">
+        <div class="container">
+            <img src="~/Content/images/banner-ask-expert.jpg" alt="" class="bg-Img">*@
+    @Html.Partial("_AskOurIndustryBusinessRepresentative", "Allresearchreports")
+    @*</div>
+        </section>*@
+
+    <section class="section events-podcast">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5">
+                    <div class="av-podcasts">
+                        <h2 class="left_line">Analyst Views & Podcasts</h2>
+                        <div class="podcasts-slider" id="podcasts">
+                            <div class="item">
+                                <div class="gallery-list">
+                                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                        <div class="thumb">
+                                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            <span class="date">05 Oct 2021</span>
+                                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="gallery-list">
+                                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                        <div class="thumb">
+                                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            <span class="date">05 Oct 2021</span>
+                                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="webinar-events">
+                        <h2 class="left_line">Media Releases</h2>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <div class="rep_det_con">
+                                            <p>Domestic passenger traffic accelerates in September 2021 with a sequential growth of 2-3% as Covid-19 infection trajectory dips</p>
+                                            <div class="tootip_con">Domestic passenger traffic accelerates in September 2021 with a sequential growth of 2-3% as Covid-19 infection trajectory dips</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <div class="rep_det_con">
+                                            <p>Resilient earnings in FY2021; Covid 2.0 impacts asset quality in Q1 FY2022</p>
+                                            <div class="tootip_con">Resilient earnings in FY2021; Covid 2.0 impacts asset quality in Q1 FY2022</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <div class="rep_det_con">
+                                            <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                            <div class="tootip_con">Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="webinar-list">
+                            <a href="#">
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm">
+                                        <p class="date">06 Oct 2021</p>
+                                        <div class="rep_det_con">
+                                            <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                            <div class="tootip_con">Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @Html.Partial("_OurSocialFeeds")
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/ICRA_JS/dataTables-min.js"></script>
+    <script type="text/javascript">
+        
+        var table = "";
+        $(document).ready(function () {
+
+            var Industry_Id = GetParameterValues('Industry_Id');
+            console.log(Industry_Id)
+
+            if (Industry_Id == "") {
+                Industry_Id = 0
+            }
+            var Research_Category_Id = $("#ListItemsCat").val() == 'Category' ? 0 : $("#ListItemsCat").val()
+            if (Research_Category_Id == "") {
+                Research_Category_Id = 0
+            }
+            console.log(Research_Category_Id)
+            var Research_Sector_id = $("#ListItemsSector").val() == 'Sector' ? 0 : $("#ListItemsSector").val()
+            if (Research_Sector_id == "") {
+                Research_Sector_id = 0
+            }
+            console.log(Research_Sector_id)
+            var Type_Id = $("#ListItemsReportType").val() == 'Type' ? 0 : $("#ListItemsReportType").val()
+            if (Type_Id == "") {
+                Type_Id = 0
+            }
+            console.log(Type_Id)
+            var FROM_DATE = $("#fromDate").val()
+            if (FROM_DATE == "") {
+                FROM_DATE = ""
+            }
+            console.log(FROM_DATE)
+            var To_DATE = $("#toDate").val()
+            if (To_DATE == "") {
+                To_DATE = ""
+            }
+            console.log(To_DATE)
+            var SearcText = $("#txtSearchReportName").val()
+            if (SearcText == "") {
+                SearcText = ""
+            }
+
+            var availableTagsdAdd = [];
+
+            var availableTags = [];
+
+
+            $.ajax({
+                url: '/ICRA/FilterData',
+                data: {
+                    Industry_Id: Industry_Id,
+                    Research_Category_Id: Research_Category_Id,
+                    Research_Sector_id: Research_Sector_id,
+                    Type_Id: Type_Id,
+                    FROM_DATE: FROM_DATE,
+                    To_DATE: To_DATE,
+                    SearcText: SearcText
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function (response) {
+                    var response = response.FilterResponse;
+                    console.log(response);
+                    $.each(response, function (key, item) {
+                        var data = { id: item.Report_Id, label: item.Report_Title };
+                        availableTagsdAdd.push(data);
+                    });
+                    var final = unique(availableTagsdAdd);
+
+                    $.each(final, function (key, item) {
+                        var data = { label: item };
+                        availableTags.push(data);
+                    });
+
+                    DataTableRender(response)
+                }
+            });
+            $("#txtSearchReportName").autocomplete({
+                source: availableTags,
+                minLength: 3,
+                appendTo: ".abt_rating .search_hld"
+
+
+            });
+
+
+            function unique(final) {
+                var result = [];
+                $.each(final, function (i, e) {
+                    if ($.inArray(e.label, result) == -1) {
+
+                        result.push(e.label);
+
+                    }
+                });
+
+                return result;
+            }
+            $("#btnSearch").click(function () {
+
+                var Industry_Id = GetParameterValues('Industry_Id');
+
+                if (Industry_Id == "") {
+                    Industry_Id = 0
+                }
+                var Research_Category_Id = $("#ListItemsCat").val() == 'Category' ? 0 : $("#ListItemsCat").val()
+                if (Research_Category_Id == "") {
+                    Research_Category_Id = 0
+                }
+
+                var Research_Sector_id = $("#ListItemsSector").val() == 'Sector' ? 0 : $("#ListItemsSector").val()
+                if (Research_Sector_id == "") {
+                    Research_Sector_id = 0
+                }
+
+                var Type_Id = $("#ListItemsReportType").val() == 'Type' ? 0 : $("#ListItemsReportType").val()
+                if (Type_Id == "") {
+                    Type_Id = 0
+                }
+                var FROM_DATE = $("#fromDate").val()
+                if (FROM_DATE == "") {
+                    FROM_DATE = ""
+                }
+                var To_DATE = $("#toDate").val()
+                if (To_DATE == "") {
+                    To_DATE = ""
+                }
+                var SearcText = $("#txtSearchReportName").val()
+                if (SearcText == "") {
+                    SearcText = ""
+                }
+
+
+                $.ajax({
+                    url: '/ICRA/FilterData',
+                    data: {
+                        Industry_Id: Industry_Id,
+                        Research_Category_Id: Research_Category_Id,
+                        Research_Sector_id: Research_Sector_id,
+                        Type_Id: Type_Id,
+                        FROM_DATE: FROM_DATE,
+                        To_DATE: To_DATE,
+                        SearcText: SearcText
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        var response = response.FilterResponse;
+                        DataTableRender(response)
+                    }
+                });
+            });
+            $("#btnSearchText").click(function () {
+                debugger
+                var Industry_Id = GetParameterValues('Industry_Id');
+                console.log(Industry_Id)
+                if (Industry_Id == "") {
+                    Industry_Id = 0
+                }
+                var Research_Category_Id = $("#ListItemsCat").val() == 'Category' ? 0 : $("#ListItemsCat").val()
+                if (Research_Category_Id == "") {
+                    Research_Category_Id = 0
+                }
+                console.log(Research_Category_Id)
+                var Research_Sector_id = $("#ListItemsSector").val() == 'Sector' ? 0 : $("#ListItemsSector").val()
+                if (Research_Sector_id == "") {
+                    Research_Sector_id = 0
+                }
+                console.log(Research_Sector_id)
+                var Type_Id = $("#ListItemsReportType").val() == 'Type' ? 0 : $("#ListItemsReportType").val()
+                if (Type_Id == "") {
+                    Type_Id = 0
+                }
+                console.log(Type_Id)
+                var FROM_DATE = $("#fromDate").val()
+                if (FROM_DATE == "") {
+                    FROM_DATE = ""
+                }
+                console.log(FROM_DATE)
+                var To_DATE = $("#toDate").val()
+                if (To_DATE == "") {
+                    To_DATE = ""
+                }
+                console.log(To_DATE)
+                var SearcText = $("#txtSearchReportName").val()
+                if (SearcText == "") {
+                    SearcText = ""
+                }
+
+
+                $.ajax({
+                    url: '/ICRA/FilterData',
+                    data: {
+                        Industry_Id: Industry_Id,
+                        Research_Category_Id: Research_Category_Id,
+                        Research_Sector_id: Research_Sector_id,
+                        Type_Id: Type_Id,
+                        FROM_DATE: FROM_DATE,
+                        To_DATE: To_DATE,
+                        SearcText: SearcText
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        var response = response.FilterResponse;
+                        DataTableRender(response)
+                    }
+                });
+            });
+            $("#ListItemsCat").change(function (e) {
+                // var Industry_Id = GetParameterValues('Industry_Id');
+                var Industry_Id = 0;
+                var Category_Id = $("#ListItemsCat").val();
+                if (Category_Id == "") {
+                    Category_Id = "0";
+                }
+                $('#ListItemsSector').empty();
+                var options = '<option value=""><strong>Sector</strong></option>'; //create your "title" option
+
+                $.ajax({
+                    url: '/ICRA/LoadSectorDropDown',
+                    data: {
+                        Industry_Id: Industry_Id,
+                        Category_Id: Category_Id
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        debugger
+                        console.log(response)
+                        var response = response.SectorDropResponse;
+                        $(response).each(function (index, value) { //loop through your elements
+
+                            options += '<option value="' + value.Research_Sector_Id + '">' + value.Sector_Name + '</option>'; //add the option element as a string
+
+                        });
+
+                        $('#ListItemsSector').html(options);
+                    }
+                });
+            });
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+
+
+        });
+        function fillSector() {
+            var Industry_Id = GetParameterValues1('Industry_Id');
+
+            var Category_Id = $("#ListItemsCat").val();
+            if (Category_Id == "") {
+                Category_Id = "0";
+            }
+            $('#ListItemsSector').empty();
+            var options = '<option value=""><strong>Sector</strong></option>'; //create your "title" option
+
+            $.ajax({
+                url: '/ICRA/LoadSectorDropDown',
+                data: {
+                    Industry_Id: Industry_Id,
+                    Category_Id: Category_Id
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function (response) {
+
+                    console.log(response)
+                    var response = response.SectorDropResponse;
+                    $(response).each(function (index, value) { //loop through your elements
+
+                        options += '<option value="' + value.Research_Sector_Id + '">' + value.Sector_Name + '</option>'; //add the option element as a string
+
+                    });
+
+                    $('#ListItemsSector').html(options);
+                }
+            });
+        }
+        function PopUpDrop(Research_Category_Id) {
+            debugger
+            console.log(Research_Category_Id);
+
+            $("#ListItemsCat").val(Research_Category_Id);
+            fillSector();
+            var Industry_Id = GetParameterValues1('Industry_Id');
+            console.log(Industry_Id)
+
+            if (Industry_Id == "") {
+                Industry_Id = 0
+            }
+
+            var Research_Category_Id = Research_Category_Id;
+            //$("#ListItemsCat").val() == 'Category' ? 0 : $("#ListItemsCat").val()
+            if (Research_Category_Id == "") {
+                Research_Category_Id = 0
+            }
+
+            console.log(Research_Category_Id)
+            var Research_Sector_id = $("#ListItemsSector").val() == 'Sector' ? 0 : $("#ListItemsSector").val()
+            if (Research_Sector_id == "") {
+                Research_Sector_id = 0
+            }
+            console.log(Research_Sector_id)
+            var Type_Id = $("#ListItemsReportType").val() == 'Type' ? 0 : $("#ListItemsReportType").val()
+            if (Type_Id == "") {
+                Type_Id = 0
+            }
+            console.log(Type_Id)
+            var FROM_DATE = $("#fromDate").val()
+            if (FROM_DATE == "") {
+                FROM_DATE = ""
+            }
+            console.log(FROM_DATE)
+            var To_DATE = $("#toDate").val()
+            if (To_DATE == "") {
+                To_DATE = ""
+            }
+            console.log(To_DATE)
+            var SearcText = $("#txtSearchReportName").val()
+            if (SearcText == "") {
+                SearcText = ""
+            }
+
+            var availableTagsdAdd = [];
+
+            var availableTags = [];
+
+
+            $.ajax({
+                url: '/ICRA/FilterData',
+                data: {
+                    Industry_Id: Industry_Id,
+                    Research_Category_Id: Research_Category_Id,
+                    Research_Sector_id: Research_Sector_id,
+                    Type_Id: Type_Id,
+                    FROM_DATE: FROM_DATE,
+                    To_DATE: To_DATE,
+                    SearcText: SearcText
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function (response) {
+                    var response = response.FilterResponse;
+                    console.log(response);
+                    $.each(response, function (key, item) {
+                        var data = { id: item.Report_Id, label: item.Report_Title };
+                        availableTagsdAdd.push(data);
+                    });
+                    var final = unique1(availableTagsdAdd);
+
+                    $.each(final, function (key, item) {
+                        var data = { label: item };
+                        availableTags.push(data);
+                    });
+
+                    DataTableRender(response)
+                }
+            });
+            $("#txtSearchReportName").autocomplete({
+                source: availableTags,
+                minLength: 3,
+                appendTo: ".abt_rating .search_hld"
+
+
+            });
+        }
+
+        function unique1(final) {
+            var result = [];
+            $.each(final, function (i, e) {
+                if ($.inArray(e.label, result) == -1) {
+
+                    result.push(e.label);
+
+                }
+            });
+
+            return result;
+        }
+
+        function GetParameterValues1(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    return urlparam[1];
+                }
+            }
+        }
+        function DataTableRender(response) {
+            var Industry_Id = GetParameterValues1('Industry_Id');
+            console.log(Industry_Id)
+            if ($.fn.DataTable.isDataTable('#reports_data_table')) {
+                $('#reports_data_table').DataTable().clear().destroy();
+            }
+            console.log(response)
+            $("#reports_data_table").DataTable({
+                data: response,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                columns: [
+                    {
+                        "data": "Report_Id",
+                        "render": function (data, type, row, meta) {
+
+                            if (row.Is_Special_Comments == false) {
+                                return "<input type='checkbox'  id=" + data + ">";
+                            } else {
+                                return "<input type='checkbox' style='Display:none;'  id=" + data + ">";
+                            }
+                        }
+                    },
+                    { "data": "Report_Date" },
+                    {
+                        "data": "Report_Title",
+                        'render': function (data, type, row, meta) {
+                            var url = "/ICRA/Researchdetail?Report_Id=" + row.Report_Id + "&Industry_Id=" + row.Industry_Id;
+
+                            return '<a id="lnk" href="' + url + '">' + data + '</a>'
+
+                        }
+
+
+                    },
+                    { "data": "Type" },
+                    {
+                        "data": "Summary_Report_Name",
+                        "render": function (data, type, row, meta) {
+                            if (row.Is_Special_Comments == false) {
+                                var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + row.Summary_Report_Name;
+                                return "<a href=" + url + " class='download' target='_blank'><span>Download</span></a>";
+                            } else {
+                                // var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + row.Summary_Report_Name;
+                                return "<a><span>N/A</span></a>";
+                            }
+                            //else {
+
+                            //    var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + row.Full_Report_Name;
+                            //    return "<a href=" + url + " class='download' target='_blank'><span>Download</span></a>";
+
+                            //}
+                        }
+
+                    },
+
+                    {
+                        "data": "Summary_Report_Name",
+                        "render": function (data, type, row, meta) {
+                            console.log(row.Is_Special_Comments)
+                            if (row.Is_Special_Comments == true) {
+                                // return "<a href ='#' style='display:inline-block;position:relative;color:#2554e0;padding-left:20px;'><span>Free</span></a>";
+                                var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + row.Summary_Report_Name;
+                                return "<a href=" + url + " class='download' target='_blank'><span>Download</span></a>";
+                            } else {
+                                return "<a href ='#' class= 'subscribe'> <span>Subscribe</span></a>";
+
+                            }
+                        }
+
+                    }
+                ]
+            });
+        }
+
+
+        $(function () {
+            $("#fromDate,#toDate").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $('.sector_type_con .sector_type_blurb').each(function () {
+            $(this).on('click', function () {
+                $('.sector_type_con .sector_type_blurb').removeClass('active');
+                $(this).addClass('active');
+                $('html, body').animate({
+                    scrollTop: $('.abt_rating .search_hld').offset().top
+                }, 1000)
+            });
+        });
+
+
+    </script>
+}

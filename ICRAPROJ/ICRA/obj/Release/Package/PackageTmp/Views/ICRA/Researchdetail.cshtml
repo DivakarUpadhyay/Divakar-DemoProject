@@ -1,0 +1,564 @@
+﻿@model ICRA.Models.ResearchDetail
+@{
+    ViewBag.Title = "Researchdetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="~/Scripts/ICRA_JS/research-min.js"></script>
+
+@{
+
+    <section class="banner_rating_detail banner_research_detail">
+        <div class="container">
+            <div class="rating_detail_panel">
+                <div class="rating_detail__desc">
+                    <p>
+                        @*<span>Thursday, October 18, 2021</span>*@
+                        <span>@Model.ResearchDeatails_Section3[0].Report_Date</span>
+                        @if (Model.ResearchDeatails_Section3 != null)
+                        {@Model.ResearchDeatails_Section3[0].Report_Title}
+                    </p>
+                    @*Free case*@
+                    @if (Model.ResearchDeatails_Section3 != null)
+                    {
+                        if (Model.ResearchDeatails_Section3[0].Is_Special_Comments == true)
+                        {
+                            if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].Summary_Report_Name) == false)
+                            {
+                                <div class="btn_hld">
+                                    @{
+
+                                        var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].Summary_Report_Name;
+
+                                        <div class="button view_desc"><a href="@url" target="_blank"><span><i class="fas fa-download"></i> Download</span></a></div>
+                                    }
+                                </div>
+                            }
+                        }
+                        else
+                        { @*Paid case*@
+
+                        if (Model.ResearchDeatails_Section3[0].Is_Special_Comments == false)
+                        {//--Prelogin case paid when html is not available
+                            if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].ResearchViewReport) == false)
+                            {
+
+                                if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].Summary_Report_Name) == false)
+                                {
+                                    <div class="btn_hld">
+                                        @{
+
+                                            var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].Summary_Report_Name;
+
+                                            var urlHtml = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].ResearchViewReport;
+
+                                            <div class="button view_desc"><a href="@url" target="_blank"><span><i class="fas fa-download"></i> Download Summary</span></a></div>
+                                            <div class="button view_desc"><a href="@urlHtml" target="_blank"><span><i class="fas fa-eye"></i>   View Summary</span></a></div>
+                                            <a href="#" class="button prime"><span><i class="fas fa-lock"></i> Subscribe to Full Report</span></a>
+
+
+                                        }
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].Summary_Report_Name) == false)
+                                {
+                                    <div class="btn_hld">
+                                        @{
+
+                                            var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].Summary_Report_Name;
+
+                                            <div class="button view_desc"><a href="@url" target="_blank"><span><i class="fas fa-download"></i> Download</span></a></div>
+                                            <a href="#" class="button prime"><span><i class="fas fa-lock"></i> Subscribe to Full Report</span></a>
+
+
+                                        }
+                                    </div>
+                                }
+
+                            }
+                        }
+                    }
+                }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index","ICRA")">Home</a><a href="@Url.Action("Research","ICRA")">Research Services </a>Research Details
+        </div>
+    </div>
+    if (Model.ResearchDeatails_Section3 != null)
+    {
+        //Free case when special comment is true
+        if (Model.ResearchDeatails_Section3[0].Is_Special_Comments == true)
+        {
+            if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].Summary_Report_Name) == false)
+            {
+                var urlopen = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].Summary_Report_Name;
+
+                <section class="section icra_pdf_viewer">
+                    <div class="container">
+                        <div class="pdf_holder">
+                            <iframe src="~/pdf-viewer/web/viewer.html?file=@urlopen" width="100%" height="600px"></iframe>
+                        </div>
+                    </div>
+                </section>
+            }
+        }
+        else
+        { @*Paid case*@
+        //--Prelogin case paid when html is not available
+        if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].ResearchViewReport) == true)
+        {
+            if (string.IsNullOrEmpty(Model.ResearchDeatails_Section3[0].Summary_Report_Name) == false)
+            {
+                var urlopen = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + @Model.ResearchDeatails_Section3[0].Summary_Report_Name;
+
+                <section class="section icra_pdf_viewer">
+                    <div class="container">
+                        <div class="pdf_holder">
+                            <iframe src="~/pdf-viewer/web/viewer.html?file=@urlopen" width="100%" height="600px"></iframe>
+                        </div>
+                    </div>
+                </section>
+            }
+        }
+
+    }
+}
+
+<section class="section">
+    <div class="container">
+        <div class="tiles_hld">
+            <div class="tiles">
+                <img src="~/Content/images/bg-rating-research.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Most Trending Research Reports</h2>
+                <div class="tiles_con">
+                    @if (Model.ResearchDeatails_Section2 != null)
+                    {
+                        int heart = 1;
+                        foreach (var item in Model.ResearchDeatails_Section2)
+                        {
+                            ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+                            var ReportURL = bannerObj.ReadImage(item.Summary_Report_Name);
+                            var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+                            <div class="cpr_blurb">
+                                <div class="cpr_info">
+                                    <div class="date">
+                                        @item.Report_Date
+
+                                        @if (item.Is_Special_Comments == false)
+                                        {
+                                            <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>}
+
+
+                                        @if (item.Is_Special_Comments == false)
+                                        {
+
+                                            if (heart == 1)
+                                            {
+                                                <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                                                heart = heart + 1;
+                                            }
+                                            else
+                                            {
+                                                <span class="heart-icon"><i class="fas fa-heart"></i></span>
+
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if (heart == 1)
+                                            {
+                                                <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                heart = heart + 1;
+                                            }
+                                            else
+                                            {
+                                                <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                            }
+
+
+                                        }
+
+                                    </div>
+                                    <div class="rep_det_con">
+                                        <a href="@url">
+                                            <p>
+                                                @{
+                                                    const int MaxLength = 152;
+                                                    var FinalTitle = "";
+                                                    if (item.Report_Title.Length > MaxLength)
+                                                    {
+                                                        FinalTitle = item.Report_Title.Substring(0, MaxLength);
+                                                        string dot = " ...";
+                                                        @FinalTitle@dot
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Report_Title
+                                                    }
+
+                                                }
+                                            </p>
+                                        </a>
+
+                                        @{
+                                            const int MaxLengthToolTip = 120;
+                                            if (item.Report_Title.Length > MaxLengthToolTip)
+                                            { <div class="tootip_con">
+                                                    @item.Report_Title
+                                                </div>
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+                                @if (item.Is_Special_Comments == true)
+                                {
+                                    var name = "Download";
+                                    var urlFull = "";
+                                    if (string.IsNullOrEmpty(item.Summary_Report_Name) == false)
+                                    {
+                                        urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Summary_Report_Name;
+
+                                    }
+                                    else
+                                    {
+                                        urlFull = "#";
+                                    }
+
+
+                                    <div class="cta_con">
+                                        <a href="@urlFull" class="download" target="_blank"> <img src="~/Content/images/icon-download.png" alt=""> <span>@name</span></a>
+                                        <div class="sharing_icons_con">
+                                            <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                            <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    var name = "Subscribe";
+                                    <div class="cta_con">
+                                        <a href="#" class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>@name</span></a>
+                                        <div class="sharing_icons_con">
+                                            <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                            <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                            <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        }
+
+                    }
+                    }
+
+
+                </div>
+                @if (Model.ResearchDeatails_Section2 != null)
+                {
+                    if (Model.ResearchDeatails_Section2.Count > 5)
+                    {
+                        <a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>
+                    }
+                }
+            </div>
+            <div class="tiles">
+                <img src="~/Content/images/bg-rating-crediet-reports.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Credit Prespective Reports</h2>
+                <div class="tiles_con">
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">
+                                12 Nov 2021
+                                <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                            </div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Tata Sons Private Limited</p></a>
+                                <div class="tootip_con">Tata Sons Private Limited</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">
+                                21 Nov 2021
+                                <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                            </div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>TP Western Odisha Distribution Limited</p></a>
+                                <div class="tootip_con">TP Western Odisha Distribution Limited</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">
+                                29 Nov 2021
+                                <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                            </div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Rainbow Children’s Medicare Private Limited</p></a>
+                                <div class="tootip_con">Rainbow Children’s Medicare Private Limited</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">
+                                29 Nov 2021
+                                <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+                                <span class="heart-icon"><i class="fas fa-heart"></i></span>
+                            </div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Rainbow Children’s Medicare Private Limited</p></a>
+                                <div class="tootip_con">Rainbow Children’s Medicare Private Limited</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="link-button">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="tiles_hld">
+            <div class="tiles col">
+                <img src="~/Content/images/bg-rating-entity-specific.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Rating Rationales</h2>
+                <div class="tiles_con">
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">04 Nov 2021 <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span></div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p></a>
+                                <div class="tootip_con">Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tiles_con">
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">04 Nov 2021 <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span></div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</p></a>
+                                <div class="tootip_con">Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tiles_con">
+                    <div class="cpr_blurb">
+                        <div class="cpr_info">
+                            <div class="date">04 Nov 2021 <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span></div>
+                            <div class="rep_det_con">
+                                <a href="#"><p>Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</p></a>
+                                <div class="tootip_con">Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</div>
+                            </div>
+                        </div>
+                        <div class="cta_con">
+                            <a href="#" class="download"> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                            <div class="sharing_icons_con">
+                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="link-button">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("UpcomingWebinarEventsAndRecordings")
+
+<section class="section remove_sect_bot_pad">
+    <div class="subscription_offerings">
+        <img src="~/Content/images/banner-sbscription-offer.jpg" alt="">
+        <div class="button"><span>View Our Subscription Offerings</span></div>
+    </div>
+</section>
+
+@Html.Partial("_AskOurIndustryBusinessRepresentative", "Researchdetail")
+
+
+
+<section class="section events-podcast">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-5">
+                <div class="av-podcasts">
+                    <h2 class="left_line">Analyst Views & Podcasts</h2>
+                    <div class="podcasts-slider" id="podcasts">
+                        <div class="item">
+                            <div class="gallery-list">
+                                <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                    <div class="thumb">
+                                        <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                    </div>
+                                    <p>
+                                        <span class="date">05 Oct 2021</span>
+                                        Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="gallery-list">
+                                <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                    <div class="thumb">
+                                        <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                    </div>
+                                    <p>
+                                        <span class="date">05 Oct 2021</span>
+                                        Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-7">
+                <div class="webinar-events">
+                    <h2 class="left_line">Media Releases</h2>
+                    <div class="webinar-list">
+                        <a href="#">
+                            <div class="form-row align-items-center">
+                                <div class="col-sm">
+                                    <p class="date">06 Oct 2021</p>
+                                    <p>Domestic passenger traffic accelerates in September 2021 with a sequential growth of 2-3% as Covid-19 infection trajectory dips</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="webinar-list">
+                        <a href="#">
+                            <div class="form-row align-items-center">
+                                <div class="col-sm">
+                                    <p class="date">06 Oct 2021</p>
+                                    <p>Resilient earnings in FY2021; Covid 2.0 impacts asset quality in Q1 FY2022</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="webinar-list">
+                        <a href="#">
+                            <div class="form-row align-items-center">
+                                <div class="col-sm">
+                                    <p class="date">06 Oct 2021</p>
+                                    <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="webinar-list">
+                        <a href="#">
+                            <div class="form-row align-items-center">
+                                <div class="col-sm">
+                                    <p class="date">06 Oct 2021</p>
+                                    <p>Improved economic activities in Q2 FY2022 to spur growth momentum for the road logistics sector in H2 FY2022; outlook continues to remain Stable</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("_OurSocialFeeds")
+}

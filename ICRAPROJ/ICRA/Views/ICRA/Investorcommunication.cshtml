@@ -1,0 +1,332 @@
+﻿
+@{
+    ViewBag.Title = "Investorcommunication";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" src="~/Scripts/ICRA_JS/investor-min.js"></script>
+
+<section id="banner" class="inner_banner inner_banner_ver_2">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-investor-detail-mob.jpg" />
+            <img src="~/Content/images/banner-investor-detail.jpg" alt="ICRA Research" />
+        </picture>
+        <div class="container">
+            <div class="banner_det investor_banner">
+                <h1>Investor Relations</h1>
+                <p>Financial Results Q3 FY 2021</p>
+                <a href="#" class="button">
+                    <span>
+                        <i class="fas fa-download"></i>
+                        Download
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a><a href="investor-relations.html">Investor Relations</a>Investor
+        Communication
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="inv_det_hld inv_financial_performance">
+
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="investor-financial-performance.html" class="nav-link">Financial Performance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-analyst-presentation.html" class="nav-link">Analyst Presentation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-corporate-governance.html" class="nav-link">Corporate Governance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-communication.html" class="nav-link active">Investor Communication</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-shareholding-pattern.html" class="nav-link">Shareholding Pattern</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-dividend.html" class="nav-link">Unpaid/Unclaimed Dividend</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-corporate-announcements.html" class="nav-link">Corporate Announcements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-board-meetings.html" class="nav-link">Board Meetings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-share-buyback.html" class="nav-link">Share Buyback</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-annual-return.html" class="nav-link">Annual Return</a>
+                </li>
+            </ul>
+
+            <div id="content" class="tab-content" role="tablist">
+
+                <div id="pane-financial_performance" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-financial_performance">
+                    <div class="card-header" role="tab" id="heading-financial_performance">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-financial-performance.html">
+                                Financial Performance
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-analyst_presentation" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-analyst_presentation">
+                    <div class="card-header" role="tab" id="heading-analyst_presentation">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-analyst-presentation.html">
+                                Analyst Presentation
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-corporate_governance" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-corporate_governance">
+                    <div class="card-header" role="tab" id="heading-corporate_governance">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-corporate-governance.html">
+                                Corporate Governance
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-investor_communication" class="card tab-pane fade show active" role="tabpanel"
+                     aria-labelledby="tab-investor_communication">
+                    <div class="card-header" role="tab" id="heading-investor_communication">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-investor_communication"
+                               aria-expanded="true" aria-controls="collapse-investor_communication">
+                                Investor Communication
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapse-investor_communication" class="collapse show" data-parent="#content"
+                         role="tabpanel" aria-labelledby="heading-investor_communication">
+                        <div class="card-body">
+                            <select name="" id="" class="selectBox big_selectBox">
+                                <option value="">Select Type</option>
+                                <option value="">Contact details of Authorized Person</option>
+                                <option value="">Disclosure under Regulations 30</option>
+                                <option value="">Grievance Redressal</option>
+                                <option value="">Investor Service Request</option>
+                                <option value="">Nodal Officer</option>
+                                <option value="">Press Releases</option>
+                                <option value="">Registrar and Share Transfer Agent</option>
+                            </select>
+
+                            <div class="cal_control_hld">
+                                <div class="wp_control">
+                                    <div class="input-group date">
+                                        <input type="text" placeholder="From date" class="form-control"
+                                               id="fromDate">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp_control">
+                                    <div class="input-group date">
+                                        <input type="text" placeholder="To date" class="form-control"
+                                               id="toDate">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inv_com_data data_auth_person">
+                                <div class="data_blurb">
+                                    <p>Contact details of key managerial personnel who are authorized for the purpose of determining materiality of an event or information and for the purpose of making disclosures to stock exchange(s) as required under sub-regulation (5) of regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015</p>
+                                </div>
+                                <div class="data_blurb">
+                                    <h3>Mr. Vipul Agarwal</h3>
+                                    <p>Designation: Group Chief Financial Officer</p>
+                                </div>
+                                <div class="data_blurb">
+                                    <h3>Mr. Amit Kumar Gupta</h3>
+                                    <p>Designation: General Counsel</p>
+                                </div>
+                                <div class="data_blurb">
+                                    <p>Email:<a href="mailto:investors@icraindia.com">investors@icraindia.com</a></p>
+                                </div>
+                            </div>
+                            <div class="inv_com_data data_disclosure">
+                                <ul class="report_links">
+                                    <li><a href="#">Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015_November 8, 2021</a></li>
+                                    <li><a href="#">Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015_October 28, 2021</a></li>
+                                    <li><a href="#">Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, regarding change in ICRA's Board of Directors</a></li>
+                                    <li><a href="#">Disclosure under regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015_Investors call-September 27, 2021</a></li>
+                                </ul>
+                            </div>
+                            <div class="inv_com_data data_grievance">
+                                <div class="data_blurb">
+                                    <h3>Shareholders Grievances</h3>
+                                    <p>Company Secretary</p>
+                                    <p><a href="mailto:investors@icraindia.com">investors@icraindia.com</a></p>
+                                    <p>Tel: <a href="tel:+91 124 4545349">+91 124 4545349</a></p>
+                                </div>
+                                <div class="data_blurb">
+                                    <h3>Rating Investor Grievances</h3>
+                                    <p>Compliance Officer</p>
+                                    <p><a href="mailto:icra.compliance@icraindia.com">icra.compliance@icraindia.com</a></p>
+                                    <p>Tel: <a href="tel:+91 124 4545300">+91 124 4545300</a></p>
+                                </div>
+                            </div>
+                            <div class="inv_com_data data_service_request">
+                                <ul class="report_links">
+                                    <li><a href="#">Common and simplified norms for processing investor's service request by RTAs and norms for furnishing PAN, KYC details and nomination</a></li>
+                                </ul>
+                            </div>
+                            <div class="inv_com_data data_node_officer">
+                                <div class="data_blurb">
+                                    <h3>S.Shakeb Rahman</h3>
+                                    <p>Compliance Officer</p>
+                                    <p>Email: <a href="mailto:investors@icraindia.com">investors@icraindia.com</a></p>
+                                </div>
+                            </div>
+                            <div class="inv_com_data data_press_releases">
+                                <ul class="report_links">
+                                    <li>
+                                        <a href="#">
+                                            Board approves unaudited financial results_Q3 FY 2022
+                                            <span>25 Jan 2022</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Board approves unaudited financial results_Q1 FY 2022
+                                            <span>28 Jul 2021</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Board approves unaudited financial results_Q1 FY 2022
+                                            <span>28 Jul 2021</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Board approves audited financial results and recommends dividend
+                                            <span>06 May 2021</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="inv_com_data data_transfer_agent">
+                                <div class="data_blurb">
+                                    <h3>M/s. Link Intime India Private Limited</h3>
+                                    <p>Noble Heights, 1st Floor, Plot NH2,</p>
+                                    <p>C-1 Block LSC, Near Savitri Market,</p>
+                                    <p>Janakpuri, New Delhi - 110058</p>
+                                    <p>Tel: <a href="tel:+91 11 4141 0592">+91 11 4141 0592</a></p>
+                                    <p>Fax: <a href="fax:+91 11 4141 0591">+91 11 4141 0591</a></p>
+
+                                </div>
+                                <div class="data_blurb">
+                                    <p>Email: <a href="mailto:delhi@linkintime.co.in">delhi@linkintime.co.in</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-shareholding_pattern" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-shareholding_pattern">
+                    <div class="card-header" role="tab" id="heading-shareholding_pattern">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-shareholding-pattern.html">
+                                Shareholding Pattern
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-dividend" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-dividend">
+                    <div class="card-header" role="tab" id="heading-dividend">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-dividend.html">
+                                Unpaid/Unclaimed Dividend
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-corporate_announcements" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-corporate_announcements">
+                    <div class="card-header" role="tab" id="heading-corporate_announcements">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-corporate-announcements.html">
+                                Corporate Announcements
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-board_meetings" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-board_meetings">
+                    <div class="card-header" role="tab" id="heading-board_meetings">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-board-meetings.html">
+                                Board Meetings
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-share_buyback" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-share_buyback">
+                    <div class="card-header" role="tab" id="heading-share_buyback">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-share-buyback.html">
+                                Share Buyback
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-annual_return" class="card tab-pane fade" role="tabpanel"
+                     aria-labelledby="tab-annual_return">
+                    <div class="card-header" role="tab" id="heading-annual_return">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-annual-return.html">
+                                Annual Return
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+
+    $(function () {
+        $("#fromDate,#toDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+

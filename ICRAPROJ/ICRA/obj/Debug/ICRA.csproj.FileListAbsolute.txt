@@ -1,0 +1,218 @@
+C:\ICRA\ICRA\ICRA\bin\ICRA.dll.config
+C:\ICRA\ICRA\ICRA\bin\ICRA.dll
+C:\ICRA\ICRA\ICRA\bin\ICRA.pdb
+C:\ICRA\ICRA\ICRA\bin\roslyn\csc.exe
+C:\ICRA\ICRA\ICRA\bin\roslyn\csc.exe.config
+C:\ICRA\ICRA\ICRA\bin\roslyn\csc.rsp
+C:\ICRA\ICRA\ICRA\bin\roslyn\csi.exe
+C:\ICRA\ICRA\ICRA\bin\roslyn\csi.exe.config
+C:\ICRA\ICRA\ICRA\bin\roslyn\csi.rsp
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.Managed.Core.targets
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\ICRA\ICRA\ICRA\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.AppContext.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Collections.Immutable.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Console.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Globalization.Calendars.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.IO.Compression.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.IO.FileSystem.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Net.Http.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Net.Sockets.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Reflection.Metadata.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.ValueTuple.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Xml.XmlDocument.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Xml.XPath.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\ICRA\ICRA\ICRA\bin\roslyn\vbc.exe
+C:\ICRA\ICRA\ICRA\bin\roslyn\vbc.exe.config
+C:\ICRA\ICRA\ICRA\bin\roslyn\vbc.rsp
+C:\ICRA\ICRA\ICRA\bin\roslyn\VBCSCompiler.exe
+C:\ICRA\ICRA\ICRA\bin\roslyn\VBCSCompiler.exe.config
+C:\ICRA\ICRA\ICRA\bin\Amazon.Core.dll
+C:\ICRA\ICRA\ICRA\bin\Amazon.S3.dll
+C:\ICRA\ICRA\ICRA\bin\Antlr3.Runtime.dll
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.Core.dll
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.S3.dll
+C:\ICRA\ICRA\ICRA\bin\Carbon.Json.dll
+C:\ICRA\ICRA\ICRA\bin\Carbon.Storage.dll
+C:\ICRA\ICRA\ICRA\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ICRA\ICRA\ICRA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\ICRA\ICRA\ICRA\bin\Microsoft.Web.Infrastructure.dll
+C:\ICRA\ICRA\ICRA\bin\Newtonsoft.Json.dll
+C:\ICRA\ICRA\ICRA\bin\RestSharp.dll
+C:\ICRA\ICRA\ICRA\bin\System.Buffers.dll
+C:\ICRA\ICRA\ICRA\bin\System.Memory.dll
+C:\ICRA\ICRA\ICRA\bin\System.Numerics.Vectors.dll
+C:\ICRA\ICRA\ICRA\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\ICRA\ICRA\ICRA\bin\System.Text.Encodings.Web.dll
+C:\ICRA\ICRA\ICRA\bin\System.Text.Json.dll
+C:\ICRA\ICRA\ICRA\bin\System.Threading.Tasks.Extensions.dll
+C:\ICRA\ICRA\ICRA\bin\System.ValueTuple.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.Helpers.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.Mvc.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.Optimization.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.Razor.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.Deployment.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.dll
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.Razor.dll
+C:\ICRA\ICRA\ICRA\bin\WebGrease.dll
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.Core.pdb
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.Core.xml
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.S3.pdb
+C:\ICRA\ICRA\ICRA\bin\AWSSDK.S3.xml
+C:\ICRA\ICRA\ICRA\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\ICRA\ICRA\ICRA\bin\RestSharp.xml
+C:\ICRA\ICRA\ICRA\bin\System.Buffers.xml
+C:\ICRA\ICRA\ICRA\bin\System.Memory.xml
+C:\ICRA\ICRA\ICRA\bin\System.Numerics.Vectors.xml
+C:\ICRA\ICRA\ICRA\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\ICRA\ICRA\ICRA\bin\System.Text.Encodings.Web.xml
+C:\ICRA\ICRA\ICRA\bin\System.Text.Json.xml
+C:\ICRA\ICRA\ICRA\bin\System.Threading.Tasks.Extensions.xml
+C:\ICRA\ICRA\ICRA\bin\System.ValueTuple.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.Helpers.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.Mvc.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.Optimization.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.Razor.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.Deployment.xml
+C:\ICRA\ICRA\ICRA\bin\System.Web.WebPages.Razor.xml
+C:\ICRA\ICRA\ICRA\bin\Newtonsoft.Json.xml
+C:\ICRA\ICRA\ICRA\bin\Antlr3.Runtime.pdb
+C:\ICRA\ICRA\ICRA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\ICRA\ICRA\ICRA\obj\Debug\ICRA.csproj.CoreCompileInputs.cache
+C:\ICRA\ICRA\ICRA\obj\Debug\ICRA.csproj.CopyComplete
+C:\ICRA\ICRA\ICRA\obj\Debug\ICRA.dll
+C:\ICRA\ICRA\ICRA\obj\Debug\ICRA.pdb
+C:\ICRA\ICRA\ICRA\obj\Debug\ICRA.csproj.AssemblyReference.cache
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\ICRA.dll.config
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\ICRA.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\ICRA.pdb
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csc.exe
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csc.exe.config
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csc.rsp
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csi.exe
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csi.exe.config
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\csi.rsp
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.Managed.Core.targets
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.AppContext.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Collections.Immutable.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Console.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Globalization.Calendars.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.IO.Compression.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.IO.FileSystem.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Net.Http.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Net.Sockets.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Reflection.Metadata.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.ValueTuple.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Xml.XmlDocument.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Xml.XPath.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\vbc.exe
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\vbc.exe.config
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\vbc.rsp
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\VBCSCompiler.exe
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\roslyn\VBCSCompiler.exe.config
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Amazon.Core.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Amazon.S3.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Antlr3.Runtime.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.Core.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.S3.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Carbon.Json.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Carbon.Storage.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Microsoft.Web.Infrastructure.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Newtonsoft.Json.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\RestSharp.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Buffers.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Memory.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Numerics.Vectors.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Text.Encodings.Web.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Text.Json.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Threading.Tasks.Extensions.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.ValueTuple.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Helpers.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Mvc.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Optimization.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Razor.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.Deployment.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.Razor.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\WebGrease.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.Core.pdb
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.Core.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.S3.pdb
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\AWSSDK.S3.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\RestSharp.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Buffers.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Memory.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Numerics.Vectors.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Text.Encodings.Web.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Text.Json.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Threading.Tasks.Extensions.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.ValueTuple.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Helpers.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Mvc.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Optimization.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.Razor.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.Deployment.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\System.Web.WebPages.Razor.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Newtonsoft.Json.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Antlr3.Runtime.pdb
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\obj\Debug\ICRA.csproj.CoreCompileInputs.cache
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\obj\Debug\ICRA.csproj.CopyComplete
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\obj\Debug\ICRA.dll
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\obj\Debug\ICRA.pdb
+C:\ICRA\ICRA DEVELOPMENT\ICRA\ICRA\obj\Debug\ICRA.csproj.AssemblyReference.cache

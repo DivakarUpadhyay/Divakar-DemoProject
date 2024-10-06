@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "Medianews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" src="~/Scripts/ICRA_JS/media-min.js"></script>
+
+<section id="banner" class="inner_banner">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-media-news-mob-01.jpg" />
+            <img src="~/Content/images/banner-media-news-01.jpg" alt="" />
+        </picture>
+        <div class="container">
+            <div class="banner_det">
+                <h1>What's<br> In The News</h1>
+                <p>Catch the latest news on ICRA Ratings</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a>What's in the News
+    </div>
+</div>
+
+<div class="section media_print">
+    <div class="container">
+        <h2 class="left_line">Print</h2>
+        <div class="media_print_filter">
+            <div class="rating_filter_box_hld" style="display:block;">
+                <div class="rating_filter_box">
+                    <div class="wp_control">
+                        <select class="selectBox">
+                            <option>Publications</option>
+                        </select>
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="From date" class="form-control" id="fromDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="To date" class="form-control" id="toDate">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button"><span>Search</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="media_print_wrapper">
+            <div class="media_print_inner">
+                <div class="media_print_list">
+                    <p class="date-source">
+                        <span class="date">Thursday, October 18, 2021</span> <span class="source">The Economics Time</span>
+                    </p>
+                    <h6>RIL’s Shopping Spree Positive For Investors</h6>
+                    <p class="author">Mr. Girishkumar Kadam</p>
+                    <a href="#" class="link_download white"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="media_print_list">
+                    <p class="date-source">
+                        <span class="date">Thursday, October 18, 2021</span> <span class="source">The Hindu</span>
+                    </p>
+                    <h6>Airports Looking To Give A Fillip To Non-Aeronautical Strems Revenue </h6>
+                    <p class="author">Citation Of ICRA Report On Airport Infrastructure Along With The Quote Of Mr. Rajeshwar Burla</p>
+                    <a href="#" class="link_download white"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="media_print_list">
+                    <p class="date-source">
+                        <span class="date">Thursday, October 18, 2021</span> <span class="source">The Economic Times</span>
+                    </p>
+                    <h6>Excise Duty Cut On Petrol Diesel Could Reduce Inflation By 30 Bps Bps</h6>
+                    <p class="author">Citation Of ICRA Report On Ramkrishna Forgings</p>
+                    <a href="#" class="link_download white"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="media_print_list">
+                    <p class="date-source">
+                        <span class="date">Thursday, October 18, 2021</span> <span class="source">The Economic Times</span>
+                    </p>
+                    <h6>Back To Pre-Covid Levels Of Cargo Volumes - Cargo Talk</h6>
+                    <p class="author">Citation Of ICRA Report On Airport Infrastructure Along With The Quote Of Mr. Rajeshwar Burla</p>
+                    <a href="#" class="link_download white"><i class="fas fa-download"></i> Download</a>
+                </div>
+                <div class="media_print_list">
+                    <p class="date-source">
+                        <span class="date">Thursday, October 18, 2021</span> <span class="source">The Hindu</span>
+                    </p>
+                    <h6>Fuel Tax Cuts May Boost Consumption By Rs35k Cr</h6>
+                    <p class="author">Citation Of ICRA Report On Central Tax Revenue Along With The Quote Of Ms. Aditi Nayar</p>
+                    <a href="#" class="link_download white"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination icra-pagination white">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="section tv_coverage">
+    <div class="container">
+        <h2 class="left_line">TV Coverage</h2>
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="pagination justify-content-center icra-pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<section class="section media_releases_hld">
+    <div class="media_releases">
+        <div class="container">
+            <h2 class="left_line">Media Releases</h2>
+            <div class="med-rel-wrapper">
+                <div class="latest-med-rel">
+                    <div class="med-rel-list">
+                        <div class="row align-items-center">
+                            <div class="col-sm-auto">
+                                <div class="med-rel-thumb">
+                                    <img src="~/Content/images/media-releases/ramnath-krishnan.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <p class="date">04 Nov 2021</p>
+                                <p>ICRA Appoints Ramnath Krishnan Managing Director And Group CEO</p>
+                                <a href="#" class="rv_more white">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="med-rel-list">
+                    <div class="row align-items-center">
+                        <div class="col-sm-auto">
+                            <div class="med-rel-thumb">
+                                <img src="~/Content/images/media-releases/media-release-1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <p class="date">04 Nov 2021</p>
+                            <p>ICRA Appoints Ramnath Krishnan Managing Director And Group CEO</p>
+                            <a href="#" class="rv_more white">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="med-rel-list">
+                    <div class="row align-items-center">
+                        <div class="col-sm-auto">
+                            <div class="med-rel-thumb">
+                                <img src="~/Content/images/media-releases/media-release-1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <p class="date">04 Nov 2021</p>
+                            <p>ICRA Appoints Ramnath Krishnan Managing Director And Group CEO</p>
+                            <a href="#" class="rv_more white">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="rv_more white">View More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section social_feed gray_bg">
+    <div class="container">
+        <h2 class="left_line">Our Social Feeds</h2>
+        <div class="feed_hld">
+            <div class="feed">
+                <div class="feed_type">
+                    <img src="~/Content/images/icon-linkedin-feed.png" alt="Linked In" />
+                    <a href="#" class="rv_more">View Feed <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <img src="~/Content/images/social_feed_linkedin.jpg" alt="Linked In">
+            </div>
+            <div class="feed">
+                <div class="feed_type">
+                    <img src="~/Content/images/icon-twitter-feed.png" alt="Twitter" />
+                    <a href="#" class="rv_more">View Feed <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <img src="~/Content/images/social_feed_twitter.jpg" alt="Twitter">
+            </div>
+        </div>
+        <div class="follow_us">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-auto">
+                    <p>Follow Us on</p>
+                </div>
+                <div class="col-auto">
+                    <div class="social_icons">
+                        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#fromDate,#toDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+

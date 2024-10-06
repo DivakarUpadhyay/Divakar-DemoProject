@@ -1,0 +1,1860 @@
+@media screen and (max-width: 1980px) and (min-width: 1367px){
+    
+}
+
+@media handheld, only screen and (max-width: 1680px){
+    h2{ font-size: 24px; line-height: 28px;}
+    p{ font-size: 16px; line-height: 24px;}
+    .button{ font-size: 16px;}
+    .section{ 
+        padding: 35px 0px;
+        &.extent_sect_top_pad{ padding-top: 70px;}
+    }
+    .container{ max-width: 1140px;}
+    .rv_more{ font-size: 14px;}
+    header{
+        .hd_top{ padding: 12px 0px;}
+        .search_hld{ max-width: 410px;}
+        .logo{ width: 220px; margin-left: -40px;}
+        .nav_nrs{
+            .nrs_blurb_con { padding: 20px 0 0px;}
+            .note{ padding-bottom: 20px;}
+        }
+        .nav_hld{
+            ul.slimmenu{
+                >li{ 
+                    padding: 0 40px;
+                    > a{ font-size: 16px;}
+                }
+            }
+        }
+        ul.slimmenu{
+            li{
+                >ul{
+                    top: 58px;
+                    >li{ 
+                        padding: 30px 20px;
+                    }
+                }
+            }
+        }
+        .login{
+            img { width: 70px;}
+        }
+        .nav_nrs{
+            p{ font-size: 14px;}
+            .nrs_blurb_con{
+                .nrs_blurb{ min-height: 117px; margin: 0 0 30px 0;}
+                .nrs_front, .nrs_back{
+                    img{ width: 90px;}
+                }
+                .nrs_front{
+                    .n_tl{ font-size: 16px;}
+                }
+                .nrs_back{
+                    .ser_det{
+                        .title{ font-size: 16px;}
+                    }
+                }
+            }
+        }
+    }
+    #banner{
+        h1{ font-size: 46px; line-height: 52px;}
+        p{ font-size: 17px;}
+        .slick-dots{ max-width: 1140px; bottom: 3%;}
+        &.inner_banner{
+            h1{ font-size: 50px; line-height: 60px;}
+            p{ font-size: 16px; line-height: 26px;}
+        }
+    }
+    .research_hld{
+        padding: 25px 0px 0px 0px;
+        p{ font-size: 16px; line-height: 24px;}
+        .date{ font-size: 14px; line-height: 30px;}
+        .rif_blurb_det{ padding: 60px 35px 20px;}
+        .research_item{ height: 450px; overflow: hidden;}
+        .rif_blurb_tl{ font-size: 18px; padding-bottom: 15px;}
+        .rif_info{ padding: 10px 0px 0px 0px;}
+        .rif_event{ font-size: 14px; line-height: 22px; padding-bottom: 25px;}
+    }
+    .rating-action{
+        h2{
+            &.space {
+                padding-left: 25px;
+                &::after{ left: 25px;}
+            }
+        }
+    }
+    .ti-panel{
+        h2 { padding-top: 30px;}
+        .panel-text { padding: 20px 0 0 0;}
+    }
+    .rating-action{
+        .button-pan{ padding: 10px 0px 0px 0px;}
+    }
+    .search-pan{ padding: 20px 40px 10px 40px;}
+    .textbox-search{ font-size: 18px;}
+    .actions-sliders{
+        .slick-slide{
+            padding: 10px 20px; margin: 8px 8%;
+            h6{
+                font-size: 14px;
+            }
+            p{ font-size: 14px; line-height: 23px; margin-bottom: 0;}
+            a{ font-size: 14px;}
+        }
+         
+    }
+    .credit_reports{ 
+        padding: 20px 0px  15px 12.5%;
+        .credir_info{
+            p{ font-size: 14px; line-height: 26px;}
+        }
+        .cpr_info{
+            padding-right: 20px;
+            p{ font-size: 16px; line-height: 24px;}
+        }
+        .rv_more{ font-size: 14px;}
+    }
+    .nrs_blurb_con{
+        .nrs_blurb{ min-height: 130px;}
+        .nrs_front{
+            .n_tl{ font-size: 20px; line-height: 26px;}
+            img{ max-width: 90px;}
+        }
+        .nrs_back{
+            padding: 10px 20px 15px 20px;
+            .ser_det{
+                .title{ font-size: 18px; line-height: 22px;}
+                p{ font-size: 14px; line-height: 22px;}
+            }
+        }
+    }
+    .undertaken{ font-size: 14px; line-height: 22px;}
+    .web_podcast{
+        h2{
+            br{ display: none;}
+        }
+        .wp_det_con{padding: 20px 40px 10px 40px;}
+        .eve_info_con{
+            padding: 12px 0px;
+            p{ font-size: 16px; line-height: 20px;}
+        }
+        a{ margin-top: 5px;}
+        audio{ margin:5px 0px 10px;}
+    }
+    .news_media_hld{
+        .news_media_con{
+            .news_media_blurb{ padding: 40px 40px;}
+        }
+        li{ font-size: 14px; line-height: 22px; padding: 10px 0px;}
+        .date{ font-size: 14px;}
+        .tvc_con { padding: 40px 0 0 35px;}
+    }
+    .icra_journey_hld{
+        p{ 
+            font-size: 16px; line-height: 26px;
+            span{ font-size: 14px; line-height: 22px;}
+        }
+    }
+    .abt_yr_hld{ 
+        top: 85px;
+        .year_list{ font-size: 100px;}
+    }
+    .our_profile{
+        p{ font-size: 14px; line-height: 22px;}
+        .p_service{ font-size: 16px;}
+    }
+    .vision_mission{
+        .vision{
+            .vision_desc{ max-width: 200px; font-size: 16px; line-height: 24px; margin: 40px 0px 0px 0px;}
+            img{ max-width: 250px;}
+        }
+        .abt_sect_desc{
+            .mission_desc{ max-width: 187px;}
+        }
+    }
+    .abt_sect_desc{
+        p{ font-size: 14px; line-height: 22px;}
+    }
+    .leadership_team{
+        .fet_item{ font-size: 16px; line-height: 26px;}
+    }
+    .popup_hld{
+        p, li{ font-size: 16px; line-height: 22px;}
+        .bod_title{ padding: 15px 0px 0px 0px;}
+    }
+    .leader_board{
+        .leader_blurb_hld{
+            .leader_blurb{ padding: 25px 7px;}
+        }
+    }
+    .icra_group{
+        .container{ padding: 0 20px 20px;}
+        .group_type_blurb{
+            padding: 70px 0px;
+            &::before, &::after{ top: 115px;}
+            &:nth-child(1), &:nth-child(3){ width: 35%;}
+            &:nth-child(2){ width: 30%;}
+            &:nth-child(1){ padding-right: 7%;}
+            &:nth-child(3){ padding-left: 7%;}
+        }
+        .group_logo{ width: 190px;}
+        p{ font-size: 14px; line-height: 26px;}
+        .group_det{ max-width: 260px;}
+    }
+    .full_frame{
+        p{ font-size: 16px; line-height: 26px;}
+        .life_banner_det{
+            h3{ font-size: 26px; line-height: 34px;}
+        }
+    }
+    .abt_rating{
+        p{
+            padding: 15px 0px;
+            span{ font-size: 18px;}
+        }
+        .dash_btn{ 
+            max-width: 310px; padding: 15px 25px;
+            img { width: 38px;}
+        }
+        .search_hld{
+            .textBox{ font-size: 16px;}
+        }
+        .subscribe_rating_reports{
+            width: 125px; padding: 15px 10px;
+            img{ width: 28px;}
+            p{ font-size: 12px; line-height: 16px;}
+        }
+    }
+    .coverage{
+        p{ font-size: 14px;}
+    }
+    .r_methodology{
+        a{ font-size: 16px; padding: 10px;}
+    }
+    .web_event_sect{ padding-top: 70px;}
+    .tiles_hld{
+        .cpr_info{
+            p{ font-size: 14px; line-height: 22px;}
+        }
+    }
+    .ask_expert{
+        padding: 40px 0;
+        .wp_controlers {
+            max-width: 600px;
+            padding: 10px 0 30px 0;
+        }
+    }
+    .wp_controlers{
+        .textBox, .textArea, .selectBox{ font-size: 14px;}
+        .note { font-size: 12px;}
+    }
+    .struct_program{
+        h3{ font-size: 18px; line-height: 26px;}
+        .our_val_desc{ font-size: 16px; line-height: 24px;}
+    }
+    .cr_life{
+        p{ 
+            font-size: 14px; line-height: 22px;
+            &::before, &::after{ width: 50px; height: 97px; display: none;}
+            &::before{ left: -50px;}
+            &::after{ right: -50px;}
+        }
+        .cr_life_det{ padding: 25px 0 25px;}
+    }
+    .testimonials{
+        .coma_left, .coma_right{ width: 90px;}
+        .coma_left{ left: -85px;}
+        .coma_right{ right: -85px;}
+    }
+    .apply_for_position{
+        .wp_controlers { max-width: 600px;}
+    }
+    .job_opening{
+        .wp_controlers{padding-bottom: 25px;}
+    }
+    .testimonial_hld{
+        p{ font-size: 18px; line-height: 26px;}
+        .emp_con{ width: 77.5%;}
+    }
+    .check_box_hld{ padding: 25px 15px 20px;}
+    .checkbox-group{
+        label{ font-size: 14px;}
+    }
+    .hr_desk_contact{
+        p{ font-size: 18px;}
+    }
+    .section{
+        &.media_releases_hld{padding: 0 0 30px;margin-top: 30px;}
+    }
+    .rating_det_page{
+        .selectBox{padding: 9px 30px 9px 15px;}
+    }
+    .icra_journey_hld{
+        p{ font-size: 14px; line-height: 22px;}
+    }
+    .csr_policy_report{
+        max-width: 300px;
+        .report_det{ width: 120px; font-size: 16px; line-height: 24px;}
+    }
+    .csr_journey{
+        .abt_yr_hld{ top: 30px;}
+    }
+    .csr_list_con{
+        .csr_mission_list{ max-width: 260px;}
+        .title{ font-size: 26px; line-height: 34px;}
+    }
+    .education{
+        .edu_blurb{ 
+            padding: 40px 20px;
+            &:first-child{ padding-right: 40px;}
+            &:last-child{padding-left: 40px;}
+        }
+        .edu_blurb_det{ max-width: 510px;}
+    }
+    .our_achievement{
+        .count{ font-size: 80px; line-height: 70px;}
+        p{ font-size: 16px; line-height: 22px;}
+    }
+    .box_series_con{
+        .box_series__large{ width: 34%;}
+        .box_series__small{ width: 31%;}
+        .box_desc{
+            h3{ font-size: 16px;}
+            p{ font-size: 14px; line-height: 22px; padding: 10px 0;}
+        }
+        .box_tl_align { max-width: 280px;}
+        .rv_more{ margin-top: 0;}
+    }
+    .women_entrepreneurship{
+        padding-bottom: 30px;
+        .box_series__large { width: 35%;}
+        .box_series__large{
+            &:first-child{ width: 57%;}
+        }
+    }
+    .env_sustainability{
+        .box_series__small{ padding: 20px 40px;}
+    }
+    .csr_anul_report_hld{
+        p{ font-size: 14px; line-height: 22px; padding: 15px 0;}
+    }
+    .initiative{
+        p{ font-size: 14px;}
+    }
+    [type="radio"]:checked+label, [type="radio"]:not(:checked)+label{ font-size: 14px; line-height: 22px;}
+    .desk_hld{
+        p{ font-size: 16px;}
+        .links_con{
+            a{ font-size: 14px; line-height: 24px;}
+            img{ width: 20px;}
+        }
+        .other_desk{ padding: 30px;}
+    }
+    .contact_block_hld{
+        .switch_tab_hld, .switch_filter_tab_hld{
+            .tab{ font-size: 14px; line-height: 22px; padding: 10px 20px;}
+        }
+    }
+    .contact_icra_grp{
+        padding: 35px 30px 25px;
+        h2 { font-size: 22px;}
+    }
+    .abt_res_desc{
+        padding-top: 10px;
+        p { padding-right: 25px;}
+    }
+    .res_offer_hld{
+        .offer_type{
+            p{ font-size: 14px;}
+            img{ width: 45px;}
+        }
+        ul{
+            a{padding: 6% 10px;}
+        }
+    }
+    .credit_reports{
+        .video_hld{ right: 7%; max-width: 400px;}
+    }
+    .rs_ratings_rationals{
+        .tiles_hld{ 
+            max-width: 750px;
+            .tiles_con{ padding: 0 20px;}
+        }
+    }
+    .subscription_offerings{
+        .button{ left: 60%;}
+    }
+    .reports_tbl_hld{
+        table{
+            &.dataTable{
+                tbody{
+                    td{
+                        padding: 40px 15px;
+                        &:nth-child(3){ max-width:400px}
+                    }
+                }
+            }
+        }
+    }
+    .assist_desk_hld{
+        .assist_con{ width: 71%;}
+        .desk_con{ width: 27%;}
+    }
+    .subscribe_sector{
+        .copy{ font-size: 24px; line-height: 32px;}
+        .desc_hld{ width: 70%;}
+    }
+    .subscribe_panel{
+        .sector_result_con{ width: 65%;}
+        .result{
+            p{ font-size: 18px; line-height: 20px;}
+        }
+        .result_sector{
+            div{
+                &:first-child{ width: 54%;}
+            }
+        }
+        .sub_sec_slected{
+            span{ font-size: 14px;}
+        }
+    }
+
+    .inv_det_hld{
+        .card-body { padding: 30px 0 0 20px;}
+        .nav-tabs{
+            width: 24%;
+            .nav-link{ font-size: 16px; padding: 20px 30px 20px 20px;}
+        }
+        .tab-content { width: 76%;}
+        table{
+            th{padding: 19px 12px;}
+            td{padding: 30px 12px;}
+        }
+        .report_block{
+            .rep_block_title{ padding: 20px 15px;}
+            ul{ padding: 20px 15px;}
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 1360px){
+    #banner{
+        .slick-dots{ max-width: 1140px; bottom: 3%;}
+    }
+    .credit_reports{ padding: 50px 0px  15px 10%;}
+    .nrs_blurb_con{
+        .nrs_back{
+            .ser_det{
+                .title{ font-size: 18px; line-height: 24px; padding-bottom: 5px;}
+            }
+        }
+    }
+    .switch_tab_hld, .switch_filter_tab_hld{
+        .tab{ font-size: 14px; line-height: 22px;}
+    }
+    .web_podcast{
+        .wp_det_con{ padding: 10px 20px;}
+    }
+}
+
+@media handheld, only screen and (max-width: 1279px){
+    header{
+        .logo{ margin-left: 0;}
+    }
+    #banner{
+        h1{ 
+            font-size: 40px; line-height: 44px;
+            span{
+                &::before{ height: 60%;}
+            }
+        }
+        p{ 
+            font-size: 16px;
+            span{
+                &::before{ height: 54%;}
+            }
+        }
+        .slick-dots{ text-align: center;}
+        &.inner_banner{
+            h1{ font-size: 42px; line-height: 44px;}
+        }
+    }
+    .research_hld{
+        .research_item{ 
+            margin: 0 0.5%;
+            &:hover{ 
+                margin-top: 0;
+                .research_con{ box-shadow: none;}
+            }
+        }
+    }
+    .credit_reports{ padding: 50px 0px 15px 20px;}
+    .wp_controlers{
+        .wp_control { padding: 5px 0;}
+    }
+    .res_offer_hld{
+        .offer_type{
+            img{ width: 38px;}
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 1200px){
+    #wrapper{ padding-top: 82.98px;}
+    header{
+        position: fixed; left: 0; top: 0; width: 100%; 
+        .hd_top{ 
+            padding: 10px 0;
+            .container{ position: initial;}
+        }
+        .logo{ width: 200px; margin-left: 50px; z-index: 3;}
+        .contact_no{ position: relative; @include nontransform();}
+        .search_hld{ 
+            position: absolute; right: 55px; top: 50%; @include alignVerCenter(); max-width: 50px; background: #163285; border-radius: 100px; overflow: hidden; z-index: 1;
+            .textBox{ font-size: 18px;}
+            .search_con{ min-height: 52px; padding-right: 50px; border-color: transparent;}
+            .icon_search{ top: 53%; right: 17px;}
+            &.open_search_box{ 
+                max-width: calc(100% - 70px); z-index: 5;
+                .search_con{ border-color: $white;}
+            }
+            .icon_close{
+                display: none;
+                &:hover{ background: $white;}
+            }
+        }
+        .nav_hld{
+            position:fixed; left: -570px; top: 0; width: 570px; height: 100vh; padding-top: 82px; background: #163285; z-index: 2; overflow: hidden;
+            .container{ 
+                height: 100%; padding: 0 0 50px 10px; background: #f4f4f4;overflow: hidden; overflow-y: scroll;
+                /* width */
+                &::-webkit-scrollbar { width: 10px;}
+                
+                /* Track */
+                &::-webkit-scrollbar-track { background: #f1f1f1; }
+                
+                /* Handle */
+                &::-webkit-scrollbar-thumb { background:$site_gray; }
+                
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover { background: $site_black;}
+            }
+            ul{
+                
+                &.slimmenu{
+                    border-top: #cecece 1px solid;  
+                    >li{ 
+                        padding: 0 0px;
+                        border-bottom: #cecece 1px solid;
+                        a{ 
+                            
+                            &::before{ display: none;}
+                        }
+                        > a {
+                            padding: 16px 20px;
+                            &:hover{ color: $site_black; /* background: $site_yellow; */}
+                        }
+                        &.has-submenu{
+                            > a{ 
+                                padding: 16px 20px;
+                                &::after{ display: none;}
+                            }
+                        }
+                    }
+                }
+            }
+            li{
+                .sub-toggle{ display: block;}
+            }
+        }
+        .login{
+            .icon_login_desk{ display: none;}
+            .icon_login_mob{ display: block;}
+        }
+        .hd_quick_links{
+            ul{ display: block; padding: 10px 0px;}
+            li{
+                padding: 0; font-weight: 600;
+                &::after{ display: none;}
+                a{ 
+                    display: block; color: $site_black; padding: 10px 20px;
+                    &:hover{ color: $site_black;}
+                }
+            }
+        }
+        .contact_no{ display: block; border-radius: 7px;}
+        .nav_nrs{
+            .nrs_blurb_con{ 
+                display: block; padding: 20px 0px 10px;
+                .nrs_blurb{ width: 100%; margin-bottom: 20px; border: $white 1px solid;}
+                .nrs_front{ padding: 0 20px;}
+            }
+            a{ padding:0!important;}
+        }
+
+        .nav_nrs{
+            .nrs_blurb_con{
+                .nrs_back{ opacity: 1;}
+            }
+        }
+    }
+    .nav-icon{ display: block;}
+    #scroll_down{ display: none;}
+    .popup_hld{ max-width: 1000px;}
+    .vision_mission{
+        .vision{
+            img{ max-width: 230px;}
+            .plane { right: -20px; width: 70px;}
+            .vision_desc{ 
+                max-width: 190px; font-size: 14px; line-height: 22px;
+                &::before, &::after{ width: 50px; height: 95px;}
+                &::before{ left: -30px;}
+            }
+        }
+    }
+    .form-control{ font-size: 14px;}
+    .rating_filter_box{
+        .selectBox, .textBox, .button{ font-size: 14px;}
+        .selectBox{ padding: 10px 30px 10px 10px;}
+        .button { min-width: 125px;}
+    }
+    .cr_life{
+        p{
+            &::before, &::after{ display: none;}
+        }
+        .cr_life_info{ padding: 0 20px;}
+        .cr_life_det{ max-width: 100%;}
+    }
+    .testimonials{
+        .coma_left,.coma_right{ display: none;}
+    }
+    .or_option{ padding: 30px 40px;}
+    .subscribe_panel{
+        .result_blurb{ padding: 15px 20px;}
+        .result{
+            p{ font-size: 16px;}
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 1100px){
+    .nrs_blurb_con{
+        flex-wrap: wrap;
+        .nrs_blurb{ width: 100%; margin-bottom: 20px;}
+    }
+    .marquee{
+        @keyframes marquee {
+            0% {
+                text-indent: 67em
+            }
+        
+            100% {
+                text-indent: -170em
+            }
+        }
+    }
+    .web_podcast{
+        .wp_blurb_con{ flex-wrap: wrap;}
+        .wp_blurb{ width: 100%; max-width: 600px; margin: 0 auto 20px;}
+    }
+    .ask_expert {
+        .wp_controlers { padding: 10px 0 20px 0;}
+    }
+    .struct_program {
+        h3 { font-size: 16px; line-height: 24px;}
+        p{font-size: 14px; line-height: 22px;}
+        .our_val_desc { font-size: 14px; line-height: 22px;}
+    }
+    .cr_life{
+        .cr_life_det { padding: 20px 0 20px;}
+        p { font-size: 14px; line-height: 22px;  padding: 15px 0px;}
+    }
+    .career_awards{
+        &.web_podcast{
+            .wp_blurb{ width: 100%; max-width: 100%;}
+        }
+    }
+    .testimonial_hld{
+        p { font-size: 16px; line-height: 24px;}
+        .emp_con { width: 86.5%;}
+    }
+    .apply_for_position{
+        .container{ padding: 0 20px;}
+        .wp_controlers { max-width: 500px;}
+    }
+    .job_opening{
+        .update_info { padding: 20px 40px;}
+    }
+    .banner_rating_detail{
+        .rating_detail__desc { max-width: 480px;}
+    }
+    .csr_journey{
+        .abt_yr_hld{ top: 20px;}
+    }
+    .csr_list_con{
+        .title{ font-size: 22px; line-height: 26px;}
+    }
+    .our_achievement{
+        .count { font-size: 72px; line-height: 65px;}
+    }
+
+    .box_series_con{
+        flex-wrap: wrap; padding: 0 20px;
+        .box_series__large, .box_series__small{ display: block; width: 100%;}
+        /* .box_align_right{ justify-content: flex-start;} */
+        .box_desc{max-width: 100%;}
+        .box_tl_align{ max-width: 100%;}
+    }
+    .skill_development{
+        h2{ color: $site_black;}
+        &.box_series_con{
+            .box_desc{ max-width: 100%;}
+            .box_series__large{
+                &:first-child{ padding: 40px 0px 20px 0px;}
+            }
+        }
+        .blue_2554e0_bg{ background: none;}
+    }
+    .women_entrepreneurship{
+        &.box_series_con{ flex-direction: column-reverse;}
+        .box_series__large{
+            &:first-child { width: 100%;}
+        }
+    }
+    .env_sustainability{
+        .box_series__large{
+            &:first-child { width: 100%;}
+            &:last-child { display: none;}
+        }
+    }
+    .initiative{ padding: 30px 20px;}
+    .emp_volunteering{
+        &.box_series_con{
+            .box_desc{max-width: 100%;}
+            .box_series__large{
+                &:first-child{ padding: 40px 0px 20px 0px;}
+            }
+            .box_align_left, .box_align_right{ padding: 20px;}
+        }
+    }
+    .csr_photo_galley{
+        &.photo_gallery{
+            .pg-slider{ padding: 25px 20px 60px;}
+        }
+    }
+    .contact_block_hld{
+        .block_form_con {
+            padding: 40px 15px;
+        }
+    }
+    .sorting_table{
+        table{
+            &.dataTable{
+                tbody{
+                    font-size: 14px; line-height: 22px;
+                    td{padding: 25px 15px;}
+                }
+            }
+        }
+    }
+    .res_offer_hld{
+        .offer_type{
+            p{ padding: 0 8px;}
+        }
+    }
+    .credit_reports{
+        .video_hld{ right: 20px; max-width: 350px;}
+    }
+    .rs_ratings_rationals{
+        padding: 20px 20px;
+        .tiles_hld { max-width: 700px;}
+    }
+    .banner_research_detail{
+        .rating_detail__desc{ max-width: 100%; padding-right: 0;}
+        .button{
+            span{ padding: 15px 15px;}
+        }
+    }
+    .reports_tbl_hld{
+        table{
+            &.dataTable{
+                tbody{
+                    td{
+                        &:nth-child(3){ max-width:350px}
+                    }
+                }
+            }
+        }
+    }
+    .event_calendar{
+        p{ font-size: 14px;}
+    }
+    .subscribe_panel{
+        .check_box_hld{
+            .checkbox-group{ padding: 12px 0 0;}
+        }
+        .sector_result_con{ width: 68%;}
+        .result_sector{
+            div{
+                &:first-child { width: 52%;}
+            }
+        }
+    }
+    .inv_det_hld{
+        .switch_tab_hld, .switch_filter_tab_hld{ margin-bottom: 20px;}
+        .nav-tabs{
+            .nav-link { font-size: 14px;}
+        }
+        table{
+            th{padding: 19px 10px;}
+            td{padding: 30px 10px;}
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 1023px){
+    .section {
+        padding: 30px 0px;
+        &.extent_sect_top_pad{ padding-top: 60px;}
+    }
+    #banner{
+        h1{ 
+            span{ display: inline;}
+        }
+        p{ flex-wrap: wrap; line-height:30px;}
+        .container, .banner_det{ position: relative; @include nontransform();}
+        .container{ background: #8ea4bf;}
+        .banner_det{ padding: 20px 0px 30px;}
+        .slick-dots{ display: none;}
+        &.inner_banner{
+            .container{ background: $site_blue_1c335e;}
+            .banner_det { padding: 25px 0px 25px;}
+        }
+    }
+    .marquee{
+        @keyframes marquee {
+            0% {
+                text-indent: 45em
+            }
+        
+            100% {
+                text-indent: -170em
+            }
+        }
+    }
+    .research_hld{
+        .research_item{ margin: 0 10px;}
+    }
+    
+    .news_media_hld{ 
+        display: block;
+        .news_media_con{ width: 100%;}
+        .tvc_con{ width: 100%; max-width: 600px; margin: 0 auto; padding: 50px 0px 0px 0px;}
+    }
+    footer{
+        .footer_hld{ padding: 45px 0px 0px 0px;}
+        .ft_blurb_con{ flex-wrap: wrap; padding: 0 20px 55px;}
+        .ft_blurb{ width: 50%;}
+        .ft_other{ 
+            display: block; text-align: center; padding: 50px 0 50px;
+            .other_links{ justify-content: center; padding: 30px 0;}
+            .created_by{ justify-content: center;}
+        }
+    }
+    .journey{
+        .desc{
+            p{ padding-right: 0;}
+        }
+    }
+    .abt_yr_hld{
+        .year_list{ font-size: 78px;}
+    }
+    .our_profile{
+        .profile_blurb{ padding-right: 8%;}
+    }
+    .vision_mission{
+        .bg_banner{ display: none;}
+        .abt_sect_desc { 
+            padding: 0px 0px 0px 30px;
+            .mission_desc{ max-width: 270px;}
+        }
+        .vm_hld{ padding: 50px 0;}
+        .vision{
+            h2, .vision_desc { color: $site_black;}
+            img{ display: none;}
+            .vision_desc{
+                max-width: 250px; margin: 15px 0px 0px 0px;
+                &::before, &::after{ display: none;}
+            }
+            .abt_vision{ position: relative; @include nontransform();}
+         }
+    }
+    .leadership_team{
+        .feature_slider_hld{ left: 30px;}
+    }
+    .leader_board{
+        .leader_type{
+            justify-content: space-between;
+            li{ 
+                margin: 0px 30px 0px;
+                &:last-child{ margin: 0;}
+            }
+        }
+        .leader_blurb_hld{
+            justify-content: flex-start;
+            .leader_blurb{ width: 33.33%; padding: 25px 1%;}
+            .rv_more{ opacity: 1;}
+        }
+    }
+    .icra_group{
+        /* .group_type_hld{ display: block;} */
+        .group_type_blurb{ 
+            &:nth-child(1), &:nth-child(2), &:nth-child(3){
+               width: 33.33%; justify-content: center; padding: 70px 0px;
+                &::before, &::after{ display: none;}
+            }
+            .grp_overlay{ display: none;}
+        }
+        .group_det{ padding:0 8px;}
+        .group_logo { width: 175px;}
+        p{ line-height: 24px;}
+    }
+    .full_frame{
+        .life_banner_det{
+            h3{ font-size: 24px; line-height: 32px;}
+        }
+    }
+
+    .coverage{
+        .coverage_blurb_hld{ flex-wrap: wrap; background: none;}
+        a{ 
+            width: 31.33%; margin: 0 1% 2%; background: #1c335e;
+            &:first-child, &:last-child{border-radius: 0;}
+        }
+        .rv_more{ opacity: 1; display: block;}
+    }
+    .tiles_hld{
+        flex-wrap: wrap;
+        .tiles{ width: 100%; margin: 20px 0;}
+    }
+    .web_event_sect {
+        padding-top: 60px;
+    }
+    .web_event_con{
+        .web_event_blurb_det{ display: block;}
+        .web_event_banner, .web_event_desc{ width: 100%;}
+        .tiles_hld{
+            .tiles { margin: 0; padding: 20px 40px;}
+        }
+    }
+    .may_intrested{
+        .tiles_hld { padding: 0;}
+    }
+    .ask_expert {
+        background:#070b1d; padding-bottom: 7%;
+    }
+    .rating_filter_box{
+        flex-wrap: wrap; padding: 40px;
+        .wp_control{ width: 50%; padding: 0 10px 20px;}
+    }
+    .abt_rating{
+        .subscribe_rating_reports{
+            display: flex; flex-direction: revert; align-items: center; width: 235px; padding: 10px 10px; z-index: 1;
+            p{padding: 0px 0 0 10px;}
+        }
+    }
+    .struct_program{
+        .sp_blurb_con{display: block;}
+        .sp_blurb { width: 100%;}
+        .sp_det{ 
+            padding: 20px 0 40px!important;
+        }
+    }
+    .cr_life{
+        .cr_life_info, .cr_video{ width: 100%;}
+        .cr_collage{ display: none;}
+    }
+    .testimonial_hld{
+        .testimonial_con{ display: block;}
+        .emp_con{ width: 100%;}
+    }
+    .apply_for_position{
+        .form_hld{ flex-wrap: wrap; align-items: flex-start; justify-content: flex-start;}
+        .wp_controlers{ max-width: 100%; padding-bottom: 30px;}
+    }
+    .file-upload-wrapper {
+        $height: 50px; margin-right: 20px;
+        &:after, input { height: $height;}
+    }
+    .job_opening{ 
+        display: block;
+        .job_opening_banner, .update_info{ width: 100%;}
+        .update_info { padding: 20px 20px;}
+    }
+    .check_box_hld { padding: 30px 15px 20px;}
+    .hr_desk_contact { padding: 30px 0 0 0;}
+    .rating_det_page{
+        &.coverage{
+            a{ width: 48%;}
+        }
+    }
+    .banner_rating_detail{
+        .rating_detail_panel{ display: block;}
+        .rating_detail__desc, .rating_detail__instrument{ max-width: 100%;}
+        .rating_detail__desc{ padding-bottom: 40px;}
+    }
+    .csr_journey{
+        .journey{ 
+            display: block; padding: 20px 0px 0px 0px;
+            .desc{ 
+                width: 100%;
+                br{ display: none;}
+            }
+        }
+        .abt_yr_hld{ position: relative; left: auto; right: auto; top: auto; width: 100%; padding: 50px 20px 80px;}
+    }
+    .csr_policy_report{ position: relative; right: auto; top: auto; max-width: 480px; margin: 0 auto;}
+    .csr_mission{
+        .cm_banner{ width: 100%;}
+    }
+    .education{
+        display: block;
+        .edu_blurb{ 
+            width: 100%; min-height: 400px;
+            &:first-child{ padding-right: 20px;}
+            &:last-child{ 
+                padding-left: 20px;
+                .edu_blurb_det { padding-top: 0;}
+            }
+        }
+        .edu_blurb_det{ max-width: 100%;}
+    }
+    .our_achievement{
+        .count { font-size: 60px; line-height: 54px;}
+    }
+    .desk_hld{ 
+        flex-wrap: wrap;
+        .desk_blurb{ 
+            width: 100%; padding: 20px;
+            &:first-child{ margin-bottom: 10px;}
+        }
+    }
+    .contact_block_hld{
+        flex-wrap: wrap;
+        .block_large, .block_small { width: 100%;}
+        .switch_tab_hld, .switch_filter_tab_hld{ max-width: 320px;}
+    }
+    .contact_icra_grp { padding: 35px 40px 25px;}
+    .sorting_table{
+        overflow: hidden; overflow-x: scroll; padding-bottom: 10px;
+        table{
+            width: 900px!important;
+            &.dataTable{
+                tbody{
+                    td{padding: 25px 10px;}
+                }
+            }
+        }
+    }
+    .abt_res_desc{
+        .icon_free_alert{ width: 26px;}
+    }
+    .abt_csr_sus{
+        &.web_podcast{
+            h2{ color: $white;}
+            .wp_det_con { padding: 10px 20px;}
+        }
+        .overlay{ display: none;}
+        .wp_blurb{
+            &:hover{ box-shadow: none;}
+        }
+    }
+    .res_offer_hld{
+        .res_offer_con{ flex-wrap: wrap;}
+        .res_offer_blurb{
+            width: 49%;
+            &:nth-child(2){ order: 2; width: 100%; margin-top: 2%;}
+        }
+        ul{
+            a { padding: 20px 10px;}
+        }
+    }
+    .credit_reports{
+        .video_hld{ position: relative; right: auto; top: auto; max-width: 320px; margin-top: 30px;}
+    }
+    .rs_ratings_rationals{
+        display: block;
+        h2{
+            br{ display: none;}
+        }
+        .tiles_hld{
+            padding: 0 0 20px;
+            .tiles_con{ padding: 20px 0; border: none; border-top: #c3c3c3 1px solid;}
+        }
+    }
+    .subscription_offerings{
+        text-align: center; padding: 50px 0; background: url(../images/banner-sbscription-offer.jpg) no-repeat right top;
+        img{ display: none;}
+        .button{ position: relative; @include nontransform(); margin: 0 auto;}
+    }
+    .full_wid_ia{
+        .ask_expert{ background: none;}
+    }
+    .sector_type_con{
+        .sector_type_blurb{ width: 32.1%;}
+    }
+    .sorting_table{
+        table{
+            &.dataTable{
+                thead{
+                    th{ background-position: right 3px center;}
+                }
+            }
+        }
+    }
+    .reports_tbl_hld{
+        table{
+            &.dataTable{
+                tbody{
+                    td{
+                        &:nth-child(3){ max-width:300px}
+                    }
+                }
+            }
+        }
+        .dataTables_paginate{ display: block; padding-left: 0;}
+    }
+    .research_table{
+        .button{ display: block; position: relative; right: auto; bottom: auto; max-width: 200px; margin: 15px auto 0;}
+    }
+    .stock_watch_hld{
+        display: block;
+        .trading_api{ width: 100%; margin: 10px 0 0;}
+    }
+    .assist_desk_hld{
+        display: block;
+        .assist_con, .desk_con{ width: 100%;}
+    }
+
+    .subscribe_sector{
+        display: block;
+        img{ width: 100%;}
+        .desc_hld{ display: block; width: 100%; text-align: center; padding: 20px 10px;}
+        .copy{ padding-bottom: 30px;}
+    }
+    .cpr_report{
+        .tiles_hld{
+            border: #001c6e 1px solid;
+            .tiles{ margin: 0;}
+            .tiles_blurb{padding: 0px 20px;}
+        }
+    }
+    .subscribe_panel{
+        .search_hld{ width: 70%;}
+        .sector_subscribe{ display: block;}
+        .sector_filter_con{ width: 100%; padding-right: 0; padding-bottom: 30px;}
+        .sector_result_con{ 
+            width: 100%;
+            .scroll_hld{ height: 400px;}
+        }
+    }
+    .inv_det_hld{
+        .card-body { padding: 30px 20px;}
+        .card-header{ 
+            border-radius: 0; 
+            a{padding: 20px 30px 20px 20px;}
+        }
+        .tab-content{ 
+            width: 100%;
+            & > .tab-pane {
+               display: block !important; opacity: 1;
+                &::after{ content: '\f0da'; position: absolute; top: 22px; right: 20px; font-family: 'Font Awesome 5 Free'; font-size: 18px; color: $white; font-weight: 900; transition: 0.3s; }
+                &.active{
+                    &::after{transform: rotate(90deg);}
+                }
+            }
+            
+        }
+        .table_con{ overflow: hidden; overflow-x: scroll;}
+        table {
+            border: none;
+            thead { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: none; clip: rect(0 0 0 0); overflow: hidden;}
+            tr { 
+                display: block; 
+                
+            }
+            td {
+                display: block; padding: 15px 0px 20px; border-bottom: 1px solid #ddd;
+                &::before{ content: attr(data-label); display: block; width: 100%; font-size: 16px; color: $white; font-weight: 600; padding: 10px; background: $site_blue_1c335e;}
+                &::after{ display: none;}
+                &:first-child { padding-top: 0;}
+                &:last-child { padding-bottom: 0; border-bottom: 0;}
+                &:nth-child(3),&:nth-child(4),&:nth-child(5){ 
+                    padding: 10px 0px 20px;
+                    &::before{display: none;}
+                }
+                &:nth-child(1),&:nth-child(5) {border-bottom: none;}
+            }
+            h3{ padding: 10px;}
+            a{ padding: 0 10px;}
+        }
+
+        .board_meetings{
+            table{
+                thead{ position: relative;}
+                th{ display: inline-block; width: 49%!important;}
+                td{
+                    display: inline-block; width: 49%; padding: 15px 10px;
+                    &::before{ display: none;}
+                }
+                a{ padding: 0;}
+            }
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 767px){
+    header{
+        .nav_hld{ width: 380px; left: -380px;}
+    }
+    h2{
+        &.space{ 
+            padding-left: 0px;
+            &::after{ left: 0;}
+        }
+    }
+    .space{ padding-left: 0px;}
+    #banner{
+        h1{ 
+            font-size: 34px;
+        }
+        .video{
+            &.vid_desktop{ display: none;}
+            &.vid_mobile{ display: block;}
+        }
+        &.inner_banner{
+            h1{ font-size: 36px; line-height: 40px;}
+            p{
+                display: inline;
+                br{ display: none;}
+            }
+        }
+        &.inner_banner_ver_2{
+            p{display: block;}
+        }
+        .banner_det{ min-width: auto;}
+    }
+    .marquee{
+        @keyframes marquee {
+            0% {
+                text-indent: 30em
+            }
+        
+            100% {
+                text-indent: -170em
+            }
+        }
+    }
+    .research_hld{
+        /* .research_item{ height: 400px;} */
+    }
+    .research_offer{
+        .tab-panel{
+            .tab{ width: 33.33%; padding: 0 10px;}
+        }
+    }
+    .research_hld{
+        .research_item{ margin: 0 5px;}
+        .rif_blurb_det{ padding: 65px 20px 20px;}
+        p{ font-size: 16px;}
+        .icon_prime{ left: 20px;}
+    }
+    .credit_reports{
+        background-size: cover;
+        .cpr_blurb{display: block;}
+        .cpr_info{ padding: 0 0 25px 0;}
+        .credir_info{ padding-right: 20px;}
+    }
+    .news_media_hld{ 
+        .news_media_con{ 
+            display: block;
+            .news_media_blurb{ width: 100%; border: none; border-top: #e2e2e2 1px solid;}
+        }
+    }
+    .social_feed{
+        .feed_hld{ display: block;}
+        .feed{ 
+            width: 100%; padding: 0 0 50px 0;
+            &:last-child{ padding: 0;}
+        }
+    }
+    .journey{
+        .desc{ 
+            width: 100%;
+            p{ 
+                padding-bottom: 20px;
+                br{ display: none;}
+            }
+        }
+    }
+    .abt_yr_hld{ 
+        position: relative; right: auto; top: auto; width: 100%; padding-bottom: 80px;
+        .year_list{
+            font-size: 60px;
+        }
+    }
+    .our_profile{
+        padding: 0px 0 30px;
+        .bg_banner{ position: relative; left: auto; right: auto; top: auto; width: 100%; height: auto; padding-bottom: 35%;}
+        .profile_blurb_con{ display: block;}
+        .profile_blurb{ 
+            width: 100%; padding: 20px 0 0;
+            &:last-child{ display: none;}
+        }
+        #data_mis{ display: block; padding-top: 30px;}
+    }
+    .leadership_team{
+        .bg_banner{ position: relative; left: auto; right: auto; top: auto; width: 100%; height: auto; padding-bottom: 35%;}
+        .vm_hld{ display: block;}
+        .vm_blurb{ width: 100%;}
+        .team_fet_hld{ min-height: auto; padding: 20px 0 120px;}
+        .fet_item{ color: $site_black;}
+        .feature_slider_hld{ position: relative; left: auto; top: auto;}
+        .abt_sect_desc{
+            h2{
+                br{ display: none;}
+            }
+            .mission_desc{ max-width: 100%;}
+        }
+    }
+    .popup_hld{
+        padding: 45px 20px 45px 20px;
+        figure{ float: none;}
+        .bod_title{ padding: 10px 0px 0px 0px;}
+    }
+    .leader_board{
+        .leader_type{
+            li{ 
+                font-size: 16px; line-height: 20px; margin: 0px 15px 0px;
+                span{
+                    &::after{ width: 45px;}
+                }
+            }
+        }
+        .leader_blurb_hld{
+            .leader_blurb{ width: 50%;}
+        }
+    }
+    .icra_group{
+        .group_type_hld{ display: block;}
+        .group_type_blurb{
+            border: none; border-top: #f9f9f9 1px solid;
+            &:nth-child(1), &:nth-child(2), &:nth-child(3){ width: 100%; padding: 40px 0px;}
+        }
+        .group_det{ max-width: 100%; padding: 0 20px;}
+        p{
+            br{ display: none;}
+        }
+    }
+    .full_frame{
+        p{
+            br{ display: none;}
+        }
+        .life_banner_det{
+            position: relative; left: auto; bottom: auto; padding: 20px 10px; background: #1c335e;
+            h3{ font-size: 22px; line-height: 30px; padding: 0 0 25px 0;}
+        }
+    }
+    .abt_rating{
+        .container{ padding: 0 20px;}
+    }
+    .coverage {
+        a{ width: 48%;}
+    }
+    .r_methodology{
+        .rm_con{ padding: 25px 0px 0;}
+        li{ width: 100%; max-width: 300px; padding: 5px 0;}
+    }
+    .switch_tab_hld, .switch_filter_tab_hld{
+        .tab{ line-height: 18px; padding: 12px 15px;}
+    }
+    .tiles_hld{
+        .tiles { padding: 30px 20px 30px 20px;}
+    }
+    .web_event_con{
+        .tiles_hld{
+            .tiles { padding: 20px 20px;}
+        }
+    }
+    .ask_expert{
+        .ae_form_hld{padding: 0 20px;}
+        .wp_controlers{ display: block;}
+    }
+    .wp_controlers{
+        .width_half { width: 100%;}
+    }
+    .switch_tab_hld, .switch_filter_tab_hld{
+        .tab { text-align: center; line-height: 16px; padding: 12px 10px;}
+    }
+    .cr_life{ flex-direction: row; flex-wrap: wrap;}
+    .testimonial_hld{
+        p { font-size: 14px; line-height: 22px; padding: 10px 0;}
+        .emp_det { padding: 20px;}
+        .emp_name { font-size: 18px;}
+    }
+    .web_podcast{
+        padding-bottom: 0;
+        h2, p, .rv_more{ color: $site_black;}
+        .wp_det_con{ position: relative; @include nontransform(); max-width: 100%;}
+        &.hm_podcast{
+            h2{ color: $white;}
+            .wp_det_con{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: 100%; padding: 10px 20px;}
+        }   
+    }
+    .checkbox-group { padding-right: 7%;}
+    .hr_desk_contact{
+        p { font-size: 16px;}
+    }
+    .banner_rating_detail{
+        h1{ font-size: 30px; line-height: 38px;}
+        p{ font-size: 14px; line-height: 22px;}
+        .rating_detail__instrument{
+            li{ font-size: 14px; line-height: 22px; padding: 10px 10px;}
+        }
+    }
+    .our_achievement{
+        .overlay{ opacity: 0;}
+    }
+    .env_sustainability{
+        .box_series__small {
+            padding: 20px 20px;
+        }
+    }
+    .skill_development, .women_entrepreneurship{
+        &.box_series_con{
+            .box_align_left{ padding: 20px 20px 35px;}
+        }
+    }
+    .csr_anul_report_hld{
+        padding: 20px;
+        .wp_controlers{ padding: 20px 20px 20px 0;}
+        .report_con{ max-width: 230px; padding: 20px 0 20px 20px;}
+    }
+    .add_con{
+        .add_col_2{
+            .col-md-6{
+                &:first-child {
+                   border:none; border-bottom: #ededed 1px solid;
+                }
+            }
+        }
+    }
+    .add_con { padding: 25px 20px 5px;}
+    .contact_icra_grp {
+        padding: 35px 20px 25px;
+    }
+    .abt_res_desc{ display: block; padding-bottom: 40px;}
+    .trending_reports{
+        padding: 40px 20px 100px;
+        .tiles_hld{
+            .tiles_con{ border: none;}
+        }
+    }
+    .abt_rating{
+        .subscribe_rating_reports{ @include nontransform(); position: fixed; left: 0; bottom: 0; width: 100%; height: 50px; border-radius: 0; /*  display: none; */}
+    } 
+    .sector_type_con{
+        .sector_type_blurb{ width: 48.8%;}
+    }
+    .cpr_report{
+        .sector_pagination{ display: block; text-align: center; padding: 20px 20px;}
+        .icra-pagination{ justify-content: center; padding-top: 20px;}
+    }
+    .subscribe_panel{
+        padding: 40px 20px;
+        .button{ font-size: 14px;}
+        .company_subscribe{ 
+            display: block; text-align: center; padding: 25px 0 0 0;
+            .button{ margin-top: 20px;}
+        }
+        .search_hld{ width: 100%;}
+        .result{ display: block;}
+        .result_blurb{ padding: 10px 15px; margin-bottom: 15px;}
+        .result_sector{
+            div{
+                &:first-child{ width: 100%; padding-right: 0; padding-bottom: 15px; }
+            }
+        }
+        .result_sub_sector {
+            a{ display: inline-block; margin-top: 10px;}
+        }
+    }
+    .inv_det_hld{
+        .card-header{
+            h5{ font-size: 16px;}
+            a{padding: 15px 30px 15px 20px;}
+        }
+        .tab-content{
+            & >.tab-pane{
+                &::after{ top: 15px;}
+                &.active{
+                    &::after{ top: 15px;}
+                }
+            }
+        }
+        .selectBox{ margin-right: 25px;}
+        .rep_stock_exchange{ display: block;}
+        .report_links{
+            li{ width: 100%;}
+        }
+        .cal_control_hld{ 
+            display: block;
+            .wp_control{ 
+                padding-bottom: 20px;
+                &:last-child{ padding-bottom: 0;}
+            }
+        }
+        .board_meetings{
+            table{
+                th{font-size: 16px;}
+                td, a{ font-size: 14px;}
+            }
+        }
+    }
+}
+
+@media handheld, only screen and (max-width: 600px){
+    
+    .credit_reports{
+        background-size: cover;
+        .cpr_blurb{display: block;}
+        .cpr_info{ padding: 0 0 25px 0;}
+        .credir_info{ padding-right: 20px;}
+    }
+    .nrs_blurb_con{
+        .nrs_blurb{ min-height: 140px; padding: 10px 20px;}
+        .nrs_back{ padding: 10px 20px 15px;}
+    }
+    .web_podcast{
+        .play{ position: relative; @include nontransform(); margin-bottom: 30px;}
+        .popup-youtube{ border: none;}
+        .eve_info_con{ 
+            display: block;
+            p{
+                br{ display: none;}
+            }
+        }
+        .thumb_podcast{ padding: 0 0 20px 0;}
+    }
+    .icra_group{
+        h2{ font-size: 22px;}
+        .icra_grp_title { 
+            margin-right: 13%;
+            &:last-child{ margin: 0;}
+        }
+    }
+    .full_frame{
+        p{ font-size: 14px; line-height: 22px;}
+        .life_banner_det{
+            h3{ font-size: 18px;}
+        }
+    }
+    .inv_det_hld{
+        .card-body { padding: 30px 10px;}
+    }
+}
+
+@media handheld, only screen and (max-width: 480px){
+    h2{ 
+        br{ display: none;}
+    }
+    header{
+        .nav_hld{ width: 320px; left: -320px; }
+        .nav_nrs{
+            .nrs_blurb_con{
+                .nrs_blurb{ min-height: 120px;}
+            }
+        }
+    }
+    #banner{
+        &.inner_banner{
+            p{
+                br{ display: none;}
+            }
+        }
+    }
+    .marquee{
+        @keyframes marquee {
+            0% {
+                text-indent: 23em
+            }
+        
+            100% {
+                text-indent: -170em
+            }
+        }
+    }
+    .tab-panel{
+        .tab{  width: 50%;}
+    }
+    .research_offer{
+        .tab-panel{
+            .tab{  width: 50%;}
+        }
+    }
+    .credit_reports{
+        .btn_hld{ display: block;}
+        .button{ margin: 0px 0 10px;}
+    }
+    .nrs_blurb_con{
+        .nrs_front{
+            .n_tl{ font-size: 18px; line-height: 24px;}
+            img{ width: 60px;}
+        }
+        .nrs_back{ 
+            .ser_det{
+                .title{ font-size: 16px; line-height: 22px;}
+            }
+            img{ width: 75px;}
+        }
+    }
+    .web_podcast{
+        .wp_det_con{ padding: 10px 20px;}
+        .eve_info_con{ 
+            p{ font-size: 16px; line-height: 20px;}
+        }
+        .thumb_podcast{ width: 90px; padding: 0 0 20px 0;}
+        
+    }
+    .news_media_hld{ 
+        .news_media_con{ 
+            display: block;
+            .news_media_blurb{ padding: 50px 20px;}
+            .corner_patch{ width: 45px;}
+        }
+    }
+    footer{
+        .ft_blurb{ width: 100%; padding-bottom: 20px;}
+        .ft_blurb_con{ padding: 0px 0px 35px;}
+        .ft_other{
+            .other_links{ 
+                li{ padding: 0 12px;}
+            }
+        }
+    }
+    .abt_yr_hld{
+        .year_list{ font-size: 50px;}
+    }
+    .vision_mission{
+        .vm_hld { padding: 30px 0;}
+    }
+    .leader_board{
+        .leader_blurb_hld{
+            padding-top: 10px;
+            .leader_blurb{ width: 100%; padding: 10px 0;}
+            .profile_info{ min-height: auto;}
+        }
+    }
+    .rating_filter_box{
+        padding: 40px 20px;
+        .wp_control{ width: 100%; padding: 0 0px 20px;}
+    }
+    .abt_rating{
+        .subscribe_rating_reports{
+            text-align: left; padding: 5px 10px; 
+            img{ width: 24px;}
+        }
+    }
+    .testimonial_hld{
+        .emp_con{ align-items: flex-start; background: $white;}
+        .emp_name{ font-size: 16px; line-height: 20px;}
+        .emp_det { padding: 10px 20px;}
+    }
+    .web_podcast{
+        .wp_det_con { padding: 10px 0px;}
+    }
+    .check_box_hld{
+        display: block; padding: 20px 15px 10px;
+        .checkbox-group{ width: 100%; padding: 10px 0;}
+    }
+    .wp_controlers{
+        .width_oneforth{ width: 100%;}
+    }
+    .banner_rating_detail{
+        .rating_detail__desc { padding-bottom: 30px;}
+        .rating_detail__instrument{
+            ul{ padding: 0 15px 0 10px;}
+        }
+        .IR_det { padding: 10px 5px 0px 0;}
+        .btn_hld { 
+            display: block;
+            .button { margin:0 0 10px 0;}
+        }
+    }
+    .csr_anul_report_hld{
+        display: block;
+        .wp_controlers, .report_con{ width: 100%; max-width: 100%; padding: 20px 0;}
+        .wp_controlers{ border: none;}
+    }
+    .desk_hld{
+        .desk_blurb{ display: block;}
+        .other_desk{ width: 100%;}
+    }
+    .address{
+        .icra_group{
+            .group_type_blurb{
+                &:nth-child(1), &:nth-child(2), &:nth-child(3){padding: 40px 0px;}
+            }
+        }
+    }
+    .sector_type_con{
+        img{ width: 50px;}
+        .sector_type_blurb{ 
+            width: 100%; min-height: 80px; margin: 0 0 10px;
+            &:last-child{ margin: 0;}
+        }
+    }
+    .inv_sub_update{
+        .ask_expert { padding: 20px 0px;}
+    }
+    .assist_desk_hld{
+        .assist_con{ padding: 30px 20px 40px;}
+    }
+    .inv_det_hld{
+        .selectBox{ max-width: 100%; margin: 0 0 10px 0;}
+        .report_block { padding-top: 15px;}
+        .report_links{
+            padding: 10px 0;
+            li{ font-size: 14px; line-height: 20px;}
+        }
+        .cal_control_hld{ 
+            display: block;
+            .wp_control{ 
+                max-width: 100%;
+            }
+        }
+        .inv_com_data{
+            p{font-size: 14px; line-height: 22px;}
+        }
+    }
+    .inv_financial_performance {
+        .table_con { padding-top: 15px;}
+    }
+}
+
+
+@media handheld, only screen and (max-width: 375px){
+    #wrapper{ padding-top: 67.23px;}
+    header{
+        .logo{ width: 150px; margin-left: 45px;}
+        .nav_hld{ width: 100%; left: -100%; padding-top: 67.23px;}
+        .nav_nrs{
+            .nrs_blurb_con{
+                .nrs_front{
+                    .n_tl{ font-size: 16px;}
+                }
+            }
+        }
+        .search_hld{ right: 45px;}
+        .login{
+            .icon_login_mob{ font-size: 24px;}
+        }
+    }
+    #banner{
+        h1{ 
+            font-size: 29px; line-height: 38px;
+        }
+        p{ 
+            font-size: 15px;
+            span{
+                &::before{ height: 40%;}
+            }
+        }
+        &.inner_banner{
+            h1{ font-size: 34px; line-height: 36px;}
+            p{ line-height: 24px;}
+        }
+    }
+    .marquee{
+        @keyframes marquee {
+            0% {
+                text-indent: 20em
+            }
+        
+            100% {
+                text-indent: -170em
+            }
+        }
+    }
+    .research_hld{
+        .research_item{ height: auto; overflow: auto;}
+        .rif_event{ font-size: 16px; line-height: 20px; padding-bottom: 20px;}
+    }
+    .social_feed{
+        .feed_type{
+            img { width: 125px;}
+        }
+    }
+    footer{
+        .ft_other{
+            .other_links{
+                flex-wrap: wrap; padding: 30px 0 10px;
+                li{width: 50%; padding: 0 15px 20px;}
+            }
+        }
+    }
+    .abt_yr_hld{
+        .year_list { font-size: 36px;}
+    }
+    .vm_hld{ display: block;}
+    .vm_blurb{ 
+        width: 100%;
+        h2{ 
+            br{ display: none;}
+        }
+    }
+    .vision_mission{
+        .abt_sect_desc{ padding:0;}
+        .vision{ padding-bottom: 30px;}
+    }
+    .leader_board{
+        .leader_type{
+            li { font-size: 14px; margin: 0px 10px 0px;}
+        }
+    }
+    .icra_group{
+        h2 { font-size: 18px; line-height: 24px;}
+    }
+    .login_popup{ padding: 30px 35px;}
+    .coverage a {
+        width: 100%;
+    }
+    /* .abt_rating{
+        .subscribe_rating_reports{
+           width: 160px;
+        }
+    } */
+    .testimonial_hld{
+        .emp_group_con{ display: none;}
+        .emp_con{ display: block;}
+        .emp_det{ width: 100%; padding: 20px 0;}
+        .slick-prev, .slick-next{ bottom: -10px;}
+    }
+    .hr_desk_contact{
+        p { font-size: 14px;}
+    }
+    .res_offer_hld{
+        .offer_title{ font-size: 22px; line-height: 30px;}
+    }
+    .subscription_offerings{
+        .button{ font-size: 14px;}
+    }
+    .inv_det_hld{
+        .switch_tab_hld, .switch_filter_tab_hld{
+            .tab { padding: 12px 20px;}
+        }
+    }
+}

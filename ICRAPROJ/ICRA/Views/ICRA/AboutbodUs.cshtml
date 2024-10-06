@@ -1,0 +1,27 @@
+﻿@model ICRA.Models.AboutUsSection4
+@{
+    Layout = null;
+}
+<div class="popup_hld clearfix">
+    <script>
+        if(window.onPopupLoadCheckHeight){
+            window.onPopupLoadCheckHeight();
+        }
+    </script>
+    <div class="popup_con">
+        <figure>
+            @{ 
+                ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+                var getImage = bannerObj.ReadImage(Model.image);
+            <img src="@getImage" alt="">
+                }
+        </figure>
+        <div class="bod_title">@Model.name</div>
+        @Html.Raw(Model.description)
+        
+    </div>
+</div>
+
+
+
+

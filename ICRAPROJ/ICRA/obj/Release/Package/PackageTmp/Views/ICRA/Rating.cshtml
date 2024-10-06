@@ -1,0 +1,349 @@
+﻿@model ICRA.Models.RatingResponse
+@{
+    ViewBag.Title = "Rating";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/ICRA_JS/rating-min.js"></script>
+@{
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.Rating_Section1.responsive_image);
+
+    var getImagebanner = bannerObj.ReadImage(Model.Rating_Section1.desktop_image);
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.Rating_Section1.title1</h1>
+                    <p>@Html.Raw(Model.Rating_Section1.title2)</p>
+                </div>
+                @Html.Partial("_Audio")
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index", "ICRA")">Home</a>Ratings
+        </div>
+    </div>
+
+    <section class="section abt_rating">
+        <div class="container">
+            <h2 class="left_line">About @Model.Rating_Section1.title1</h2>
+            <div class="abt_res_desc">
+                @Html.Raw(Model.Rating_Section1.Description)
+                @Html.Partial("_GetFreeAlerts")
+            </div>
+            @Html.Partial("_RatingSearchEntity")
+            
+        </div>
+        <a href="@Url.Action("Researchsubscribereportspopup", "ICRA")" class="subscribe_rating_reports">
+            <img src="~/Content/images/icon-subscribe-rating.png" alt="">
+            <p>Want to Get Rated</p>
+        </a>
+    </section>
+    <section class="section coverage">
+        <div class="container">
+            <h2 class="left_line space">ICRA Ratings Coverage</h2>
+            <div class="coverage_blurb_hld">
+                @{
+                    int i = 1;
+                    foreach (var item in Model.Rating_Section2)
+                    {
+                        if (i <= 4)
+                        {
+                            var urlicon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon;
+
+                            var url = "/ICRA/Ratingscorporatesector?Rating_Category_Id=" + item.Rating_Category_Id;
+                            var urlRatingBaseIcon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon_hover;
+
+                            <a href="@url">
+                                <img src="@urlRatingBaseIcon">
+                                <img src="@urlicon">
+                                <p>@item.Rating_Category_Name</p>
+                                <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        }
+
+                        i = i + 1;
+                    }
+                    var urlotherRating = "/ICRA/Ratingscorporatesector?Rating_Category_Id=OtherRating";
+
+                    <a href="@urlotherRating">
+                        <img src="~/Content/images/icon-tab-other-rating.png">
+                        <img src="~/Content/images/icon-tab-other-rating-hover.png">
+                        <p>Other Ratings</p>
+                        <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                }
+
+
+
+            </div>
+        </div>
+    </section>
+    @Html.Partial("_RatingRationalAndCPR",Model)
+    @Html.Partial("_OurRatingApproachAndMethodologies")
+    @Html.Partial("UpcomingWebinarEventsAndRecordings")
+    @Html.Partial("_YouMayalsobeInterestedin",Model)
+    @Html.Partial("_AskOurIndustryBusinessRepresentative", "Rating")     
+
+}
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        var availableTags = [];
+        var Rating_Category_Id ="0";
+        var Company_Id = "0";
+        $.ajax({
+            url: '/ICRA/RatingLoad',
+            data: {
+                Company_Id: Company_Id,
+                Rating_Category_Id: Rating_Category_Id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (response) {
+                var response = response.Rating_Section4;
+               
+                $.each(response, function (key, item) {
+                    var data = {id:item.Company_Id,label:item.Company_Name };
+                    availableTags.push(data);
+                   /* console.log(availableTags);*/
+                });
+            }
+        });
+
+        $("#txtSearchEntityName").autocomplete({
+            source: availableTags,
+            minLength: 3,
+            appendTo: ".abt_rating .search_hld",
+            select: function (event, ui) {
+                console.log(ui.item)
+                var e = ui.item;
+                console.log(e)
+                var host = window.location.host;
+                console.log(host)
+                let protocol = location.protocol;
+                var url = protocol + "//" + host+"/ICRA/RatingsDetail?Company_Id=" + e.id;
+                console.log(url)
+                window.open(url, "_self")
+            }
+        });
+
+    });
+
+
+    function KeyUpevent() {
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry Start----------------
+        $("#txtName").keyup(function () {
+            debugger
+            console.log("testdata");
+            if ($.trim($("#txtName").val()) == "") {
+                debugger
+                $("#lblName").css('display', 'block');
+                $("#lblName").text("Please Enter Name")
+                $("#txtName").focus();
+                return false;
+            } else {
+                debugger
+                $("#lblName").css('display', 'none');
+            }
+
+        })
+
+        $("#txtEmail").keyup(function () {
+            if ($("#txtEmail").val() == "") {
+                $("#lblEmail").css('display', 'block');
+                $("#lblEmail").text("Please Enter Email Id")
+                $("#txtEmail").focus();
+                return false;
+            } else {
+                var email = $("#txtEmail").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmail").css('display', 'none');
+                } else {
+                    $("#lblEmail").css('display', 'block');
+                    $("#lblEmail").text("Please Enter Valid Email Id");
+                }
+
+            }
+
+
+        })
+        $("#txtContactNumber").keyup(function () {
+            if ($("#txtContactNumber").val() == "") {
+                $("#lblContactNumber").css('display', 'block');
+                $("#lblContactNumber").text("Please Enter Contact Number")
+                $("#txtContactNumber").focus();
+                return false;
+            } else {
+
+                $("#lblContactNumber").css('display', 'none');
+            }
+
+
+        })
+
+        $("#txtCompanyName").keyup(function () {
+            if ($.trim($("#txtCompanyName").val()) == "") {
+                $("#lblCompanyName").css('display', 'block');
+                $("#lblCompanyName").text("Please Enter Company Name")
+                $("#txtCompanyName").focus();
+                return false;
+            } else {
+
+                $("#lblCompanyName").css('display', 'none');
+            }
+
+        })
+        $("#txtMessage").keyup(function () {
+            if ($("#txtMessage").val() == "") {
+                $("#lblMessage").css('display', 'block');
+                $("#lblMessage").text("Please Enter Message")
+                $("#txtMessage").focus();
+                return false;
+            } else {
+
+                $("#lblMessage").css('display', 'none');
+            }
+
+        })
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry End----------------
+
+    }    
+    function GetRatedInsert() {
+
+        if ($.trim($("#txtName").val()) == "") {
+            debugger
+            $("#lblName").css('display', 'block');
+            $("#lblName").text("Please Enter Name")
+            $("#lblName").attr("Name");
+            $("#txtName").focus();
+            return false;
+        } else {
+            $("#lblName").css('display', 'none');
+        }
+
+        if ($.trim($("#txtEmail").val()) == "") {
+            $("#lblEmail").css('display', 'block');
+            $("#lblEmail").text("Please Enter Email Id")
+            $("#txtEmail").focus();
+            return false;
+        } else {
+            var email = $("#txtEmail").val();
+            if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                $("#lblEmail").css('display', 'none');
+            } else {
+                $("#lblEmail").css('display', 'block');
+                $("#lblEmail").text("Please Enter Valid Email Id");
+            }
+        }
+
+
+        if ($.trim($("#txtContactNumber").val()) == "") {
+            $("#lblContactNumber").css('display', 'block');
+            $("#lblContactNumber").text("Please Enter Contact Number")
+            $("#txtContactNumber").focus();
+            return false;
+        } else {
+
+            $("#lblContactNumber").css('display', 'none');
+        }
+        if ($.trim($("#txtCompanyName").val()) == "") {
+            $("#lblCompanyName").css('display', 'block');
+            $("#lblCompanyName").text("Please Enter Company Name")
+            $("#txtCompanyName").focus();
+            return false;
+        } else {
+
+            $("#lblCompanyName").css('display', 'none');
+        }
+
+
+
+        if ($.trim($("#txtMessage").val()) == "") {
+            $("#lblMessage").css('display', 'block');
+            $("#lblMessage").text("Please Enter Message")
+            $("#txtMessage").focus();
+            return false;
+        } else {
+
+            $("#lblMessage").css('display', 'none');
+        }
+
+        var data = {
+            Name: $("#txtName").val(),
+            Email: $("#txtEmail").val(),
+            ContactNumber: $("#txtContactNumber").val(),
+            CompanyName: $("#txtCompanyName").val(),
+            Message: $("#txtMessage").val(),
+            WebPageName: "Rating"
+        };
+
+
+        console.log(data)
+        var json = JSON.stringify(data);
+        console.log(json)
+        $.ajax({
+            type: "POST",
+            url: "/ICRA/InsertGetRated",
+            data: json,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.Status == 200) {
+                    $("#msgResponse").css({
+                        "text-align": 'center', "font-size": '15px', "font-weight": 'bold', "display": 'block',"color":'#ff0000',"padding":'0 15px'});
+                    $("#msgResponse").text("");
+                    $("#msgResponse").text("Thank You! We will contact you shortly.")
+
+                    $("#txtName").val('')
+                    $("#txtCompanyName").val('')
+                    $("#txtEmail").val('')
+                    $("#txtContactNumber").val('')
+                    $("#txtMessage").val('')
+
+                } else {
+
+                    $("#msgResponse").css('display', 'none');
+                    $("#msgResponse").text("");
+                    $("#msgResponse").text("Data Save Failed")
+                }
+            }
+        });
+    }
+    function alphaOnly(evt) {
+        var charCode = (evt.which) ? evt.which : window.event.keyCode;
+
+        if (charCode <= 13) {
+            return true;
+        }
+        else {
+            var keyChar = String.fromCharCode(charCode);
+            var re = /^[a-zA-Z- ]+(\s+[a-zA-Z]+)*$/;
+            return re.test(keyChar);
+        }
+    }
+    function isNumberOnly(evt) {
+        var charCode = (evt.which) ? evt.which : window.event.keyCode;
+
+        if (charCode <= 13) {
+            return true;
+        }
+        else {
+            var keyChar = String.fromCharCode(charCode);
+            var re = /^\d+$/;
+            return re.test(keyChar);
+        }
+    }
+   
+   
+
+</script>

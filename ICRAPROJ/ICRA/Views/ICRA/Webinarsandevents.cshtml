@@ -1,0 +1,291 @@
+﻿
+@{
+    ViewBag.Title = "Webinarsandevents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/ICRA_JS/media-min.js"></script>
+
+<section id="banner" class="inner_banner">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-webinars-events-mob-01.jpg" />
+            <img src="~/Content/images/banner-webinars-events-01.jpg" alt="" />
+        </picture>
+        <div class="container">
+            <div class="banner_det">
+                <h1>Webinars<br> & Events </h1>
+                <p>Find all the ICRA Ratings upcoming webinars<br> as well as the recordings of the past webinars.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a>Webinars & Events
+    </div>
+</div>
+
+<div class="section media_print">
+    <div class="container">
+        <div id="tabdata_01">
+            <div class="switch_tab_hld">
+                <div class="slider"></div>
+                <div class="tab active" tabId="webinars_events">Upcoming Webinars / Events</div>
+                <div class="tab" tabId="past_events">Past Events</div>
+            </div>
+            <div class="media_print_filter">
+                <div class="rating_filter_box_hld">
+                    <div class="rating_filter_box">
+                        <div class="wp_control">
+                            <select class="selectBox">
+                                <option>Sector</option>
+                            </select>
+                        </div>
+                        <div class="wp_control">
+                            <div class="input-group date">
+                                <input type="text" placeholder="From date" class="form-control" id="fromDate">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wp_control">
+                            <div class="input-group date">
+                                <input type="text" placeholder="To date" class="form-control" id="toDate">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button"><span>Search</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="switch_det_panel show" id="tab_webinars_events">
+                <div class="media_print_wrapper bg_webinars">
+                    <div class="media_print_inner">
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 18, 2021</span>
+                            </p>
+                            <h6>RIL’s Shopping Spree Positive For Investors</h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 18, 2021</span>
+                            </p>
+                            <h6>Airports Looking To Give A Fillip To Non-Aeronautical Strems Revenue </h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 18, 2021</span>
+                            </p>
+                            <h6>Excise Duty Cut On Petrol Diesel Could Reduce Inflation By 30 Bps Bps</h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <nav>
+                        <ul class="pagination icra-pagination white">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="switch_det_panel" id="tab_past_events">
+                <div class="media_print_wrapper bg_webinars">
+                    <div class="media_print_inner">
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 25, 2021</span>
+                            </p>
+                            <h6>RIL’s Shopping Spree Positive For Investors</h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 18, 2021</span>
+                            </p>
+                            <h6>Airports Looking To Give A Fillip To Non-Aeronautical Strems Revenue </h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                        <div class="media_print_list">
+                            <p class="date-source">
+                                <span class="date">Thursday, October 18, 2021</span>
+                            </p>
+                            <h6>Excise Duty Cut On Petrol Diesel Could Reduce Inflation By 30 Bps Bps</h6>
+                            <a href="#" class="rv_more yellow">Register</a>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <nav>
+                        <ul class="pagination icra-pagination white">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section photo_gallery">
+    <div class="container">
+        <h2 class="left_line">Photo Gallery</h2>
+    </div>
+    <div class="pg-slider imgSlider img-gallery">
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-1.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-1.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-2.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-2.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-1.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-1.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-2.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-2.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-1.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-1.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-2.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-2.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgGal_list">
+                <a href="~/Content/images/gallery/img-gallery-1.jpg" class="image">
+                    <div class="thumb">
+                        <img src="~/Content/images/gallery/img-gallery-1.jpg" alt="">
+                    </div>
+                </a>
+                <p>ICRA Conference on Roads & Construction Sector in India held at Mumbai</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section media_contacts">
+    <div class="container">
+        <div class="med-cont-wrapper">
+            <img src="~/Content/images/bg-media-contact.jpg" alt="" class="bg-Img" />
+            <h2 class="left_line">Media Contacts</h2>
+            <div class="contacts">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="med-cont-list">
+                            <h6>Naznin Prodhani</h6>
+                            <p>Head Media & Communications ICRA Ltd</p>
+                            <a href="mailto:naznin.prodhani@icraindia.com" class="mail">naznin.prodhani@icraindia.com</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="med-cont-list">
+                            <h6>Shreya Bothra</h6>
+                            <p>Manager - Media & Communications ICRA Ltd</p>
+                            <a href="mailto:shreya.bothra@icraindia.com" class="mail">shreya.bothra@icraindia.com</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="med-cont-list">
+                            <h6>Venkat Raman</h6>
+                            <p>Manager - Media & Communications ICRA Ltd</p>
+                            <a href="mailto:venkat.raman@icraindia.com" class="mail">venkat.raman@icraindia.com</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="med-cont-list">
+                            <h6>Poornima Tyagi</h6>
+                            <p>Deputy Manager- Media & Communications ICRA Ltd</p>
+                            <a href="mailto:poornima.tyagi@icraindia.com" class="mail">poornima.tyagi@icraindia.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reach_us">
+            <p>You May Also Reach Us At <a href="mailto:communications@icraindia.com">communications@icraindia.com</a></p>
+        </div>
+    </div>
+</section>
+
+<script>
+            $(function () {
+                $("#fromDate,#toDate").datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+</script>
+

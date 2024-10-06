@@ -1,0 +1,409 @@
+﻿@model ICRA.Models.CSResponse
+
+@{
+    ViewBag.Title = "CSR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/ICRA_JS/csr-min.js"></script>
+@{
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImagebanner = bannerObj.ReadImage(Model.csR_Section1.desktop_image);
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.csR_Section1.responsive_image);
+    var getDownloadimage = bannerObj.ReadImage("bg-csr-report-download.jpg");
+    var getcsrmissonimage = bannerObj.ReadImage("banner-csr-mission.jpg");
+
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.csR_Section1.title1</h1>
+                    <p>@Html.Raw(Model.csR_Section1.title2)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a>CSR
+        </div>
+    </div>
+    <section class="section icra_journey_hld csr_journey">
+        <div class="container">
+            <h2 class="left_line">@Model.csR_Section2[0].title</h2>
+            <div class="journey">
+                <div class="desc">
+                    @Html.Raw(Model.csR_Section2[0].short_Description)
+                </div>
+              
+                <a href="~/Content/pdf/_Content_PDF_ICRA_CSR Policy.pdf" target="_blank" download="download" class="csr_policy_report">
+
+                    <img src="~/Content/images/bg-csr-report-download.jpg" alt="Download ICRA's CSR Policy Report">
+                    <div class="report_det">
+                        Download ICRA's CSR Policy Report
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="csr_mission">
+
+            <div class="abt_yr_hld">
+                <div class="csr_list_con">
+                    @foreach (var item in Model.csR_Section3)
+                    {
+                        <div class="csr_mission_list">
+                            <div class="title">@item.title</div>
+                            @Html.Raw(item.description)
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <div class="cm_banner">
+                <img src="~/Content/images/banner-csr-mission.jpg" alt="ICRA's CSR Mission" />
+            </div>
+
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="our_achievement row">
+                <a href="#" class="col-md">
+                    <img src="~/Content/images/our-achievement-01.jpg" />
+                    <div class="overlay"></div>
+                    <div class="count_det_hld">
+                        <div class="count center_line">20</div>
+                        <p>Activities Covered</p>
+                    </div>
+                </a>
+                <a href="#" class="col-md">
+                    <img src="~/Content/images/our-achievement-01.jpg" />
+                    <div class="overlay"></div>
+                    <div class="count_det_hld">
+                        <div class="count center_line">2510</div>
+                        <p>People Benefitted</p>
+                    </div>
+                </a>
+                <a href="#" class="col-md">
+                    <img src="~/Content/images/our-achievement-01.jpg" />
+                    <div class="overlay"></div>
+                    <div class="count_det_hld">
+                        <div class="count center_line">08</div>
+                        <p>Projects</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    var skillDevelopmentImage = bannerObj.ReadImage(Model.csR_Section2[1].image);
+
+    var WomanEntrepreneurship = bannerObj.ReadImage(Model.csR_Section2[2].image);
+
+    var Education = bannerObj.ReadImage(Model.csR_Section2[3].image);
+    var Education1 = bannerObj.ReadImage(Model.csR_Section2[4].image);
+
+    <section class="section remove_sect_bot_pad">
+        <div class="box_series_con gray_bg skill_development">
+            <div class="box_series__large box_align_right blue_2554e0_bg">
+                <div class="box_tl_align">
+                    <h2 class="left_line">Skill Development</h2>
+                </div>
+            </div>
+            <div class="box_series__small">
+                <img src="@skillDevelopmentImage" alt="@Model.csR_Section2[1].title">
+            </div>
+            <div class="box_series__large box_align_left">
+                <div class="box_desc">
+                    <h3>@Model.csR_Section2[1].title</h3>
+                    @Html.Raw(Model.csR_Section2[1].short_Description)
+                    <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[1].csrBannersec2_Id })" class="rv_more bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_series_con gray_bg women_entrepreneurship">
+            <div class="box_series__large box_align_left">
+                <div class="box_desc">
+                    <h3>@Model.csR_Section2[2].title</h3>
+                    @Html.Raw(Model.csR_Section2[2].short_Description)
+                    <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[2].csrBannersec2_Id })" class="rv_more bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="box_series__large box_align_right">
+                <img src="@WomanEntrepreneurship" alt="@Model.csR_Section2[2].title">
+            </div>
+        </div>
+    </section>
+
+    <section class="section remove_sect_top_pad">
+        <div class="education">
+            <div class="edu_blurb">
+                <img src="@Education" alt="@Model.csR_Section2[3].title" class="bg-Img" />
+                <div>
+                    <h2 class="left_line">Education</h2>
+                    <div class="edu_blurb_det">
+                        <div class="edu_title">@Model.csR_Section2[3].title</div>
+                        @Html.Raw(Model.csR_Section2[3].short_Description)
+                        <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[3].csrBannersec2_Id })" class="rv_more white bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="edu_blurb">
+                <img src="@Education1" alt="Sponsorship Programmes" class="bg-Img" />
+                <div>
+                    <div class="edu_blurb_det">
+                        <div class="edu_title">@Model.csR_Section2[4].title</div>
+                        @Html.Raw(Model.csR_Section2[4].short_Description)
+                        <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[4].csrBannersec2_Id })" class="rv_more white bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    var Environment = bannerObj.ReadImage(Model.csR_Section2[5].image);
+    var Lake = bannerObj.ReadImage(Model.csR_Section2[6].image);
+    <section class="section env_sustainability">
+        <div class="container">
+            <h2 class="left_line">@Model.csR_Section2[5].title</h2>
+            @Html.Raw(Model.csR_Section2[5].short_Description)
+
+        </div>
+        <div class="box_series_con">
+            <div class="box_series__large box_align_right">
+                <img src="@Environment" alt="@Model.csR_Section2[5].title">
+            </div>
+            <div class="box_series__small">
+                <div class="box_desc">
+                    <h3>@Model.csR_Section2[6].title</h3>
+                    @Html.Raw(Model.csR_Section2[6].short_Description)
+                    <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[6].csrBannersec2_Id })" class="rv_more bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="box_series__large box_align_left blue_2554e0_bg">
+                <img src="@Lake" alt="@Model.csR_Section2[6].title">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="initiative">
+                <h2 class="center_line">@Model.csR_Section2[7].title</h2>
+                @Html.Raw(Model.csR_Section2[7].short_Description)
+
+            </div>
+        </div>
+    </section>
+    var EmployeeVolunteering = bannerObj.ReadImage(Model.csR_Section2[8].image);
+    <section class="section">
+        <div class="box_series_con gray_bg emp_volunteering">
+            <div class="box_series__large box_align_right">
+                <div class="box_tl_align">
+                    <h2 class="left_line">@Model.csR_Section2[8].title</h2>
+                </div>
+            </div>
+            <div class="box_series__small">
+                <img src="@EmployeeVolunteering" alt="@Model.csR_Section2[8].title">
+            </div>
+            <div class="box_series__large box_align_left blue_2554e0_bg">
+                <div class="box_desc">
+                    @Html.Raw(Model.csR_Section2[8].short_Description)
+                    <a href="@Url.Action("csrrlcpopup", "ICRA", new { Id = @Model.csR_Section2[8].csrBannersec2_Id })" class="rv_more white bod_popup_link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section photo_gallery csr_photo_galley">
+        <div class="container">
+            <h2 class="left_line">Photo Gallery</h2>
+        </div>
+        <div class="pg-slider imgSlider img-gallery">
+            @foreach (var catitem in Model.csR_Section6)
+            {
+                var Image = bannerObj.ReadImage(catitem.Image);
+                <div class="item">
+                    <div class="imgGal_list">
+                        <a href="@Image" class="image">
+                            <div class="thumb">
+                                <img src="@Image" alt="">
+                            </div>
+                        </a>
+                        <p>@catitem.Title</p>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="left_line">Annual Report</h2>
+            <div class="csr_anul_report_hld">
+                <img src="~/Content/images/bg-csr-anual-report.jpg" alt="Annual Report" class="bg-Img" />
+                <div class="wp_controlers">
+                    @{
+                        int k = 1;
+                        foreach (var catitem in Model.csR_Section4)
+                        {
+                            <div class="wp_control">
+                                @if (k == 1)
+                                {
+                                    <input type="radio" id="@catitem.Id" name="radio-group" onclick="return csrYear(@catitem.Id);" value="@catitem.Id" checked="checked">
+                                    <label for="@catitem.Id">@catitem.Annual_Report_Category_Name</label>
+
+                                }
+                                else
+                                {
+                                    <input type="radio" id="@catitem.Id" name="radio-group" onclick="return csrYear(@catitem.Id);" value="@catitem.Id">
+                                    <label for="@catitem.Id">@catitem.Annual_Report_Category_Name</label>
+
+                                }
+
+                            </div>
+                            k = k + 1;
+                        }
+                    }
+
+                    <div class="wp_control">
+                        @Html.DropDownList("ListItemsAnnualReportYear", Model.ListItemsAnnualReportYear, "Select Year", new { @class = "selectBox" })
+
+
+                    </div>
+                </div>
+                @{
+                    int i = 1;
+                    foreach (var catitem in Model.csR_Section5)
+                    {
+
+                        if (i == 1)
+                        {
+                            var PDF = bannerObj.ReadImage(catitem.Report);
+
+                            <a href="@PDF" id="anchorpdf" class="report_con" target="_blank">
+                                <div id="divYear" class="year">@catitem.Annual_Report_Year</div>
+                                <p id="Title">@catitem.Title </p>
+                                <div class="button"><span> <img src="~/Content/images/icon-download.png" alt="Download"> Download</span></div>
+                            </a>
+                            i = i + 1;
+                        }
+
+                    }
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="desk_hld">
+                <div class="desk_blurb blue_2554e0_bg">
+                    <h3 class="desk_title">Corporate Social Responsibility Desk</h3>
+                    <p>Mr. S Shakeb Rahman</p>
+                    <div class="links_con">
+                        <a href="mailto:investors@icraindia.com "> <img src="~/Content/images/icon-mail-white.png" alt="Mail" /> investors@icraindia.com </a>
+                        <a href="tel:91 124 4545 349"> <img src="~/Content/images/icon-phone.png" alt="Phone no" /> 91 124 4545 349</a>
+                    </div>
+                </div>
+                <div class="desk_blurb other_desk_hld blue_2554e0_bg">
+                    <a href="" class="other_desk">
+                        <img src="~/Content/images/bg-desk-investor-rel.jpg" alt="Investor Relations" class="img_bg" />
+                        <div>
+                            <h3 class="desk_title">Investor Relations</h3>
+                        </div>
+                    </a>
+                    <a href="" class="other_desk">
+                        <div>
+                            <h3 class="desk_title">Media &amp; Events</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ListItemsAnnualReportYear").change(function () {
+
+                if ($("#ListItemsAnnualReportYear").val() == "Select Year") {
+                    alert("Please Select Annual Year")
+                    $("#ListItemsAnnualReportYear").focus();
+                    return false;
+                }
+
+                var Category_id = $("input[name='radio-group']:checked").val();
+                var Id = $("#ListItemsAnnualReportYear").val();
+
+
+                $.ajax({
+                    url: '/ICRA/AnnualYearData',
+                    data: {
+                        Category_id: Category_id,
+                        Id: Id
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        debugger
+                        console.log(response)
+                        $("#divYear").text(response.csR_Section5[0].Annual_Report_Year);
+                        $("#anchorpdf").attr("href", "https://icrabcweb.s3.ap-south-1.amazonaws.com" + response.csR_Section5[0].Report);
+                        $("#Title").text(response.csR_Section5[0].Title);
+                        //    var response = response.SectorDropResponse;
+
+                        //$(response).each(function (index, value) { //loop through your elements
+
+                        //    options += '<option value="' + value.Research_Sector_Id + '">' + value.Sector_Name + '</option>'; //add the option element as a string
+
+                        //});
+
+                        //$('#ListItemsSector').html(options);
+                    }
+                });
+            });
+
+
+
+
+        });
+
+        function csrYear(id) {
+            debugger
+            $('#ListItemsAnnualReportYear').empty();
+            var options = '<option value=""><strong>Select Year</strong></option>'; //create your "title" option
+
+            $.ajax({
+                url: '/ICRA/CSRYEAR',
+                data: {
+                    id: id
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function (response) {
+                    debugger
+                    console.log("Divakar Upadhyay")
+                    console.log(response)
+
+                    var response = response.ListItemsAnnualReportYear;
+
+                    $(response).each(function (index, value) { //loop through your elements
+
+                        options += '<option value="' + value.Value + '">' + value.Text + '</option>'; //add the option element as a string
+
+                    });
+
+                    $('#ListItemsAnnualReportYear').html(options);
+                }
+            });
+        }
+
+    </script>
+}

@@ -1,0 +1,229 @@
+﻿@model ICRA.Models.RatingResponse
+@{
+    ViewBag.Title = "Ratingscorporatesector";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/ICRA_JS/rating-min.js"></script>
+@{
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.Rating_Section1.responsive_image);
+
+    var getImagebanner = bannerObj.ReadImage(Model.Rating_Section1.desktop_image);
+
+
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="@getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="ICRA Corporate Sector Ratings" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.Rating_Section1.title1</h1>
+                    <p>@Html.Raw(Model.Rating_Section1.title2)</p>
+                </div>
+                @Html.Partial("_Audio")
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index", "ICRA")">Home</a><a href="@Url.Action("Rating", "ICRA")">Ratings</a>@Model.Rating_Section1.title1
+        </div>
+    </div>
+
+    <section class="section abt_rating">
+        <div class="container">
+            <h2 class="left_line">About @Model.Rating_Section1.title1</h2>
+            <div class="abt_res_desc">
+                @Html.Raw(Model.Rating_Section1.Description)
+                @Html.Partial("_GetFreeAlerts")
+            </div>
+            @Html.Partial("_RatingSearchEntity")
+        </div>
+
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="entity_tbl_hld sorting_table">
+                <table id="entity_data_table" class="" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Entity Name</th>
+                            <th>Instrument</th>
+                            <th>Ratings</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </section>
+    @Html.Partial("_RatingRationalAndCPR")
+    @Html.Partial("_OurRatingApproachAndMethodologies")
+    @Html.Partial("UpcomingWebinarEventsAndRecordings")
+    @Html.Partial("_ResearchSectorHorizontal", Model)
+    <section class="section rating_det_page coverage">
+        <div class="container">
+            <h2 class="left_line space">Explore our Rating Offerings</h2>
+            <div class="coverage_blurb_hld">
+                @{
+                    int i = 1;
+                    foreach (var item in Model.Rating_Section2)
+                    {
+                        var url = "/ICRA/Ratingscorporatesector?Rating_Category_Id=" + item.Rating_Category_Id;
+                        if (i <= 4)
+                        {
+                            var urlicon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon;
+                            var urlRatingBaseIcon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon_hover;
+
+                            <a href="@url">
+                                <img src="@urlRatingBaseIcon">
+                                <img src="@urlicon">
+                                <p>@item.Rating_Category_Name</p>
+                                <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        }
+
+
+                        i = i + 1;
+                    }
+                    var urlotherRating = "/ICRA/Ratingscorporatesector?Rating_Category_Id=OtherRating";
+
+                    <a href="@urlotherRating">
+                        <img src="~/Content/images/icon-tab-other-rating.png">
+                        <img src="~/Content/images/icon-tab-other-rating-hover.png">
+                        <p>Other Ratings</p>
+                        <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                }
+
+            </div>
+        </div>
+    </section>
+
+
+
+    @Html.Partial("_AskOurIndustryBusinessRepresentative", "RatingCorporate")
+
+}
+<script src="~/Content/js/dataTables-min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var Rating_Category_Id = GetParameterValues('Rating_Category_Id');
+        var Company_Id = "0";
+        $.ajax({
+            url: '/ICRA/RatingLoad',
+            data: {
+                Company_Id: Company_Id,
+                Rating_Category_Id: Rating_Category_Id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                var response = response.Rating_Section3;
+                DataTableRender(response)
+
+            }
+        });
+
+        //----------------Auto Fill Start---------------
+        var availableTags = [];
+        Rating_Category_Id = "0";
+        Company_Id = "0";
+        $.ajax({
+            url: '/ICRA/RatingLoad',
+            data: {
+                Company_Id: Company_Id,
+                Rating_Category_Id: Rating_Category_Id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (response) {
+                var response = response.Rating_Section4;
+
+                $.each(response, function (key, item) {
+                    var data = { id: item.Company_Id, label: item.Company_Name };
+                    availableTags.push(data);
+                });
+            }
+        });
+        $("#txtSearchEntityName").autocomplete({
+            source: availableTags,
+            minLength: 3,
+            appendTo: ".abt_rating .search_hld",
+            select: function (event, ui) {
+                console.log(ui.item)
+                var e = ui.item;
+                console.log(e)
+                var host = window.location.host;
+                console.log(host)
+                let protocol = location.protocol;
+                var url = protocol + "//" + host + "/ICRA/RatingsDetail?Company_Id=" + e.id;
+                console.log(url)
+                window.open(url, "_self")
+            }
+        });
+        //---------------Auto Fill End----------------
+
+        function GetParameterValues(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    return urlparam[1];
+                }
+            }
+        }
+    });
+    function GetParameterValues1(param) {
+        var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < url.length; i++) {
+            var urlparam = url[i].split('=');
+            if (urlparam[0] == param) {
+                return urlparam[1];
+            }
+        }
+    }
+    function DataTableRender(response) {
+        var Rating_Category_Id = GetParameterValues1('Rating_Category_Id');
+
+        if ($.fn.DataTable.isDataTable('#entity_data_table')) {
+            $('#entity_data_table').DataTable().clear().destroy();
+        }
+        console.log(response)
+        $("#entity_data_table").DataTable({
+            data: response,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            columns: [
+                {
+                    "data": "Date"
+                },
+                {
+                    "data": "EntityName",
+                    'render': function (data, type, row, meta) {
+                        var url = "/ICRA/RatingsDetail?Company_Id=" + row.Company_Id;
+                        return '<a id="lnk" href="' + url + '">' + data + '</a>'
+                    }
+                },
+                { "data": "Instrument" },
+                { "data": "Ratings" },
+                {
+                    "data": "Downloads",
+                    "render": function (data, type, row, meta) {
+
+                        var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com/" + row.Downloads;
+                        return "<a href=" + url + " class='download' target='_blank'><span>Download</span></a>";
+
+                    }
+                },
+            ]
+        });
+    }
+</script>
+

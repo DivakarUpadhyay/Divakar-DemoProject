@@ -1,0 +1,16 @@
+﻿@model ICRA.Models.CsRSection2
+@{
+    Layout = null;
+}
+
+<div class="popup_hld csr_edu_popup clearfix">
+    <script>
+        if(window.onPopupLoadCheckHeight){
+            window.onPopupLoadCheckHeight();
+        }
+    </script>
+    <div class="popup_con">
+        <div class="title">@Model.title</div>
+        @Html.Raw(Model.long_Description)
+    </div>
+</div>

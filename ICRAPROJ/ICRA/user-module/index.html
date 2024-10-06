@@ -1,0 +1,637 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ICRA Limited</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" /> -->
+    <link href="~/Content/css/main-min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/ie-style-min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="user_module">
+    <div class="um_wrapper">
+        <!-- Sidebar Menu -->
+        <div id="icraSidebar" class="icra_sidebar isOpen">
+            <div class="icra_sidebar_header">
+                <img src="~/Content/images/user-module/icra-logo.png" class="lg_logo" alt="">
+                <img src="~/Content/images/user-module/icra-logo-sm.png" class="sm_logo" alt="">
+            </div>
+            <ul class="components">
+                <li>
+                    <a href="index.html" class="active">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-dashboard.png" alt=""></span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="my-account.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-account.png" alt=""></span>
+                        <span class="text">My Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-login.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-managelogin.png" alt=""></span>
+                        <span class="text">Manage Login</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="my-watchlist.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-mywatchlist.png" alt=""></span>
+                        <span class="text">My Watchlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="rating-analyzer.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-ratinganalyzer.png" alt=""></span>
+                        <span class="text">Rating Analyzer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="research-report.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-researchreport.png" alt=""></span>
+                        <span class="text">Research Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="credit-perspective-report.html">
+                        <span class="icon"><img src="~/Content/images/user-module/icon-menu-cpr.png" alt=""></span>
+                        <span class="text">Credit Perspective Report</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Wrapper-->
+        <div class="um_main isOpen" id="main">
+            <!-- Toggle Menu Header -->
+            <div class="um_toggle isOpen">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <button class="openbtn sidebar_toggle"><i class="fas fa-bars"></i></button>
+                    </div>
+                    <div class="col-auto">
+                        <a href="#" class="nav_link">
+                            <img src="~/Content/images/user-module/icon-menu-cart.png" alt="">
+                        </a>
+                        <a href="#" class="nav_link">
+                            <span class="notif_count">99</span>
+                            <img src="~/Content/images/user-module/icon-menu-notification.png" alt="">
+                        </a>
+                        <a class="nav_user">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <img src="~/Content/images/user-module/icon-menu-user.png" alt="">
+                                </div>
+                                <div class="col">
+                                    <p>
+                                        <span class="name">Mr. Yogesh Bhatani</span>
+                                        <span class="designation">Designation</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Container -->
+            <div class="um-container">
+                <h2 class="left_line">Dashboard</h2>
+                <div class="um_card">
+                    <div class="um_card_header">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h3><img src="~/Content/images/user-module/icon-rating-rationales.png" alt="">Rating
+                                    Rationales</h3>
+                            </div>
+                            <div class="col-auto">
+                                <div class="switch_filter_tab_hld um_tabs recent_subscriptions">
+                                    <div class="slider"></div>
+                                    <div class="tab active" tabId="recent">Recent</div>
+                                    <div class="tab" tabId="mySubscriptions">My Subscription</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="um_card-content">
+                        <div class="sorting_table um_table">
+                            <table id="subscriptionTable" class="" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Entity</th>
+                                        <th>Sector</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>Pratap Moto Private Limited : Ratings Reaffirmed At [ICRA] B+ Stable</td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>Pratap Moto Private Limited : Ratings Reaffirmed At [ICRA] B+ Stable</td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>Pratap Moto Private Limited : Ratings Reaffirmed At [ICRA] B+ Stable</td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>Pratap Moto Private Limited : Ratings Reaffirmed At [ICRA] B+ Stable</td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="um_card_footer">
+                        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="um_card">
+                    <div class="um_card_header">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h3><img src="~/Content/images/user-module/icon-research-report.png" alt="">Research
+                                    Reports</h3>
+                            </div>
+                            <div class="col-auto">
+                                <div class="switch_tab_hld um_tabs recent_subscriptions">
+                                    <div class="slider"></div>
+                                    <div class="tab active" tabId="recent">Recent</div>
+                                    <div class="tab" tabId="mySubscriptions">My Subscription</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="um_card-content">
+                        <div class="sorting_table um_table">
+                            <table id="researchReport" class="" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Entity</th>
+                                        <th>Sector</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In Plfs In
+                                            FY2021, While Solar Plfs Remained Stable
+                                            <div class="td-cta"><a href="#" class="subscribe"><span>Subscribe</span></a>
+                                            </div>
+                                        </td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In Plfs In
+                                            FY2021, While Solar Plfs Remained Stable
+                                            <div class="td-cta"><a href="#" class="download"><span>Download</span></a>
+                                            </div>
+                                        </td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18 Nov 2021</td>
+                                        <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In Plfs In
+                                            FY2021, While Solar Plfs Remained Stable
+                                            <div class="td-cta"><a href="#" class="subscribe"><span>Subscribe</span></a>
+                                            </div>
+                                        </td>
+                                        <td>Corporate Sector
+                                            <small>Automatic</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="um_card_footer">
+                        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="um_card">
+                    <div class="um_card_header">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h3><img src="~/Content/images/user-module/icon-cpr.png" alt="">Credit
+                                    Perspective Reports</h3>
+                            </div>
+                            <div class="col-auto">
+                                <div class="switch_tab_hld um_tabs recent_subscriptions">
+                                    <div class="slider"></div>
+                                    <div class="tab active" tabId="recent">Recent</div>
+                                    <div class="tab" tabId="mySubscriptions">My Subscription</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="watchlist-left">
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Construction</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-blue" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Information Technology & BPO</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-yellow" role="progressbar" style="width:60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Tourism Hotel and Restaurant</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-skyblue" role="progressbar"
+                                                    style="width:100%" aria-valuenow="100" aria-valuemin="0"
+                                                    aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Tourism Hotel and Restaurant</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-orange" role="progressbar"
+                                                    style="width:35%" aria-valuenow="35" aria-valuemin="0"
+                                                    aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Lorem Ipsum</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-dblue" role="progressbar"
+                                                    style="width:25%" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="50" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Lorem Ipsum</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-lorange" role="progressbar"
+                                                    style="width:65%" aria-valuenow="65" aria-valuemin="0"
+                                                    aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Lorem Ipsum</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-blue" role="progressbar"
+                                                    style="width:25%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-row">
+                                    <div class="form-row align-items-center">
+                                        <div class="col-sm-6">
+                                            <p>Lorem Ipsum</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-skyblue" role="progressbar"
+                                                    style="width:25%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100" data-toggle="tooltip" data-html="true" data-placement="right" title="Construction<br>Value - 555"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="watchlist-right">
+                                <div class="um_card-content">
+                                    <div class="sorting_table um_table">
+                                        <table id="researchReport" class="" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Entity</th>
+                                                    <th>Sector</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>Pandoul Flour Mills Private Limited
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>Pandoul Flour Mills Private Limited
+                                                        <div class="td-cta"><a href="#"
+                                                                class="download"><span>Download</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>Pandoul Flour Mills Private Limited
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="um_card_footer">
+                                    <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="watchlist-update">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="um_card">
+                                <div class="um_card_header">
+                                    <h3><img src="~/Content/images/user-module/icon-watchlist-1.png" alt="">Watchlist :
+                                        Company Update</h3>
+                                </div>
+                                <div class="um_card-content">
+                                    <div class="sorting_table um_table">
+                                        <table id="watchlistCompany" class="" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Entity</th>
+                                                    <th>Sector</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="download"><span>Download</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="um_card_footer">
+                                    <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="um_card">
+                                <div class="um_card_header">
+                                    <h3><img src="~/Content/images/user-module/icon-watchlist-2.png" alt="">Watchlist :
+                                        Research Updates</h3>
+                                </div>
+                                <div class="um_card-content">
+                                    <div class="sorting_table um_table">
+                                        <table id="watchlistCompany" class="" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Entity</th>
+                                                    <th>Sector</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="download"><span>Download</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18 Nov 2021</td>
+                                                    <td>ICRA-Monitored Wind Portfolio Witnessed A Significant Decline In
+                                                        Plfs In FY2021, While Solar Plfs Remained Stable
+                                                        <div class="td-cta"><a href="#"
+                                                                class="subscribe"><span>Subscribe</span></a></div>
+                                                    </td>
+                                                    <td>Corporate Sector
+                                                        <small>Automatic</small>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="um_card_footer">
+                                    <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="um_card">
+                    <div class="um_card_header">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h3><img src="~/Content/images/user-module/icon-my-subscriptions.png" alt="">My
+                                    Subscriptions</h3>
+                            </div>
+                            <div class="col-auto">
+                                <div class="switch_tab_hld um_tabs recent_subscriptions">
+                                    <div class="slider"></div>
+                                    <div class="tab active" tabId="recent">Recent</div>
+                                    <div class="tab" tabId="mySubscriptions">My Subscription</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="um_card-content">
+                        <div class="sorting_table um_table">
+                            <table id="mySubscriptions" class="" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Product Type</th>
+                                        <th>Sector</th>
+                                        <th>Sub-Sector</th>
+                                        <th>Entity</th>
+                                        <th>Report</th>
+                                        <th>Subscription Due</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Credit Perspective Report</td>
+                                        <td>All Sector</td>
+                                        <td>All Sub-Sector</td>
+                                        <td>NA</td>
+                                        <td>All</td>
+                                        <td>22 Nov 2020 To 21 Nov 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Credit Perspective Report</td>
+                                        <td>Housing Finance Company</td>
+                                        <td>-</td>
+                                        <td>NA</td>
+                                        <td>All</td>
+                                        <td>22 Nov 2020 To 21 Nov 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Research</td>
+                                        <td>Market Update</td>
+                                        <td>-</td>
+                                        <td>NA</td>
+                                        <td>All</td>
+                                        <td>22 Nov 2020 To 21 Nov 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Research</td>
+                                        <td>Market Update</td>
+                                        <td>-</td>
+                                        <td>NA</td>
+                                        <td>All</td>
+                                        <td>22 Nov 2020 To 21 Nov 2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="um_card_footer">
+                        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Content/js/common-lib-min.js"></script>
+    <script type="text/javascript" src="~/Content/js/dataTables-min.js"></script>
+    <script type="text/javascript" src="~/Content/js/main-min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        $(document).ready(function () {
+            $(".sidebar_toggle").click(function () {
+                $(".icra_sidebar, .um_main, .um_toggle").toggleClass("isOpen");
+            });
+            $('#subscriptionTable, #researchReport, #watchlistCompany, #mySubscriptions').DataTable({
+                "ordering": false,
+                "paging": false,
+            });
+        });
+    </script>
+</body>
+
+</html>

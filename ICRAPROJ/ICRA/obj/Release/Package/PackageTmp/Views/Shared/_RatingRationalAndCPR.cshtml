@@ -1,0 +1,291 @@
+﻿@model ICRA.Models.RatingResponse
+
+<section class="section">
+    <div class="container">
+        <div class="tiles_hld">
+            <div class="tiles">
+                <img src="~/Content/images/bg-rating-rationales.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Rating Rationales</h2>
+                <div class="tiles_con">
+                    @if (Model.Rating_Section7 != null)
+                    {
+                        int heart = 1;
+
+                        int topFive = 1;
+                        foreach (var item in Model.Rating_Section7)
+                        {
+                            var urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Rational_Report_Name;
+
+                            if (topFive <= 5)
+                            {
+                                var url = "/ICRA/RatingsDetail?Company_Id=" + item.Company_Id;
+                                <div class="cpr_blurb">
+                                    <div class="cpr_info">
+                                        <div class="date">
+                                            @item.Rational_Date
+                                            @if (heart == 1)
+                                            {
+                                                <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                heart = heart + 1;
+                                            }
+                                            else
+                                            {
+                                                <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                            }
+
+
+
+                                        </div>
+
+                                        <div class="rep_det_con">
+                                            <a href="@url">
+                                                <p>
+                                                    @{
+                                                        const int MaxLength = 152;
+                                                        var FinalTitle = "";
+                                                        if (item.Rational_Title.Length > MaxLength)
+                                                        {
+                                                            FinalTitle = item.Rational_Title.Substring(0, MaxLength);
+                                                            string dot = " ...";
+                                                            @FinalTitle@dot
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.Rational_Title
+                                                        }
+
+                                                    }
+                                                </p>
+                                            </a>
+
+                                            @{
+                                                const int MaxLengthToolTip = 152;
+                                                if (item.Rational_Title.Length > MaxLengthToolTip)
+                                                {<div class="tootip_con">
+                                                        @item.Rational_Title
+                                                    </div>
+                                                }
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    @{
+                                        var name = "Download";
+                                        <div class="cta_con">
+                                            <a href="@urlFull" target="_blank" class="download" download><img src="~/Content/images/icon-download.png" alt=""><span>@name</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                    }
+
+
+                                </div>
+                            }
+                            topFive = topFive + 1;
+                        }
+                    }
+                </div>
+                @if (Model.Rating_Section7 != null)
+                {
+                    if (Model.Rating_Section7.Count > 5)
+                    {
+                        @*<a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>*@
+                        <a href="#" class="link-button">View More</a>
+                    }
+                }
+                @*<div class="tiles_con">
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    15 Nov 2021
+                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction</p></a>
+                                    <div class="tootip_con">
+                                        Muthoot Microfin Limited: Rating confirmed as final for PTCs backed by micro loan receivables securitisation transaction
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download" download> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    15 Nov 2021
+                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</p></a>
+                                    <div class="tootip_con">Shriram Transport Finance Company Limited: Ratings withdrawn for PTCs and second loss facility issued under a vehicle loan securitisation transaction</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download" download> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cpr_blurb">
+                            <div class="cpr_info">
+                                <div class="date">
+                                    04 Nov 2021
+                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+                                </div>
+                                <div class="rep_det_con">
+                                    <a href="#"><p>Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</p></a>
+                                    <div class="tootip_con">Graphite India Limited: Ratings reaffirmed, outlook revised to Stable; rating assigned to the CP programme</div>
+                                </div>
+                            </div>
+                            <div class="cta_con">
+                                <a href="#" class="download" download> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                <div class="sharing_icons_con">
+                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="link-button">View More</a>*@
+            </div>
+            <div class="tiles">
+                <img src="~/Content/images/bg-rating-crediet-reports.jpg" alt="" class="bg_img">
+                <h2 class="left_line">Credit Prespective Reports</h2>
+                <div class="tiles_con">
+                    @if (Model.Rating_Section6 != null)
+                    {
+                        int heart = 1;
+
+                        int topFive = 1;
+                        foreach (var item in Model.Rating_Section6)
+                        {
+                            if (topFive <= 5)
+                            {
+                                // var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+                                <div class="cpr_blurb">
+                                    <div class="cpr_info">
+                                        <div class="date">
+                                            @item.Report_Date
+
+
+                                            <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+
+
+
+                                            @if (heart == 1)
+                                            {
+                                                <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                heart = heart + 1;
+                                            }
+                                            else
+                                            {
+                                                <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                            }
+
+
+
+                                        </div>
+
+                                        <div class="rep_det_con">
+                                            <a href="#">
+                                                <p>
+                                                    @{
+                                                        const int MaxLength = 152;
+                                                        var FinalTitle = "";
+                                                        if (item.Company_Name.Length > MaxLength)
+                                                        {
+                                                            FinalTitle = item.Company_Name.Substring(0, MaxLength);
+                                                            string dot = " ...";
+                                                            @FinalTitle@dot
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.Company_Name
+                                                        }
+
+                                                    }
+                                                </p>
+                                            </a>
+
+                                            @{
+                                                const int MaxLengthToolTip = 152;
+                                                if (item.Company_Name.Length > MaxLengthToolTip)
+                                                {<div class="tootip_con">
+                                                        @item.Company_Name
+                                                    </div>
+                                                }
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    @{var name = "Subscribe";
+                                        <div class="cta_con">
+                                            <a href="#" class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>@name</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                </div>
+                            }
+                            topFive = topFive + 1;
+                        }
+                    }
+                </div>
+                @if (Model.Rating_Section6 != null)
+                {
+                    if (Model.Rating_Section6.Count > 3)
+                    {
+                        @*<a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>*@
+                        <a href="#" class="link-button">View More</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,206 @@
+﻿
+@{
+    ViewBag.Title = "Investordividend";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" src="~/Scripts/ICRA_JS/investor-min.js"></script>
+
+<section id="banner" class="inner_banner inner_banner_ver_2">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-investor-detail-mob.jpg" />
+            <img src="~/Content/images/banner-investor-detail.jpg" alt="ICRA Research" />
+        </picture>
+        <div class="container">
+            <div class="banner_det investor_banner">
+                <h1>Investor Relations</h1>
+                <p>Financial Results Q3  FY 2021</p>
+                <a href="#" class="button">
+                    <span>
+                        <i class="fas fa-download"></i>
+                        Download
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a><a href="investor-relations.html">Investor Relations</a>Unpaid/Unclaimed Dividend
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="inv_det_hld inv_financial_performance">
+
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="investor-financial-performance.html" class="nav-link">Financial Performance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-analyst-presentation.html" class="nav-link">Analyst Presentation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-corporate-governance.html" class="nav-link">Corporate Governance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-communication.html" class="nav-link">Investor Communication</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-shareholding-pattern.html" class="nav-link">Shareholding Pattern</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-dividend.html" class="nav-link active">Unpaid/Unclaimed Dividend</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-corporate-announcements.html" class="nav-link">Corporate Announcements</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-board-meetings.html" class="nav-link">Board Meetings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-share-buyback.html" class="nav-link">Share Buyback</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-annual-return.html" class="nav-link">Annual Return</a>
+                </li>
+            </ul>
+
+            <div id="content" class="tab-content" role="tablist">
+
+                <div id="pane-financial_performance" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-financial_performance">
+                    <div class="card-header" role="tab" id="heading-financial_performance">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-financial-performance.html">
+                                Financial Performance
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-analyst_presentation" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-analyst_presentation">
+                    <div class="card-header" role="tab" id="heading-analyst_presentation">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-analyst-presentation.html">
+                                Analyst Presentation
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-corporate_governance" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-corporate_governance">
+                    <div class="card-header" role="tab" id="heading-corporate_governance">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-corporate-governance.html">
+                                Corporate Governance
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+
+                <div id="pane-investor_communication" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-investor_communication">
+                    <div class="card-header" role="tab" id="heading-investor_communication">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-communication.html">
+                                Investor Communication
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-shareholding_pattern" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-shareholding_pattern">
+                    <div class="card-header" role="tab" id="heading-shareholding_pattern">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-shareholding-pattern.html">
+                                Shareholding Pattern
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-dividend" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-dividend">
+                    <div class="card-header" role="tab" id="heading-dividend">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-dividend" aria-expanded="true" aria-controls="collapse-dividend">
+                                Unpaid/Unclaimed Dividend
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapse-dividend" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-dividend">
+                        <div class="card-body">
+                            <select name="" id="" class="selectBox big_selectBox">
+                                <option value="">Financial Year</option>
+                                <option value="FY 2021-2022">FY 2021-2022</option>
+                                <option value="FY 2020-2021">FY 2020-2021</option>
+                                <option value="FY 2019-2020">FY 2019-2020</option>
+                                <option value="FY 2018-2019">FY 2018-2019</option>
+                                <option value="FY 2017-2018">FY 2017-2018</option>
+                                <option value="FY 2016-2017">FY 2016-2017</option>
+                                <option value="FY 2015-2016">FY 2015-2016</option>
+                                <option value="FY 2014-2015">FY 2014-2015</option>
+                                <option value="FY 2013-2014">FY 2013-2014</option>
+                                <option value="FY 2011-2012">FY 2011-2012</option>
+                                <option value="FY 2010-2011">FY 2010-2011</option>
+                            </select>
+
+                            <ul class="report_links">
+                                <li><a href="#">Financial Year 2016-17</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-corporate_announcements" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-corporate_announcements">
+                    <div class="card-header" role="tab" id="heading-corporate_announcements">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-corporate-announcements.html">
+                                Corporate Announcements
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-board_meetings" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-board_meetings">
+                    <div class="card-header" role="tab" id="heading-board_meetings">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-board-meetings.html">
+                                Board Meetings
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-share_buyback" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-share_buyback">
+                    <div class="card-header" role="tab" id="heading-share_buyback">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-share-buyback.html">
+                                Share Buyback
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="pane-annual_return" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-annual_return">
+                    <div class="card-header" role="tab" id="heading-annual_return">
+                        <h5 class="mb-0">
+                            <a class="collapsed" href="investor-annual-return.html">
+                                Annual Return
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

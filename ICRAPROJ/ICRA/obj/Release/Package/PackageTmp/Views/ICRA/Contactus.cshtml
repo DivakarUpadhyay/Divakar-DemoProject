@@ -1,0 +1,731 @@
+﻿@model ICRA.Models.ContactusResponse
+@{
+    ViewBag.Title = "Contactus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ICRA.Models.CommonMethods bannerObj = new ICRA.Models.CommonMethods();
+    var getImagebanner = bannerObj.ReadImage(Model.contactUs_Section1.desktop_image);
+    var getImageresponsiveimage = bannerObj.ReadImage(Model.contactUs_Section1.responsive_image);
+
+    <section id="banner" class="inner_banner">
+        <div class="banner_item">
+            <picture>
+                <source media="(max-width:767px)" srcset="getImageresponsiveimage" />
+                <img src="@getImagebanner" alt="Contact Us" />
+            </picture>
+            <div class="container">
+                <div class="banner_det">
+                    <h1>@Model.contactUs_Section1.title1</h1>
+                    <p>@Html.Raw(Model.contactUs_Section1.title2)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a>Contact Us
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact_block_hld">
+                <div class="block_large">
+                    <div class="med-cont-wrapper">
+                        <img src="~/Content/images/bg-business-contact.jpg" alt="" class="bg-Img" />
+                        <h2 class="left_line">Business Contact</h2>
+                        <div class="contacts">
+                            <div class="row">
+                                @foreach (var item in Model.contactUs_Section2)
+                                {
+                                    if (item.category_Id == 1)
+                                    {
+                                        <div class="col-md-12">
+                                            <div class="med-cont-list">
+                                                <h6>@item.name</h6>
+                                                <a href="mailto:@item.email" class="mail">@item.email</a>
+                                                <span class="phone">@item.phone</span>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_small blue_2554e0_bg">
+                    <div class="block_form_con">
+                        <h2 class="left_line">Get a Call Back</h2>
+                        <div class="wp_controlers">
+                            <div class="wp_control">
+                                <input type="text" id="txtNamecallback" onkeypress="return isAlfa(this);" placeholder="Name*" class="textBox">
+                                <div class="errMsg" id="Nameerrocallback" style="display:none;"></div>
+
+                            </div>
+                            <div class="wp_control">
+                                <input type="text" id="txtEmailIdcallback" placeholder="Email ID*" class="textBox">
+                                <div class="errMsg" id="Emailerrocallback" style="display:none;"></div>
+
+                            </div>
+                            <div class="wp_control">
+                                <input type="text" id="txtContactNumbercallback" pattern="^[0-9]*$" maxlength="15" onkeypress="return onlyNumberKey(this);" placeholder="Contact Number*" class="textBox">
+                                <div class="errMsg" id="ContactNumbererrocallback" style="display:none;"></div>
+
+                            </div>
+                        </div>
+                        <div class="button" id="btnSubmitcallback" onclick="return EmailInsert('callback');"><span>Submit</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section remove_sect_bot_pad">
+        <div class="media_communication">
+            <img src="~/Content/images/bg-media-communication.jpg" alt="" class="bg-Img" />
+            <div class="container">
+                <div class="med-cont-wrapper">
+                    <h2 class="left_line">Media and Corporate Communications</h2>
+                    <div class="contacts">
+                        <div class="row">
+                            @foreach (var item in Model.contactUs_Section2)
+                            {
+                                if (item.category_Id == 2)
+                                {
+                                    <div class="col-md-6">
+                                        <div class="med-cont-list">
+                                            <h6>@item.name</h6>
+                                            <p>@item.designation</p>
+                                            <a href="mailto:@item.email" class="mail">@item.email</a>
+                                            <a href="tel: @item.phone" class="phone">@item.phone</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gray_bg extent_sect_top_pad">
+        <div class="container">
+            <div class="contact_block_hld">
+                <div class="med-cont-wrapper">
+                    <img src="~/Content/images/bg-research-contact.jpg" alt="" class="bg-Img" />
+                    <h2 class="left_line">Research Contact</h2>
+                    <div class="contacts">
+                        <div class="row">
+                            @foreach (var item in Model.contactUs_Section2)
+                            {
+                                if (item.category_Id == 3)
+                                {
+                                    <div class="col-md-12">
+                                        <div class="med-cont-list">
+                                            <h6>@item.name</h6>
+                                            <a href="mailto:@item.email" class="mail">@item.email</a>
+                                            <a href="tel: @item.boardlineDirect" class="phone"><span>Boardline</span> - @item.boardlineDirect </a>
+                                            <a href="tel: @item.direct" class="phone"><span>Direct</span> - @item.direct</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gray_bg contacts_investor_block">
+        <div class="container">
+            <div class="contact_block_hld">
+                <div class="block_large">
+                    <div class="med-cont-wrapper">
+                        <img src="~/Content/images/bg-business-contact.jpg" alt="" class="bg-Img" />
+                        <div class="contacts">
+                            <div class="row">
+                                @foreach (var item in Model.contactUs_Section2)
+                                {
+                                    if (item.category_Id == 4)
+                                    {
+
+                                        <div class="col-md-12">
+                                            <h2 class="left_line">Investor Relations</h2>
+                                            <div class="med-cont-list">
+                                                <h6>@item.name</h6>
+                                                <a href="mailto:@item.email" class="mail">@item.email</a>
+                                                <a href="tel: @item.phone" class="phone">@item.phone</a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                @foreach (var item in Model.contactUs_Section2)
+                                {
+                                    if (item.category_Id == 5)
+                                    {
+                                        <div class="col-md-12">
+                                            <h2 class="left_line">Rating Investor Grievances</h2>
+                                            <div class="med-cont-list">
+                                                <h6>@item.name</h6>
+                                                <a href="mailto:@item.email" class="mail">@item.email</a>
+                                                <a href="tel: @item.phone" class="phone">@item.phone</a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block_small blue_2554e0_bg">
+                    <div class="block_form_con">
+                        <div id="tabdata_01">
+                            <div class="switch_tab_hld">
+                                <div class="slider"></div>
+                                <div class="tab active" tabId="industry_analyst">Ask Our Industry Analyst</div>
+                                <div class="tab" tabId="ask_our_bd">Ask Our BD</div>
+                            </div>
+
+                            <div class="switch_det_panel show" id="tab_industry_analyst">
+
+                                <div class="wp_controlers">
+                                    <div class="wp_control">
+                                        <input type="text" id="txtNameAskOurIndustry" placeholder="Name*" onkeypress="return isAlfa(this);" class="textBox">
+                                        <div class="errMsg" id="lblNameAskOurIndustry" style="display:none"></div>
+                                    </div>
+                                    <div class="wp_control">
+                                        <input type="text" id="txtEmailIdAskOurIndustry" placeholder="Email ID*" class="textBox">
+                                        <div class="errMsg" id="lblEmailIdAskOurIndustry" style="display:none"></div>
+                                    </div>
+                                    <div class="wp_control">
+                                        <input type="text" id="txtContactNumberAskOurIndustry" pattern="^[0-9]*$" maxlength="15" onkeypress="return onlyNumberKey(this);" placeholder="Contact Number*" class="textBox">
+                                        <div class="errMsg" id="lblContactNumberAskOurIndustry" style="display:none"></div>
+
+                                    </div>
+                                </div>
+                                <div class="button" id="btnSubmitindustry" onclick="return EmailInsert('askIndustry');"><span>Submit</span></div>
+                            </div>
+                            <div class="switch_det_panel" id="tab_ask_our_bd">
+
+                                <div class="wp_controlers">
+                                    <div class="wp_control">
+                                        <input type="text" id="txtNameaskbd" placeholder="Name*" onkeypress="return isAlfa(this);" class="textBox">
+                                        <div class="errMsg" id="lblNameaskbd" style="display:none;"></div>
+                                    </div>
+                                    <div class="wp_control">
+                                        <input type="text" id="txtEmailIdaskbd" placeholder="Email ID*" class="textBox">
+                                        <div class="errMsg" id="lblEmailIdaskbd" style="display:none;"></div>
+                                    </div>
+                                    <div class="wp_control">
+                                        <input type="text" id="txtContactNumberaskbd" pattern="^[0-9]*$" maxlength="15" onkeypress="return onlyNumberKey(this);" placeholder="Contact Number*" class="textBox">
+                                        <div class="errMsg" id="lblContactNumberaskbd" style="display:none;"></div>
+                                    </div>
+                                </div>
+                                <div class="button" id="btnSubmitaskbd" onclick="return EmailInsert('askbd');"><span>Submit</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section address gray_bg">
+        <div class="container">
+            <div class="contact_block_hld">
+                <div class="block_large office_add_hld">
+                    <div class="add_con">
+                        <h2 class="left_line">Regional Office</h2>
+                        <div class="med-cont-wrapper">
+                            <div class="contacts">
+                                <div class="row">
+                                    @foreach (var item in Model.contactUs_Section3)
+                                    {
+                                        if (item.category_Id == 1)
+                                        {
+
+                                            <div class="col-md-12">
+                                                <div class="med-cont-list">
+                                                    <h6>@item.city</h6>
+                                                    <span class="location">@item.address</span>
+                                                    <a href="tel:@item.phone" class="phone">@item.phone</a>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add_con">
+                        <h2 class="left_line">Registered Office</h2>
+                        @{
+
+                            var MultipleRecord = Model.contactUs_Section3.GroupBy(c => c.city).Where(grp => grp.Count() > 1);
+                            var SingleRecord = Model.contactUs_Section3.GroupBy(c => c.city).Where(grp => grp.Count() == 1);
+
+
+                            foreach (var single in SingleRecord)
+                            {
+                                var city = single.Key as string;
+
+                                <div class="med-cont-wrapper">
+                                    <div class="contacts">
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="med-cont-list">
+                                                    <h6>@city</h6>
+                                                    @foreach (var addressphonesingle in single)
+                                                    {
+                                                        <span class="location">@addressphonesingle.address</span>
+                                                        <a href="tel:@addressphonesingle.phone" class="phone">@addressphonesingle.phone</a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            }
+                            foreach (var itemcheck in MultipleRecord)
+                            {
+                                var city = itemcheck.Key as string;
+
+                                <div class="med-cont-wrapper">
+                                    <div class="contacts">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="med-cont-list">
+
+                                                    <h6>@city</h6>
+                                                    <div class="row add_col_2">
+                                                        @foreach (var addressphone in itemcheck)
+                                                        {
+                                                            <div class="col-md-6">
+                                                                <span class="location">@addressphone.address</span>
+                                                                <a href="tel:@addressphone.phone" class="phone">@addressphone.phone</a>
+                                                            </div>
+                                                        }
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+
+
+
+
+
+
+                        }
+
+
+
+                    </div>
+                </div>
+
+                <div class="block_small">
+                    <div class="icra_group">
+                        <div class="contact_icra_grp">
+                            <div class="icra_grp_title">
+                                <h2 class="left_line">The ICRA Group</h2>
+                            </div>
+                            <a href="https://www.moodys.com/" target="_blank" class="icra_grp_title">
+                                <h2 class="left_line">Moody's</h2>
+                            </a>
+                        </div>
+
+                        <div class="group_type_hld">
+                            @foreach (var itemicra in Model.contactUs_Section4)
+                            {
+                                ICRA.Models.CommonMethods grouplogoObj = new ICRA.Models.CommonMethods();
+                                var getImagegrouplogoObj = grouplogoObj.ReadImage(itemicra.Logo);
+                                <a href="@itemicra.URL" target="_blank" class="group_type_blurb">
+                                    <div class="grp_overlay"></div>
+                                    <div class="group_det">
+                                        <div class="group_logo">
+                                            <img src="@getImagegrouplogoObj" alt="ICRA Company">
+                                        </div>
+                                        <p>@Html.Raw(itemicra.Description)</p>
+                                        <div class="button" @Url.Action(itemicra.URL)><span>Learn More</span></div>
+                                    </div>
+                                </a>
+                            }
+
+
+                        </div>
+                    </div>
+
+                    <div class="desk_hld">
+                        <div class="desk_blurb other_desk_hld blue_2554e0_bg">
+                            <a href="" class="other_desk">
+                                <img src="~/Content/images/banner-careers.jpg" alt="Career" class="img_bg">
+                                <div>
+                                    <h3 class="desk_title">Careers</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        //----------Divakar Upadhyay 22 Jan 2022 Get Call Back Start----------------
+        $("#txtNamecallback").keyup(function () {
+            if ($("#txtNamecallback").val() == "") {
+                $("#Nameerrocallback").css('display', 'block');
+                $("#Nameerrocallback").text("Please Enter Name")
+                $("#txtNamecallback").focus();
+                return false;
+            } else {
+
+                $("#Nameerrocallback").css('display', 'none');
+            }
+
+        })
+        $("#txtEmailIdcallback").keyup(function () {
+            if ($("#txtEmailIdcallback").val() == "") {
+                $("#Emailerrocallback").css('display', 'block');
+                $("#Emailerrocallback").text("Please Enter Email Id")
+                $("#txtEmailIdcallback").focus();
+                return false;
+            } else {
+
+                var email = $("#txtEmailIdcallback").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#Emailerrocallback").css('display', 'none');
+                } else {
+                    $("#Emailerrocallback").css('display', 'block');
+                    $("#Emailerrocallback").text("Please Enter Valid Email Id");
+                }
+
+            }
+
+
+        })
+        $("#txtContactNumbercallback").keyup(function () {
+            if ($("#txtContactNumbercallback").val() == "") {
+                $("#ContactNumbererrocallback").css('display', 'block');
+                $("#ContactNumbererrocallback").text("Please Enter Contact Number")
+                $("#txtContactNumbercallback").focus();
+                return false;
+            } else {
+
+                $("#ContactNumbererrocallback").css('display', 'none');
+            }
+
+
+        })
+        //----------Divakar Upadhyay 22 Jan 2022 Get Call Back End----------------
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry Start----------------
+        $("#txtNameAskOurIndustry").keyup(function () {
+            if ($("#txtNameAskOurIndustry").val() == "") {
+                $("#lblNameAskOurIndustry").css('display', 'block');
+                $("#lblNameAskOurIndustry").text("Please Enter Name")
+                $("#txtNameAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblNameAskOurIndustry").css('display', 'none');
+            }
+
+        })
+        $("#txtEmailIdAskOurIndustry").keyup(function () {
+            if ($("#txtEmailIdAskOurIndustry").val() == "") {
+                $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                $("#lblEmailIdAskOurIndustry").text("Please Enter Email Id")
+                $("#txtEmailIdAskOurIndustry").focus();
+                return false;
+            } else {
+                var email = $("#txtEmailIdAskOurIndustry").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmailIdAskOurIndustry").css('display', 'none');
+                } else {
+                    $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                    $("#lblEmailIdAskOurIndustry").text("Please Enter Valid Email Id");
+                }
+                
+            }
+
+
+        })
+        $("#txtContactNumberAskOurIndustry").keyup(function () {
+            if ($("#txtContactNumberAskOurIndustry").val() == "") {
+                $("#lblContactNumberAskOurIndustry").css('display', 'block');
+                $("#lblContactNumberAskOurIndustry").text("Please Enter Contact Number")
+                $("#txtContactNumberAskOurIndustry").focus();
+                return false;
+            } else {
+
+                $("#lblContactNumberAskOurIndustry").css('display', 'none');
+            }
+
+
+        })
+        //----------Divakar Upadhyay 22 Jan 2022 Ask Industry End----------------
+
+        //----------Divakar Upadhyay 22 Jan 2022 Ask BD Start----------------
+        $("#txtNameaskbd").keyup(function () {
+            if ($("#txtNameaskbd").val() == "") {
+                $("#lblNameaskbd").css('display', 'block');
+                $("#lblNameaskbd").text("Please Enter Name")
+                $("#txtNameaskbd").focus();
+                return false;
+            } else {
+
+                $("#lblNameaskbd").css('display', 'none');
+            }
+
+        })
+        $("#txtEmailIdaskbd").keyup(function () {
+            if ($("#txtEmailIdaskbd").val() == "") {
+                $("#lblEmailIdaskbd").css('display', 'block');
+                $("#lblEmailIdaskbd").text("Please Enter Email Id")
+                $("#txtEmailIdaskbd").focus();
+                return false;
+            } else {
+                var email = $("#txtEmailIdaskbd").val();
+
+                if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                    $("#lblEmailIdaskbd").css('display', 'none');
+                } else {
+                    $("#lblEmailIdaskbd").css('display', 'block');
+                    $("#lblEmailIdaskbd").text("Please Enter Valid Email Id");
+                }
+              
+            }
+
+
+        })
+        $("#txtContactNumberaskbd").keyup(function () {
+            if ($("#txtContactNumberaskbd").val() == "") {
+                $("#lblContactNumberaskbd").css('display', 'block');
+                $("#lblContactNumberaskbd").text("Please Enter Contact Number")
+                $("#txtContactNumberaskbd").focus();
+                return false;
+            } else {
+
+                $("#lblContactNumberaskbd").css('display', 'none');
+            }
+
+
+        })
+
+        //----------Divakar Upadhyay 22 Jan 2022 Ask BD End----------------
+        function EmailInsert(section)
+        {
+            if (section == 'callback') {
+                if ($("#txtNamecallback").val() == "") {
+                    $("#Nameerrocallback").css('display', 'block');
+                    $("#Nameerrocallback").text("Please Enter Name")
+                    $("#txtNamecallback").focus();
+                    return false;
+                } else {
+
+                    $("#Nameerrocallback").css('display', 'none');
+                }
+                if ($("#txtEmailIdcallback").val() == "") {
+                    $("#Emailerrocallback").css('display', 'block');
+                    $("#Emailerrocallback").text("Please Enter Email Id")
+                    $("#txtEmailIdcallback").focus();
+                    return false;
+                } else {
+
+                    var email = $("#txtEmailIdcallback").val();
+
+                    if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                        $("#Emailerrocallback").css('display', 'none');
+                    } else {
+                        $("#Emailerrocallback").css('display', 'block');
+                        $("#Emailerrocallback").text("Please Enter Valid Email Id");
+                    }
+                }
+
+                if ($("#txtContactNumbercallback").val() == "") {
+                    $("#ContactNumbererrocallback").css('display', 'block');
+                    $("#ContactNumbererrocallback").text("Please Enter Contact Number")
+                    $("#txtContactNumbercallback").focus();
+                    return false;
+                } else {
+
+                    $("#ContactNumbererrocallback").css('display', 'none');
+                }
+
+                var data = {
+                    Category_Id: "6",
+                    Name: $("#txtNamecallback").val(),
+                    Email: $("#txtEmailIdcallback").val() ,
+                    ContactNumber: $("#txtContactNumbercallback").val(),
+                    WebPageName: "Contactus"
+                };
+
+            }
+            else if (section == 'askIndustry') {
+                if ($("#txtNameAskOurIndustry").val() == "") {
+                    $("#lblNameAskOurIndustry").css('display', 'block');
+                    $("#lblNameAskOurIndustry").text("Please Enter Name")
+                    $("#txtNameAskOurIndustry").focus();
+                    return false;
+                } else {
+
+                    $("#lblNameAskOurIndustry").css('display', 'none');
+                }
+                if ($("#txtEmailIdAskOurIndustry").val() == "") {
+                    $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                    $("#lblEmailIdAskOurIndustry").text("Please Enter Email Id")
+                    $("#txtEmailIdAskOurIndustry").focus();
+                    return false;
+                } else {
+                    var email = $("#txtEmailIdAskOurIndustry").val();
+                    if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                        $("#lblEmailIdAskOurIndustry").css('display', 'none');
+                    } else {
+                        $("#lblEmailIdAskOurIndustry").css('display', 'block');
+                        $("#lblEmailIdAskOurIndustry").text("Please Enter Valid Email Id");
+                    }
+                }
+
+
+                if ($("#txtContactNumberAskOurIndustry").val() == "") {
+                    $("#lblContactNumberAskOurIndustry").css('display', 'block');
+                    $("#lblContactNumberAskOurIndustry").text("Please Enter Contact Number")
+                    $("#txtContactNumberAskOurIndustry").focus();
+                    return false;
+                } else {
+
+                    $("#lblContactNumberAskOurIndustry").css('display', 'none');
+                }
+
+                var data = {
+                    Category_Id: "7",
+                    Name: $("#txtNameAskOurIndustry").val(),
+                    Email: $("#txtEmailIdAskOurIndustry").val(),
+                    ContactNumber: $("#txtContactNumberAskOurIndustry").val(),
+                    WebPageName: "Contactus"
+                };
+
+            } else {
+                if ($("#txtNameaskbd").val() == "") {
+                    $("#lblNameaskbd").css('display', 'block');
+                    $("#lblNameaskbd").text("Please Enter Name")
+                    $("#txtNameaskbd").focus();
+                    return false;
+                } else {
+
+                    $("#lblNameaskbd").css('display', 'none');
+                }
+                if ($("#txtEmailIdaskbd").val() == "") {
+                    $("#lblEmailIdaskbd").css('display', 'block');
+                    $("#lblEmailIdaskbd").text("Please Enter Email Id")
+                    $("#txtEmailIdaskbd").focus();
+                    return false;
+                } else {
+                    var email = $("#txtEmailIdaskbd").val();
+                    if (/^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+                        $("#lblEmailIdaskbd").css('display', 'none');
+                    } else {
+                        $("#lblEmailIdaskbd").css('display', 'block');
+                        $("#lblEmailIdaskbd").text("Please Enter Valid Email Id");
+                    }
+                   
+                }
+
+                if ($("#txtContactNumberaskbd").val() == "") {
+                    $("#lblContactNumberaskbd").css('display', 'block');
+                    $("#lblContactNumberaskbd").text("Please Enter Contact Number")
+                    $("#txtContactNumberaskbd").focus();
+                    return false;
+                } else {
+
+                    $("#lblContactNumberaskbd").css('display', 'none');
+                }
+                var data = {
+                    Category_Id: "8",
+                    Name: $("#txtNameaskbd").val() ,
+                    Email: $("#txtEmailIdaskbd").val() ,
+                    ContactNumber: $("#txtContactNumberaskbd").val(),
+                    WebPageName: "Contactus"
+                };
+
+            }
+            console.log(data)
+            var json = JSON.stringify(data);
+            console.log(json)
+            $.ajax({
+                type: "POST",
+                url: "/ICRA/InsertContactUs_Email",
+                data: json,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.Status == 200) {
+                        alert("Data Saved Successfully")
+                        $("#txtNamecallback").val('')
+                        $("#txtEmailIdcallback").val('')
+                        $("#txtContactNumbercallback").val('')
+
+                        $("#txtNameAskOurIndustry").val('')
+                        $("#txtEmailIdAskOurIndustry").val('')
+                        $("#txtContactNumberAskOurIndustry").val('')
+
+                        $("#txtNameaskbd").val('')
+                        $("#txtEmailIdaskbd").val('')
+                        $("#txtContactNumberaskbd").val('')
+
+                    } else {
+                        alert("Data Save Failed")
+                    }
+                }
+            });
+        }
+        function isAlfa(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 32 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
+                return false;
+            }
+            return true;
+        }
+
+        function isNumber(evt) {
+            var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+            if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                return false;
+
+            return true;
+        }
+        function onlyNumberKey(evt) {
+
+            // Only ASCII character in that range allowed
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+    </script>
+
+
+}

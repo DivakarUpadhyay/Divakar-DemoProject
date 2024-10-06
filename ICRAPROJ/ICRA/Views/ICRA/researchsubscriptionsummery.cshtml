@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "researchsubscriptionsummery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="banner" class="inner_banner inner_banner_ver_2">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-research-corporate-sector-mob.jpg" />
+            <img src="~/Content/images/banner-research-corporate-sector.jpg" alt="Credit Perspective Reports" />
+        </picture>
+        <div class="container">
+            <div class="banner_det investor_banner">
+                <h1>Research Subscription</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research Services</a>
+        <a href="research-corporate-sector.html">Research Reports</a>
+        Subscription
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="subscribe_panel">
+            <div class="sector_subscribe">
+                <div class="sector_filter_con">
+                    <h2 class="left_line">Subscribe a sector</h2>
+                    <div class="filer_controllers sector_con">
+                        <h3>Category</h3>
+                        <select name="sectors" class="selectBox">
+                            <option value="">Select Category</option>
+                            <option value="">Agriculture Produce</option>
+                            <option value="">Banks</option>
+                            <option value="">Chemicals</option>
+                        </select>
+                    </div>
+                    <div class="filer_controllers sub_sector_con">
+                        <h3>Sector</h3>
+                        <div class="check_box_hld">
+                            <div class="scroll_hld">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-01">
+                                    <label for="chk-01">Cashews</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-02">
+                                    <label for="chk-02">Others</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-03">
+                                    <label for="chk-03">Pulses and Other Milling</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-04">
+                                    <label for="chk-04">Rice mills</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-05">
+                                    <label for="chk-05">Spices</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-06">
+                                    <label for="chk-06">Cashews</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-07">
+                                    <label for="chk-07">Others</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="chk-08">
+                                    <label for="chk-08">Pulses and Other Milling</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sector_result_con">
+                    <div class="note_to_subscribe">If you want to subscribe to all the sectors you please reach out to us at <a href="mailto:abc@gmail.com">abc@gmail.com</a></div>
+                    <div class="no_sector_selected">
+                        <p>No Sector selected</p>
+                    </div>
+                    <div class="scroll_hld result_blurb_hld">
+                        <div class="result_blurb">
+                            <div class="result result_sector">
+                                <div>
+                                    <div class="res_title">Category</div>
+                                    <p>Agriculture Produce</p>
+                                </div>
+                                <!-- <div class="button prime"><span>Subscribe to Entire Sector</span></div> -->
+                            </div>
+                            <div class="result result_sub_sector">
+                                <p>Please select a sector</p>
+                                <div class="sector_det">
+                                    <div>
+                                        <div class="res_title">Sector</div>
+                                        <div class="sub_sec_slected">
+                                            <span>Pulses and Other Milling <i class="close_sub_sect fas fa-times"></i></span>
+                                            <span>Spices <i class="close_sub_sect fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                            <i class="close_result fas fa-times"></i>
+                        </div>
+
+                        <div class="result_blurb">
+                            <div class="result result_sector">
+                                <div>
+                                    <div class="res_title">Category</div>
+                                    <p>Banks</p>
+                                </div>
+                                <!-- <div class="button prime"><span>Subscribe to Entire Sector</span></div> -->
+                            </div>
+                            <div class="result result_sub_sector">
+                                <p>Please select a sector</p>
+                                <div class="sector_det">
+                                    <div>
+                                        <div class="res_title">Sector</div>
+                                        <div class="sub_sec_slected">
+                                            <span>Pulses and Other Milling <i class="close_sub_sect fas fa-times"></i></span>
+                                            <span>Spices <i class="close_sub_sect fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                            <i class="close_result fas fa-times"></i>
+                        </div>
+                        <div class="result_blurb">
+                            <div class="result result_sector">
+                                <div>
+                                    <div class="res_title">Category</div>
+                                    <p>Chemicals</p>
+                                </div>
+                                <!-- <div class="button prime"><span>Subscribe to Entire Sector</span></div> -->
+                            </div>
+                            <div class="result result_sub_sector">
+                                <p>Please select a sector</p>
+                                <div class="sector_det">
+                                    <div>
+                                        <div class="res_title">Sector</div>
+                                        <div class="sub_sec_slected">
+                                            <span>Pulses and Other Milling <i class="close_sub_sect fas fa-times"></i></span>
+                                            <span>Spices <i class="close_sub_sect fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                            <i class="close_result fas fa-times"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

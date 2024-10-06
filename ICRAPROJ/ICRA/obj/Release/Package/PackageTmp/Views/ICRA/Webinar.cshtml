@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewBag.Title = "Webinar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="banner" class="inner_banner">
+    <div class="banner_item">
+        <picture>
+            <source media="(max-width:767px)" srcset="~/Content/images/banner-webinar-mob.jpg" />
+            <img src="~/Content/images/banner-webinar.jpg" alt="Webinar" />
+        </picture>
+        <div class="container">
+            <div class="banner_det">
+                <h1>Webinar</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <a href="@Url.Action("Index","ICRA")">Home</a><a href="@Url.Action("Mediaandevents","ICRA")">Media</a>Webinar
+    </div>
+</div>
+
+<div class="section media_print">
+    <div class="container">
+        <div class="media_print_filter">
+            <div class="rating_filter_box_hld" style="display:block;">
+                <div class="rating_filter_box">
+                    <div class="wp_control">
+                        <select class="selectBox">
+                            <option>Sector</option>
+                        </select>
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="From" class="form-control" id="fromDate" autocomplete="off">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wp_control">
+                        <div class="input-group date">
+                            <input type="text" placeholder="To" class="form-control" id="toDate" autocomplete="off">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button"><span>Search</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="media_print_wrapper">
+            <img src="~/Content/images/banner-webinar-report.jpg" alt="" class="bg_img">
+            <div class="media_print_inner">
+                <div class="web_print_list">
+                    <div class="date">
+                        <span>28 Feb 2022</span><span>04:00 PM</span>
+                    </div>
+                    <a href="#"><p>Trends &amp;utlook: Indian Tractor Industry | Industry growth falters as farm sentiments moderate </p></a>
+                    <div class="author">--By Mr. Shamsher Dewan,Mr. Srikumar Krishnamurthy,Mr. Rohan Kanwar Gupta,Mr. Shivam Nagpal</div>
+                    <div class="controllers_hld">
+                        <a href="#" class="pdf"><i class="fas fa-file-pdf"></i><span>PDF</span></a>
+                        <a href="#" class="transcript"><img src="~/Content/images/icon-transcript.png" alt=""><span>Transcript</span></a>
+                        <div class="audio_con">
+                            <img src="~/Content/images/icon-audio.jpg" alt="" class="icon_audio">
+                            <audio controls="">
+                                <source src="~/Content/audio/demo-file.mp3" type="audio/ogg">
+                                <source src="~/Content/audio/demo-file.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="web_print_list">
+                    <div class="date">
+                        <span>28 Feb 2022</span><span>04:00 PM</span>
+                    </div>
+                    <a href="#"><p>Trends &amp;utlook: Indian Tractor Industry | Industry growth falters as farm sentiments moderate </p></a>
+                    <div class="author">--By Mr. Shamsher Dewan,Mr. Srikumar Krishnamurthy,Mr. Rohan Kanwar Gupta,Mr. Shivam Nagpal</div>
+                </div>
+
+                <div class="web_print_list">
+                    <div class="date">
+                        <span>28 Feb 2022</span><span>04:00 PM</span>
+                    </div>
+                    <a href="#"><p>Trends &amp;utlook: Indian Tractor Industry | Industry growth falters as farm sentiments moderate </p></a>
+                    <div class="author">--By Mr. Shamsher Dewan,Mr. Srikumar Krishnamurthy,Mr. Rohan Kanwar Gupta,Mr. Shivam Nagpal</div>
+                    <div class="controllers_hld">
+                        <a href="#" class="pdf"><i class="fas fa-file-pdf"></i><span>PDF</span></a>
+                        <a href="#" class="transcript"><img src="~/Content/images/icon-transcript.png" alt=""><span>Transcript</span></a>
+                        <div class="audio_con">
+                            <img src="~/Content/images/icon-audio.jpg" alt="" class="icon_audio">
+                            <audio controls="">
+                                <source src="~/Content/audio/demo-file.mp3" type="audio/ogg">
+                                <source src="~/Content/audio/demo-file.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="web_print_list">
+                    <div class="date">
+                        <span>28 Feb 2022</span><span>04:00 PM</span>
+                    </div>
+                    <a href="#"><p>Trends &amp;utlook: Indian Tractor Industry | Industry growth falters as farm sentiments moderate </p></a>
+                    <div class="author">--By Mr. Shamsher Dewan,Mr. Srikumar Krishnamurthy,Mr. Rohan Kanwar Gupta,Mr. Shivam Nagpal</div>
+                    <div class="controllers_hld">
+                        <a href="#" class="pdf"><i class="fas fa-file-pdf"></i><span>PDF</span></a>
+                        <a href="#" class="transcript"><img src="~/Content/images/icon-transcript.png" alt=""><span>Transcript</span></a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination icra-pagination white">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="section inthe_news">
+    <div class="container">
+        <h2 class="left_line">What's In The News</h2>
+        <div class="print_coverage">
+            <div class="row">
+                <div class="col-lg-4 pc_left">
+                    <div class="pc_left_inner">
+                        <h2 class="left_line">Print</h2>
+                        <div class="print_list">
+                            <a href="#">
+                                <span class="date">04 Oct 2021</span>
+                                RIL’s shopping spree positive for investors
+                            </a>
+                        </div>
+                        <div class="print_list">
+                            <a href="#">
+                                <span class="date">04 Oct 2021</span>
+                                RIL’s shopping spree positive for investors
+                            </a>
+                        </div>
+                        <div class="print_list">
+                            <a href="#">
+                                <span class="date">04 Oct 2021</span>
+                                RIL’s shopping spree positive for investors
+                            </a>
+                        </div>
+                        <a href="#" class="rv_more white">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 pc_right">
+                    <div class="pc_right_inner">
+                        <h2 class="left_line">TV Coverage</h2>
+                        <div class="video-coverage">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="gallery-list">
+                                        <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                            <div class="thumb">
+                                                <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                            </div>
+                                            <p>Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="gallery-list">
+                                        <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                            <div class="thumb">
+                                                <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                            </div>
+                                            <p>Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="gallery-list">
+                                        <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                                            <div class="thumb">
+                                                <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                                            </div>
+                                            <p>Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="rv_more white">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section social_feed">
+    <div class="container">
+        <h2 class="left_line">Our Social Feeds</h2>
+        <div class="feed_hld">
+            <div class="feed">
+                <div class="feed_type">
+                    <img src="~/Content/images/icon-linkedin-feed.png" alt="Linked In" />
+                    <a href="#" class="rv_more">View Feed <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <img src="~/Content/images/social_feed_linkedin.jpg" alt="Linked In">
+            </div>
+            <div class="feed">
+                <div class="feed_type">
+                    <img src="~/Content/images/icon-twitter-feed.png" alt="Twitter" />
+                    <a href="#" class="rv_more">View Feed <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <img src="~/Content/images/social_feed_twitter.jpg" alt="Twitter">
+            </div>
+        </div>
+        <div class="follow_us">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-auto">
+                    <p>Follow Us on</p>
+                </div>
+                <div class="col-auto">
+                    <div class="social_icons">
+                        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="insta"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section av_and_podcasts">
+    <div class="container">
+        <h2 class="left_line">Analyst Views & Podcasts</h2>
+        <div class="av-podcasts" id="avPodcasts">
+            <div class="item">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            <span class="date">05 Oct 2021</span>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            <span class="date">05 Oct 2021</span>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="gallery-list">
+                    <a href="https://www.youtube.com/watch?v=8hYwLoMNZjA" class="video popup-youtube">
+                        <div class="thumb">
+                            <img src="~/Content/images/coverages/video-thumb-1.jpg" alt="">
+                        </div>
+                        <p>
+                            <span class="date">05 Oct 2021</span>
+                            Ms. Aditi Nayar In An Interaction With CNBC Tv18 Sharing Her Views On IIP Data
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="rv_more">View More <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+

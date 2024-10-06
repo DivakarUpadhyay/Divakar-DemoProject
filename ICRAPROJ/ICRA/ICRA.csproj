@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{103E6A39-4B8B-495E-892C-FFD90C041D2D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICRA</RootNamespace>
+    <AssemblyName>ICRA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44340</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Amazon.Core, Version=0.16.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Amazon.Core.0.16.4\lib\netstandard2.0\Amazon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Amazon.S3, Version=0.16.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Amazon.S3.0.16.4\lib\netstandard2.0\Amazon.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.5.12\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.7.7.10\lib\net45\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Json, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Json.1.5.0\lib\net461\Carbon.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Storage, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Storage.2.0.0\lib\netstandard2.0\Carbon.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=107.0.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.107.0.1\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ICRAController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AboutUsResponse.cs" />
+    <Compile Include="Models\CommonMethods.cs" />
+    <Compile Include="Models\ContactusResponse.cs" />
+    <Compile Include="Models\CSResponse.cs" />
+    <Compile Include="Models\GetRated.cs" />
+    <Compile Include="Models\RatingResponse.cs" />
+    <Compile Include="Models\ResearchDetail.cs" />
+    <Compile Include="Models\ResearchFilter.cs" />
+    <Compile Include="Models\ResearchResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\ie-style-min.css" />
+    <Content Include="Content\css\main-min.css" />
+    <Content Include="Content\js\dataTables-min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\fa-brands-400.svg" />
+    <Content Include="Content\fonts\fa-regular-400.svg" />
+    <Content Include="Content\fonts\fa-solid-900.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\Rupee-Foradian.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\images\arrow-down-blue.png" />
+    <Content Include="Content\images\arrow-down-gray-select.png" />
+    <Content Include="Content\images\arrow-down-gray.png" />
+    <Content Include="Content\images\arrow-down-white.png" />
+    <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\banner-01-old.jpg" />
+    <Content Include="Content\images\banner-01.jpg" />
+    <Content Include="Content\images\banner-about-01.jpg" />
+    <Content Include="Content\images\banner-about-journey.jpg" />
+    <Content Include="Content\images\banner-about-mob-01.jpg" />
+    <Content Include="Content\images\banner-abt-csr.jpg" />
+    <Content Include="Content\images\banner-abt-env.jpg" />
+    <Content Include="Content\images\banner-abt-profile.jpg" />
+    <Content Include="Content\images\banner-analyst-views-01.jpg" />
+    <Content Include="Content\images\banner-analyst-views-mob-01.jpg" />
+    <Content Include="Content\images\banner-ask-expert.jpg" />
+    <Content Include="Content\images\banner-careers-mob.jpg" />
+    <Content Include="Content\images\banner-careers.jpg" />
+    <Content Include="Content\images\banner-contact-us-mob.jpg" />
+    <Content Include="Content\images\banner-contact-us.jpg" />
+    <Content Include="Content\images\banner-credit-reports.jpg" />
+    <Content Include="Content\images\banner-csr-mission.jpg" />
+    <Content Include="Content\images\banner-csr-mob.jpg" />
+    <Content Include="Content\images\banner-csr.jpg" />
+    <Content Include="Content\images\banner-emp-volunteering.jpg" />
+    <Content Include="Content\images\banner-env-sus-01.jpg" />
+    <Content Include="Content\images\banner-env-sus-02.jpg" />
+    <Content Include="Content\images\banner-group-01.jpg" />
+    <Content Include="Content\images\banner-group-02.jpg" />
+    <Content Include="Content\images\banner-group-03.jpg" />
+    <Content Include="Content\images\banner-job-opening.jpg" />
+    <Content Include="Content\images\banner-leadership-team.jpg" />
+    <Content Include="Content\images\banner-life-at-icra-mob.jpg" />
+    <Content Include="Content\images\banner-life-at-icra.jpg" />
+    <Content Include="Content\images\banner-media-events-01.jpg" />
+    <Content Include="Content\images\banner-media-events-mob-01.jpg" />
+    <Content Include="Content\images\banner-media-news-01.jpg" />
+    <Content Include="Content\images\banner-media-news-mob-01.jpg" />
+    <Content Include="Content\images\banner-media-releases-01.jpg" />
+    <Content Include="Content\images\banner-media-releases-mob-01.jpg" />
+    <Content Include="Content\images\banner-methodology.jpg" />
+    <Content Include="Content\images\banner-mob-01.jpg" />
+    <Content Include="Content\images\banner-photo-gallery-01.jpg" />
+    <Content Include="Content\images\banner-photo-gallery-mob-01.jpg" />
+    <Content Include="Content\images\banner-podcasts-01.jpg" />
+    <Content Include="Content\images\banner-podcasts-mob-01.jpg" />
+    <Content Include="Content\images\banner-rating-corporate-sector-mob.jpg" />
+    <Content Include="Content\images\banner-rating-corporate-sector.jpg" />
+    <Content Include="Content\images\banner-rating-landing-mob.jpg" />
+    <Content Include="Content\images\banner-rating-landing.jpg" />
+    <Content Include="Content\images\banner-res-company.jpg" />
+    <Content Include="Content\images\banner-res-economy.jpg" />
+    <Content Include="Content\images\banner-research-corporate-sector-mob.jpg" />
+    <Content Include="Content\images\banner-research-corporate-sector.jpg" />
+    <Content Include="Content\images\banner-research-landing-mob.jpg" />
+    <Content Include="Content\images\banner-research-landing.jpg" />
+    <Content Include="Content\images\banner-sbscription-offer.jpg" />
+    <Content Include="Content\images\banner-skill-development.jpg" />
+    <Content Include="Content\images\banner-vision.jpg" />
+    <Content Include="Content\images\banner-webinars-events-01.jpg" />
+    <Content Include="Content\images\banner-webinars-events-mob-01.jpg" />
+    <Content Include="Content\images\banner-wep.jpg" />
+    <Content Include="Content\images\bg-business-contact.jpg" />
+    <Content Include="Content\images\bg-business-news.jpg" />
+    <Content Include="Content\images\bg-corner-gradient.jpg" />
+    <Content Include="Content\images\bg-csr-anual-report.jpg" />
+    <Content Include="Content\images\bg-csr-report-download.jpg" />
+    <Content Include="Content\images\bg-desk-investor-rel.jpg" />
+    <Content Include="Content\images\bg-education-camp.jpg" />
+    <Content Include="Content\images\bg-education-program.jpg" />
+    <Content Include="Content\images\bg-free-alert.jpg" />
+    <Content Include="Content\images\bg-gray-overlay.png" />
+    <Content Include="Content\images\bg-hm-media-news.jpg" />
+    <Content Include="Content\images\bg-media-communication.jpg" />
+    <Content Include="Content\images\bg-media-contact.jpg" />
+    <Content Include="Content\images\bg-media-print.jpg" />
+    <Content Include="Content\images\bg-media-releases.jpg" />
+    <Content Include="Content\images\bg-rating-crediet-reports.jpg" />
+    <Content Include="Content\images\bg-rating-entity-specific.jpg" />
+    <Content Include="Content\images\bg-rating-rationales.jpg" />
+    <Content Include="Content\images\bg-rating-research-report.jpg" />
+    <Content Include="Content\images\bg-rating-research.jpg" />
+    <Content Include="Content\images\bg-research-contact.jpg" />
+    <Content Include="Content\images\bg-research-cpr.jpg" />
+    <Content Include="Content\images\bg-research-report.jpg" />
+    <Content Include="Content\images\bg-similer-sector-reports.jpg" />
+    <Content Include="Content\images\bg-trending-res-reports.jpg" />
+    <Content Include="Content\images\bg-vision-mission.jpg" />
+    <Content Include="Content\images\bg-webinars.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-arun-duggal.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-devid-patt.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-michael-foley.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-min-ye.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-radhika-haribhakti.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-ramnath-krishnan.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-ranjana-agrwal.jpg" />
+    <Content Include="Content\images\board-of-directors\bod-wendy-cheong.jpg" />
+    <Content Include="Content\images\career-awards.jpg" />
+    <Content Include="Content\images\career-collage.jpg" />
+    <Content Include="Content\images\career-dev-program.jpg" />
+    <Content Include="Content\images\career-our-value.jpg" />
+    <Content Include="Content\images\career-video-thumb.jpg" />
+    <Content Include="Content\images\coma-left.png" />
+    <Content Include="Content\images\coma-right.png" />
+    <Content Include="Content\images\coverages\video-thumb-1.jpg" />
+    <Content Include="Content\images\divider-gradient.png" />
+    <Content Include="Content\images\emp-profile.jpg" />
+    <Content Include="Content\images\footer-bg.jpg" />
+    <Content Include="Content\images\gallery\csr-img-gallery-1.jpg" />
+    <Content Include="Content\images\gallery\csr-img-gallery-2.jpg" />
+    <Content Include="Content\images\gallery\csr-img-gallery-3.jpg" />
+    <Content Include="Content\images\gallery\event-gallery-1.jpg" />
+    <Content Include="Content\images\gallery\img-gallery-1.jpg" />
+    <Content Include="Content\images\gallery\img-gallery-2.jpg" />
+    <Content Include="Content\images\icon-alert.png" />
+    <Content Include="Content\images\icon-board-of-director-hover.jpg" />
+    <Content Include="Content\images\icon-board-of-director.png" />
+    <Content Include="Content\images\icon-chairman-emeritous-hover.jpg" />
+    <Content Include="Content\images\icon-chairman-emeritous.png" />
+    <Content Include="Content\images\icon-csr-sustanability-hover.jpg" />
+    <Content Include="Content\images\icon-csr-sustanability.png" />
+    <Content Include="Content\images\icon-download-blue.png" />
+    <Content Include="Content\images\icon-download-gray.png" />
+    <Content Include="Content\images\icon-download.png" />
+    <Content Include="Content\images\icon-expand.png" />
+    <Content Include="Content\images\icon-faq-hover.png" />
+    <Content Include="Content\images\icon-faq.png" />
+    <Content Include="Content\images\icon-fb.png" />
+    <Content Include="Content\images\icon-grading-risk-hover.jpg" />
+    <Content Include="Content\images\icon-grading-risk.jpg" />
+    <Content Include="Content\images\icon-grading-risk.png" />
+    <Content Include="Content\images\icon-icra-group-hover.jpg" />
+    <Content Include="Content\images\icon-icra-group.png" />
+    <Content Include="Content\images\icon-insta.png" />
+    <Content Include="Content\images\icon-knowledge-services-hover.jpg" />
+    <Content Include="Content\images\icon-knowledge-services.jpg" />
+    <Content Include="Content\images\icon-knowledge-services.png" />
+    <Content Include="Content\images\icon-linkedin-feed.jpg" />
+    <Content Include="Content\images\icon-linkedin-feed.png" />
+    <Content Include="Content\images\icon-location.png" />
+    <Content Include="Content\images\icon-login-mob.png" />
+    <Content Include="Content\images\icon-login.png" />
+    <Content Include="Content\images\icon-mail-white.png" />
+    <Content Include="Content\images\icon-mail.png" />
+    <Content Include="Content\images\icon-market-data-hover.jpg" />
+    <Content Include="Content\images\icon-market-data.jpg" />
+    <Content Include="Content\images\icon-market-data.png" />
+    <Content Include="Content\images\icon-mision-hover.jpg" />
+    <Content Include="Content\images\icon-mision.png" />
+    <Content Include="Content\images\icon-moodys-hover.jpg" />
+    <Content Include="Content\images\icon-moodys.png" />
+    <Content Include="Content\images\icon-phone-yellow.png" />
+    <Content Include="Content\images\icon-phone.png" />
+    <Content Include="Content\images\icon-play.png" />
+    <Content Include="Content\images\icon-prime.png" />
+    <Content Include="Content\images\icon-profile-hover.jpg" />
+    <Content Include="Content\images\icon-profile.png" />
+    <Content Include="Content\images\icon-rating-credit-hover.png" />
+    <Content Include="Content\images\icon-rating-credit.png" />
+    <Content Include="Content\images\icon-rating-dash-login.png" />
+    <Content Include="Content\images\icon-rating-methodology-hover.png" />
+    <Content Include="Content\images\icon-rating-methodology.png" />
+    <Content Include="Content\images\icon-rating-performance-hover.png" />
+    <Content Include="Content\images\icon-rating-performance.png" />
+    <Content Include="Content\images\icon-rating-scale-hover.png" />
+    <Content Include="Content\images\icon-rating-scale.png" />
+    <Content Include="Content\images\icon-register.png" />
+    <Content Include="Content\images\icon-risk-management-hover.jpg" />
+    <Content Include="Content\images\icon-risk-management.jpg" />
+    <Content Include="Content\images\icon-risk-management.png" />
+    <Content Include="Content\images\icon-sbscribe-blue.png" />
+    <Content Include="Content\images\icon-sbscribe-white.png" />
+    <Content Include="Content\images\icon-sbscribe.png" />
+    <Content Include="Content\images\icon-senior-management-hover.jpg" />
+    <Content Include="Content\images\icon-senior-management.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\jquery-ui\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\images\logo-bcw.png" />
+    <Content Include="Content\images\logo-ICRA.png" />
+    <Content Include="Content\images\media-releases\media-release-1.jpg" />
+    <Content Include="Content\images\media-releases\ramnath-krishnan.jpg" />
+    <Content Include="Content\images\podcasts\latest-podcasts-01.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-01.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-02.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-03.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-04.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-05.jpg" />
+    <Content Include="Content\images\podcasts\podcasts-06.jpg" />
+    <Content Include="Content\images\research-sector-icon\icon-agriculture.png" />
+    <Content Include="Content\images\research-sector-icon\icon-automobile.png" />
+    <Content Include="Content\images\research-sector-icon\icon-consumer-retail.png" />
+    <Content Include="Content\images\research-sector-icon\icon-energy-chemicals.png" />
+    <Content Include="Content\images\research-sector-icon\icon-instruction.png" />
+    <Content Include="Content\images\research-sector-icon\icon-metals-mining.png" />
+    <Content Include="Content\images\research-sector-icon\icon-pharma-healthcare.png" />
+    <Content Include="Content\images\research-sector-icon\icon-shipping-logistics.png" />
+    <Content Include="Content\images\research-sector-icon\icon-textile.png" />
+    <Content Include="Content\images\research-sector-icon\icon-tmt.png" />
+    <Content Include="Content\images\research-sector-icon\icon-travel-hospitality.png" />
+    <Content Include="Content\images\webinars-events\event-1.jpg" />
+    <Content Include="pdf-viewer\build\pdf.js" />
+    <Content Include="pdf-viewer\build\pdf.sandbox.js" />
+    <Content Include="pdf-viewer\build\pdf.worker.js" />
+    <Content Include="pdf-viewer\web\debugger.js" />
+    <Content Include="pdf-viewer\web\images\annotation-check.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-comment.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-help.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-insert.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-key.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-newparagraph.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-noicon.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-note.svg" />
+    <Content Include="pdf-viewer\web\images\annotation-paragraph.svg" />
+    <Content Include="pdf-viewer\web\images\findbarButton-next.svg" />
+    <Content Include="pdf-viewer\web\images\findbarButton-previous.svg" />
+    <Content Include="pdf-viewer\web\images\grab.cur" />
+    <Content Include="pdf-viewer\web\images\grabbing.cur" />
+    <Content Include="pdf-viewer\web\images\loading-dark.svg" />
+    <Content Include="pdf-viewer\web\images\loading-icon.gif" />
+    <Content Include="pdf-viewer\web\images\loading.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-documentProperties.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-firstPage.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-handTool.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-lastPage.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-rotateCcw.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-rotateCw.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-scrollHorizontal.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-scrollPage.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-scrollVertical.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-scrollWrapped.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-selectTool.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-spreadEven.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-spreadNone.svg" />
+    <Content Include="pdf-viewer\web\images\secondaryToolbarButton-spreadOdd.svg" />
+    <Content Include="pdf-viewer\web\images\shadow.png" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-bookmark.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-currentOutlineItem.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-download.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-menuArrow.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-openFile.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-pageDown.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-pageUp.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-presentationMode.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-print.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-search.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-secondaryToolbarToggle.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-sidebarToggle.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-viewAttachments.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-viewLayers.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-viewOutline.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-viewThumbnail.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-zoomIn.svg" />
+    <Content Include="pdf-viewer\web\images\toolbarButton-zoomOut.svg" />
+    <Content Include="pdf-viewer\web\images\treeitem-collapsed.svg" />
+    <Content Include="pdf-viewer\web\images\treeitem-expanded.svg" />
+    <Content Include="pdf-viewer\web\viewer.css" />
+    <Content Include="pdf-viewer\web\viewer.html" />
+    <Content Include="pdf-viewer\web\viewer.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="sass\ie-style.scss" />
+    <Content Include="sass\main.scss" />
+    <Content Include="sass\_base.scss" />
+    <Content Include="sass\_bootstrap-datepicker.scss" />
+    <Content Include="sass\_bootstrap.scss" />
+    <Content Include="sass\_dataTables.scss" />
+    <Content Include="sass\_fontawesome.scss" />
+    <Content Include="sass\_inner.scss" />
+    <Content Include="sass\_jquery.ui.min.scss" />
+    <Content Include="sass\_magnific-popup.scss" />
+    <Content Include="sass\_menu.scss" />
+    <Content Include="sass\_responsive.scss" />
+    <Content Include="sass\_slick.scss" />
+    <Content Include="Content\fonts\fa-brands-400.eot" />
+    <Content Include="Content\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\fonts\fa-brands-400.woff" />
+    <Content Include="Content\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\fonts\fa-regular-400.eot" />
+    <Content Include="Content\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\fonts\fa-regular-400.woff" />
+    <Content Include="Content\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\fonts\fa-solid-900.eot" />
+    <Content Include="Content\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\fonts\fa-solid-900.woff" />
+    <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\Rupee-Foradian.eot" />
+    <Content Include="Content\fonts\Rupee-Foradian.ttf" />
+    <Content Include="Content\fonts\Rupee-Foradian.woff" />
+    <Content Include="Content\fonts\Rupee-Foradian.woff2" />
+    <Content Include="Scripts\ICRA_JS\bootstrap-datepicker-debug.js" />
+    <Content Include="Scripts\ICRA_JS\bootstrap-datepicker-min.js" />
+    <Content Include="Scripts\ICRA_JS\careers-debug.js" />
+    <Content Include="Scripts\ICRA_JS\careers-min.js" />
+    <Content Include="Scripts\ICRA_JS\common-lib-debug.js" />
+    <Content Include="Scripts\ICRA_JS\cpr-debug.js" />
+    <Content Include="Scripts\ICRA_JS\cpr-min.js" />
+    <Content Include="Scripts\ICRA_JS\csr-debug.js" />
+    <Content Include="Scripts\ICRA_JS\dataTables-debug.js" />
+    <Content Include="Scripts\ICRA_JS\dataTables-min.js" />
+    <Content Include="Scripts\ICRA_JS\home-debug.js" />
+    <Content Include="Scripts\ICRA_JS\home-min.js" />
+    <Content Include="Scripts\ICRA_JS\investor-debug.js" />
+    <Content Include="Scripts\ICRA_JS\investor-min.js" />
+    <Content Include="Scripts\ICRA_JS\main-debug.js" />
+    <Content Include="Scripts\ICRA_JS\maps\about-us-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\about-us-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\bootstrap-datepicker-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\bootstrap-datepicker-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\bootstrap-datepicker.min-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\bootstrap-datepicker.min-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\careers-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\careers-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\csr-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\csr-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\dataTables-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\dataTables-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\home-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\home-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\investor-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\investor-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\main-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\main-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\media-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\media-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\rating-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\rating-min.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\research-debug.js.map" />
+    <Content Include="Scripts\ICRA_JS\maps\research-min.js.map" />
+    <Content Include="Content\pdf\Independent_Credit_Evaluation.pdf" />
+    <Content Include="pdf-viewer\build\pdf.js.map" />
+    <Content Include="pdf-viewer\build\pdf.sandbox.js.map" />
+    <Content Include="pdf-viewer\build\pdf.worker.js.map" />
+    <Content Include="pdf-viewer\web\cmaps\78-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78ms-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\78ms-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\83pv-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90ms-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90ms-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90msp-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90msp-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90pv-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\90pv-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Add-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Add-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Add-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Add-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-0.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-1.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-3.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-4.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-5.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-6.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-0.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-1.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-3.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-4.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-5.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-0.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-1.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-3.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-4.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-5.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-6.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Korea1-0.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Korea1-1.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Korea1-2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\B5pc-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\B5pc-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS1-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS1-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS2-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\CNS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETen-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETen-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETenms-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETenms-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETHK-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\ETHK-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Ext-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Ext-RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Ext-RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Ext-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GB-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GB-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GB-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GB-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBK-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBK-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBK2K-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBK2K-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBKp-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBKp-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBpc-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBpc-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBT-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBT-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBT-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBT-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBTpc-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\GBTpc-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Hankaku.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Hiragana.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKdla-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKdla-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKdlb-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKdlb-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKgccs-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKgccs-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKm314-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKm314-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKm471-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKm471-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKscs-B5-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\HKscs-B5-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Katakana.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-Johab-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-Johab-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCms-UHC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCms-UHC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCpc-EUC-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\KSCpc-EUC-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\LICENSE" />
+    <Content Include="pdf-viewer\web\cmaps\NWP-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\NWP-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\RKSJ-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\RKSJ-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\Roman.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UCS2-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UCS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF16-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF16-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF8-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniCNS-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UCS2-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UCS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF16-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF16-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF8-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniGB-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UCS2-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UCS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF16-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF16-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF8-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UCS2-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UCS2-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF16-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF16-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF32-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF32-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF8-H.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\UniKS-UTF8-V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\V.bcmap" />
+    <Content Include="pdf-viewer\web\cmaps\WP-Symbol.bcmap" />
+    <Content Include="pdf-viewer\web\locale\ach\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\af\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\an\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ar\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ast\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\az\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\be\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\bg\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\bn\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\bo\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\brx\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\br\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\bs\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\cak\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ca\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ckb\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\cs\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\cy\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\da\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\de\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\dsb\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\el\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\en-CA\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\en-GB\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\en-US\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\eo\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\es-AR\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\es-CL\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\es-ES\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\es-MX\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\et\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\eu\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\fa\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ff\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\fi\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\fr\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\fy-NL\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ga-IE\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\gd\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\gl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\gn\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\gu-IN\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\he\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hi-IN\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hr\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hsb\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hu\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hy-AM\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\hye\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ia\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\id\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\is\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\it\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ja\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\kab\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ka\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\kk\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\km\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\kn\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ko\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\lij\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\locale.properties" />
+    <Content Include="pdf-viewer\web\locale\lo\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ltg\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\lt\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\lv\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\meh\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\mk\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\mr\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ms\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\my\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\nb-NO\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ne-NP\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\nl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\nn-NO\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\oc\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\pa-IN\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\pl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\pt-BR\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\pt-PT\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\rm\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ro\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ru\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sat\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\scn\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sco\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sc\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\si\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sk\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\son\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sq\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sr\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\sv-SE\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\szl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ta\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\te\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\tg\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\th\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\tl\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\trs\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\tr\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\uk\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\ur\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\uz\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\vi\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\wo\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\xh\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\zh-CN\viewer.properties" />
+    <Content Include="pdf-viewer\web\locale\zh-TW\viewer.properties" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitDingbats.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitFixed.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitFixedBold.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitFixedBoldItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitFixedItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSans.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSansBold.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSansBoldItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSansItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSerif.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSerifBold.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSerifBoldItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSerifItalic.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\FoxitSymbol.pfb" />
+    <Content Include="pdf-viewer\web\standard_fonts\LiberationSans-Bold.ttf" />
+    <Content Include="pdf-viewer\web\standard_fonts\LiberationSans-BoldItalic.ttf" />
+    <Content Include="pdf-viewer\web\standard_fonts\LiberationSans-Italic.ttf" />
+    <Content Include="pdf-viewer\web\standard_fonts\LiberationSans-Regular.ttf" />
+    <Content Include="pdf-viewer\web\standard_fonts\LICENSE_FOXIT" />
+    <Content Include="pdf-viewer\web\standard_fonts\LICENSE_LIBERATION" />
+    <Content Include="pdf-viewer\web\viewer.js.map" />
+    <Content Include="Content\pdf\_Content_PDF_ICRA_CSR Policy.pdf" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\ICRA_JS\about-us-debug.js" />
+    <Content Include="Scripts\ICRA_JS\about-us-min.js" />
+    <Content Include="Scripts\ICRA_JS\common-lib-min.js" />
+    <Content Include="Scripts\ICRA_JS\csr-min.js" />
+    <Content Include="Scripts\ICRA_JS\main-min.js" />
+    <Content Include="Scripts\ICRA_JS\media-debug.js" />
+    <Content Include="Scripts\ICRA_JS\media-min.js" />
+    <Content Include="Scripts\ICRA_JS\rating-debug.js" />
+    <Content Include="Scripts\ICRA_JS\rating-min.js" />
+    <Content Include="Scripts\ICRA_JS\research-debug.js" />
+    <Content Include="Scripts\ICRA_JS\research-min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\ICRA_JS\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ICRA\AboutUs.cshtml" />
+    <Content Include="Views\ICRA\AboutbodUs.cshtml" />
+    <Content Include="Views\ICRA\CSR.cshtml" />
+    <Content Include="Views\ICRA\csrrlcpopup.cshtml" />
+    <Content Include="Views\ICRA\Research.cshtml" />
+    <Content Include="Views\ICRA\ResearchCorporateSector.cshtml" />
+    <Content Include="Views\ICRA\Researchdetail.cshtml" />
+    <Content Include="Views\ICRA\Contactus.cshtml" />
+    <Content Include="Views\Shared\_AskOurIndustryBusinessRepresentative.cshtml" />
+    <Content Include="Views\ICRA\Rating.cshtml" />
+    <Content Include="Views\ICRA\Ratingscorporatesector.cshtml" />
+    <Content Include="Views\ICRA\RatingsDetail.cshtml" />
+    <Content Include="Views\Shared\_RatingsAskOurIndustryBusinessRepresentative.cshtml" />
+    <Content Include="Views\Shared\UpcomingWebinarEventsAndRecordings.cshtml" />
+    <Content Include="Views\Shared\_YouMayalsobeInterestedin.cshtml" />
+    <Content Include="Views\Shared\_RatingRationalAndCPR.cshtml" />
+    <Content Include="Views\ICRA\RatingLoginPopup.cshtml" />
+    <Content Include="Views\ICRA\Career.cshtml" />
+    <Content Include="Views\ICRA\Analystviews.cshtml" />
+    <Content Include="Views\ICRA\Index.cshtml" />
+    <Content Include="Views\ICRA\Webinarsandevents.cshtml" />
+    <Content Include="Views\ICRA\Template.cshtml" />
+    <Content Include="Views\ICRA\Subscriptionsummary.cshtml" />
+    <Content Include="Views\ICRA\Regulatorydisclosuressebi.cshtml" />
+    <Content Include="Views\ICRA\Regulatorydisclosuresrbi.cshtml" />
+    <Content Include="Views\ICRA\Policiescodes.cshtml" />
+    <Content Include="Views\ICRA\Podcasts.cshtml" />
+    <Content Include="Views\ICRA\Photogallery.cshtml" />
+    <Content Include="Views\ICRA\Mediareleases.cshtml" />
+    <Content Include="Views\ICRA\Medianews.cshtml" />
+    <Content Include="Views\ICRA\Mediaandevents.cshtml" />
+    <Content Include="Views\ICRA\loginpopup.cshtml" />
+    <Content Include="Views\ICRA\Investorshareholdingpattern.cshtml" />
+    <Content Include="Views\ICRA\Investorsharebuyback.cshtml" />
+    <Content Include="Views\ICRA\Investorrelations.cshtml" />
+    <Content Include="Views\ICRA\Investorfinancialperformance.cshtml" />
+    <Content Include="Views\ICRA\Investordividend.cshtml" />
+    <Content Include="Views\ICRA\Investorcorporategovernance.cshtml" />
+    <Content Include="Views\ICRA\Investorcorporateannouncements.cshtml" />
+    <Content Include="Views\ICRA\Investorcommunication.cshtml" />
+    <Content Include="Views\ICRA\Investorboardmeetings.cshtml" />
+    <Content Include="Views\ICRA\Investorannualreturn.cshtml" />
+    <Content Include="Views\ICRA\Investoranalystpresentation.cshtml" />
+    <Content Include="Views\ICRA\Cprsubscriptionsummerycart.cshtml" />
+    <Content Include="Views\ICRA\Cprdetail.cshtml" />
+    <Content Include="Views\ICRA\CPR.cshtml" />
+    <Content Include="Views\ICRA\ResearchViewReport.cshtml" />
+    <Content Include="Views\ICRA\Allresearchreports.cshtml" />
+    <Content Include="Views\ICRA\Researchsubscribereportspopup.cshtml" />
+    <Content Include="Views\ICRA\OtherRatingPopup.cshtml" />
+    <Content Include="Views\Shared\_AnalystViewsAndPodCasts.cshtml" />
+    <Content Include="Views\Shared\_OurRatingApproachAndMethodologies.cshtml" />
+    <Content Include="Views\Shared\_OurSocialFeeds.cshtml" />
+    <Content Include="Views\Shared\_RatingSearchEntity.cshtml" />
+    <Content Include="Views\Shared\_ResearchReports.cshtml" />
+    <Content Include="Views\Shared\_ResearchSectorHorizontal.cshtml" />
+    <Content Include="Views\ICRA\AllRatingRationals.cshtml" />
+    <Content Include="Views\ICRA\researchsubscriptionsummery.cshtml" />
+    <Content Include="Views\Shared\_Audio.cshtml" />
+    <Content Include="Views\Shared\_GetFreeAlerts.cshtml" />
+    <Content Include="Views\Shared\_ToSubscribe.cshtml" />
+    <Content Include="Views\ICRA\Webinar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\roslyn\" />
+    <Folder Include="Content\audio\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.7.7.10\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54392</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

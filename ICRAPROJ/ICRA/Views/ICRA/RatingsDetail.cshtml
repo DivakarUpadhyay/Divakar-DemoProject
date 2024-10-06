@@ -1,0 +1,608 @@
+﻿@model ICRA.Models.RatingResponse
+@{
+    ViewBag.Title = "RatingsDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/ICRA_JS/rating-min.js"></script>
+
+@{
+
+    <section class="banner_rating_detail">
+        <div class="container">
+            <div class="rating_detail_panel">
+                <div class="rating_detail__desc">
+                    <h1>
+                        @if (Model.Rating_Section5 != null)
+                        {
+                            @Model.Rating_Section5[0].EntityName
+                        }
+                    </h1>
+                    <p>
+                        <span>
+                            @if (Model.Rating_Section5 != null)
+                            {
+                                @Model.Rating_Section5[0].Date
+                            }
+                        </span>
+                        @if (Model.Rating_Section5 != null)
+                        {
+                            @Model.Rating_Section5[0].CompanyWithRationalTitle
+                        }
+                    </p>
+                    <div class="btn_hld">
+                        @if (Model.Rating_Section5 != null)
+                        {
+                            var url = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + Model.Rating_Section5[0].Downloads;
+
+                            <a href="@url" target="_blank" class="button prime"><span>View Rationale</span></a>
+                        }
+                        else
+                        { <a href="#" class="button prime"><span>View Rationale</span></a>
+                        }
+
+                        }
+
+                        <div class="button view_desc"><span>View Description</span></div>
+                    </div>
+                </div>
+
+                <div class="rating_detail__instrument">
+                    <div class="hd_con">
+                        <ul>
+                            <li>
+                                <span>Instrument</span>
+                                <span>Ratings</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="IR_det">
+                        <ul>
+                            @if (Model.Rating_Section5 != null)
+                            {
+                                foreach (var item in Model.Rating_Section5)
+                                {
+                                    <li>
+                                        <span>@item.Instrument</span>
+                                        <span>@item.Ratings</span>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                <li>
+                                    No Record Found
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="@Url.Action("Index", "ICRA")">Home</a><a href="@Url.Action("Rating", "ICRA")">Ratings</a>@if (@Model.Rating_Section5 != null)
+            {@Model.Rating_Section5[0].EntityName}
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="tiles_hld">
+                <div class="tiles col">
+                    <img src="~/Content/images/bg-rating-entity-specific.jpg" alt="" class="bg_img">
+                    <h2 class="left_line">Entity-Specific Rating Rationales</h2>
+
+                    <div class="tiles_con">
+
+                        @if (Model.Rating_Section5 != null)
+                        {
+                            int topFive = 1;
+
+                            foreach (var item in Model.Rating_Section5)
+                            {
+                                var url = "/ICRA/RatingsDetail?Company_Id=" + item.Company_Id;
+                                var urldownload = "https://icrabcweb.s3.ap-south-1.amazonaws.com/" + item.Downloads;
+                                if (topFive <= 5)
+                                {
+                                    <div class="cpr_blurb">
+                                        <div class="cpr_info">
+                                            <div class="date">
+                                                @item.Date_EntitySpecific
+                                                <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                            </div>
+                                            <div class="rep_det_con">
+
+                                                <a href="@url">
+                                                    <p>
+                                                        @{
+                                                            const int MaxLength = 152;
+                                                            var FinalTitle = "";
+                                                            if (item.CompanyWithRationalTitle.Length > MaxLength)
+                                                            {
+                                                                FinalTitle = item.CompanyWithRationalTitle.Substring(0, MaxLength);
+                                                                string dot = " ...";
+                                                                @FinalTitle@dot
+                                                            }
+                                                            else
+                                                            {
+                                                                @item.CompanyWithRationalTitle
+                                                            }
+
+                                                        }
+                                                    </p>
+                                                </a>
+
+                                                @{
+                                                    const int MaxLengthToolTip = 152;
+                                                    if (item.CompanyWithRationalTitle.Length > MaxLengthToolTip)
+                                                    {<div class="tootip_con">
+                                                            @item.CompanyWithRationalTitle
+                                                        </div>
+                                                    }
+                                                }
+
+
+                                            </div>
+                                        </div>
+                                        <div class="cta_con">
+                                            <a href="@urldownload" class="download" target="_blank" download> <img src="~/Content/images/icon-download.png" alt=""> <span>Download</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    topFive = topFive + 1;
+                                }
+                            }
+                        }
+
+                    </div>
+                    @if (Model.Rating_Section5 != null)
+                    {
+                        if (Model.Rating_Section5.Count > 3)
+                        {
+                            @*<a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>*@
+
+                            <a href="#" class="link-button">View More</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="credit_perspective">
+            <div class="container">
+                <div class="tiles_hld">
+                    <div class="tiles col">
+                        <h2 class="left_line">Credit Perspective Reports</h2>
+                        <div class="tiles_con">
+                            @if (Model.Rating_Section6 != null)
+                            {
+                                int heart = 1;
+
+                                int topFive = 1;
+                                foreach (var item in Model.Rating_Section6)
+                                {
+                                    if (topFive <= 5)
+                                    {
+                                        // var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+                                        <div class="cpr_blurb">
+                                            <div class="cpr_info">
+                                                <div class="date">
+                                                    @item.Report_Date
+
+
+                                                    <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+
+
+
+                                                    @if (heart == 1)
+                                                    {
+                                                        <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                        heart = heart + 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                                    }
+
+
+
+                                                </div>
+
+                                                <div class="rep_det_con">
+                                                    <a href="#">
+                                                        <p>
+                                                            @{
+                                                                const int MaxLength = 152;
+                                                                var FinalTitle = "";
+                                                                if (item.Company_Name.Length > MaxLength)
+                                                                {
+                                                                    FinalTitle = item.Company_Name.Substring(0, MaxLength);
+                                                                    string dot = " ...";
+                                                                    @FinalTitle@dot
+                                                                }
+                                                                else
+                                                                {
+                                                                    @item.Company_Name
+                                                                }
+
+                                                            }
+                                                        </p>
+                                                    </a>
+
+                                                    @{
+                                                        const int MaxLengthToolTip = 152;
+                                                        if (item.Company_Name.Length > MaxLengthToolTip)
+                                                        {<div class="tootip_con">
+                                                                @item.Company_Name
+                                                            </div>
+                                                        }
+                                                    }
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                            @{var name = "Subscribe";
+                                                <div class="cta_con">
+                                                    <a href="#" class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>@name</span></a>
+                                                    <div class="sharing_icons_con">
+                                                        <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                        <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                        <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                        <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                        <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                                    </div>
+                                                </div>
+                                            }
+
+
+
+                                        </div>
+                                    }
+                                    topFive = topFive + 1;
+                                }
+                            }
+                        </div>
+                        @if (Model.Rating_Section6 != null)
+                        {
+                            if (Model.Rating_Section6.Count > 3)
+                            {
+                                @*<a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>*@
+                                <a href="#" class="link-button">View More</a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="tiles_hld">
+                @Html.Partial("_ResearchReports", Model)
+                <div class="tiles">
+                    <img src="~/Content/images/bg-rating-rationales.jpg" alt="" class="bg_img">
+                    <h2 class="left_line">Sector Rationales</h2>
+                    <div class="tiles_con">
+                        @if (Model.Rating_Section8 != null)
+                        {
+                            int heart = 1;
+
+                            int topFive = 1;
+                            foreach (var item in Model.Rating_Section8)
+                            {
+                                var urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Rational_Report_Name;
+
+                                if (topFive <= 5)
+                                {
+                                    var url = "/ICRA/RatingsDetail?Company_Id=" + item.Company_Id;
+                                    <div class="cpr_blurb">
+                                        <div class="cpr_info">
+                                            <div class="date">
+                                                @item.Rational_Date
+                                                @if (heart == 1)
+                                                {
+                                                    <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                    heart = heart + 1;
+                                                }
+                                                else
+                                                {
+                                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                                }
+
+
+
+                                            </div>
+
+                                            <div class="rep_det_con">
+                                                <a href="@url">
+                                                    <p>
+                                                        @{
+                                                            const int MaxLength = 152;
+                                                            var FinalTitle = "";
+                                                            if (item.Rational_Title.Length > MaxLength)
+                                                            {
+                                                                FinalTitle = item.Rational_Title.Substring(0, MaxLength);
+                                                                string dot = " ...";
+                                                                @FinalTitle@dot
+                                                            }
+                                                            else
+                                                            {
+                                                                @item.Rational_Title
+                                                            }
+
+                                                        }
+                                                    </p>
+                                                </a>
+
+                                                @{
+                                                    const int MaxLengthToolTip = 152;
+                                                    if (item.Rational_Title.Length > MaxLengthToolTip)
+                                                    {<div class="tootip_con">
+                                                            @item.Rational_Title
+                                                        </div>
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                        @{
+                                            var name = "Download";
+                                            <div class="cta_con">
+                                                <a href="@urlFull" target="_blank" class="download" download><img src="~/Content/images/icon-download.png" alt=""><span>@name</span></a>
+                                                <div class="sharing_icons_con">
+                                                    <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                    <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                    <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                        }
+
+
+                                    </div>
+                                }
+                                topFive = topFive + 1;
+                            }
+                        }
+                    </div>
+                    @if (Model.Rating_Section8 != null)
+                    {
+                        if (Model.Rating_Section8.Count > 5)
+                        {
+                            @*<a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>*@
+                            <a href="#" class="link-button">View More</a>
+                        }
+                    }
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section web_event_sect rating_det_page">
+
+        @Html.Partial("UpcomingWebinarEventsAndRecordings")
+        <!--<div class="container">
+        <div id="tabdata_01">
+            <div class="switch_tab_hld">
+                <div class="slider"></div>
+                <div class="tab active" tabId="webinars_events">Upcoming Webinars/Events</div>
+                <div class="tab" tabId="presentations_recordings">Presentations And Recordings</div>
+            </div>-->
+        <!--Below are thetabs Detail pannels  -->
+        <!--<div class="switch_det_panel show" id="tab_webinars_events">
+                <div class="web_event_con">
+                    <a href="#" class="web_event_blurb">
+                        <div class="web_event_blurb_det">
+                            <div class="web_event_banner">
+                                <img src="~/Content/images/web-event-01.jpg" alt="">
+                            </div>
+                            <div class="web_event_desc">
+                                <div class="tiles_hld">
+                                    <div class="tiles">
+                                        <div class="tiles_con">
+                                            <div class="cpr_blurb">
+                                                <div class="cpr_info">
+                                                    <div class="date">12 Nov 2021<span class="time">11:30 IST</span></div>
+                                                    <p>Distress at EVERGRANDE: The shot that has been heard around global steel markets</p>
+                                                    <div class="post_by">By Mr. Jayanta Roy,Mr. Priyesh Ruparelia, Mr. Ritabrata Ghosh</div>
+                                                </div>
+                                                <div class="subscribe"> <img src="~/Content/images/icon-register.png" alt=""> <span>Register</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="web_event_blurb">
+                        <div class="web_event_blurb_det">
+                            <div class="web_event_banner">
+                                <img src="~/Content/images/web-event-02.jpg" alt="">
+                            </div>
+                            <div class="web_event_desc">
+                                <div class="tiles_hld">
+                                    <div class="tiles">
+                                        <div class="tiles_con">
+                                            <div class="cpr_blurb">
+                                                <div class="cpr_info">
+                                                    <div class="date">05 Nov 2021<span class="time">11:30 IST</span></div>
+                                                    <p>Performance of ICRA-Assigned Ratings in H1 FY2022</p>
+                                                    <div class="post_by">By Mr. K Ravichandran,Mr. Jitin Makkar, Mr. Pratik Singhania</div>
+                                                </div>
+                                                <div class="subscribe"> <img src="~/Content/images/icon-register.png" alt=""> <span>Register</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="#" class="rv_more space">View Feed <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="switch_det_panel" id="tab_presentations_recordings">
+                <div class="web_event_con">
+                    <a href="#" class="web_event_blurb">
+                        <div class="web_event_blurb_det">
+                            <div class="web_event_banner">
+                                <img src="~/Content/images/web-event-01.jpg" alt="">
+                            </div>
+                            <div class="web_event_desc">
+                                <div class="tiles_hld">
+                                    <div class="tiles">
+                                        <div class="tiles_con">
+                                            <div class="cpr_blurb">
+                                                <div class="cpr_info">
+                                                    <div class="date">15 Dec 2021<span class="time">11:30 IST</span></div>
+                                                    <p>Distress at EVERGRANDE: The shot that has been heard around global steel markets</p>
+                                                    <div class="post_by">By Mr. Jayanta Roy,Mr. Priyesh Ruparelia, Mr. Ritabrata Ghosh</div>
+                                                </div>
+                                                <div class="subscribe"> <img src="~/Content/images/icon-register.png" alt=""> <span>Register</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="web_event_blurb">
+                        <div class="web_event_blurb_det">
+                            <div class="web_event_banner">
+                                <img src="~/Content/images/web-event-02.jpg" alt="">
+                            </div>
+                            <div class="web_event_desc">
+                                <div class="tiles_hld">
+                                    <div class="tiles">
+                                        <div class="tiles_con">
+                                            <div class="cpr_blurb">
+                                                <div class="cpr_info">
+                                                    <div class="date">05 Nov 2021<span class="time">11:30 IST</span></div>
+                                                    <p>Performance of ICRA-Assigned Ratings in H1 FY2022</p>
+                                                    <div class="post_by">By Mr. K Ravichandran,Mr. Jitin Makkar, Mr. Pratik Singhania</div>
+                                                </div>
+                                                <div class="subscribe"> <img src="~/Content/images/icon-register.png" alt=""> <span>Register</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="#" class="rv_more space">View Feed <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>-->
+    </section>
+
+    <section class="section coverage rating_det_page">
+        <div class="container">
+            <h2 class="left_line space">Explore our Rating Offerings</h2>
+            <div class="coverage_blurb_hld">
+                @{
+                    int i = 1;
+                    foreach (var item in Model.Rating_Section2)
+                    {
+                        var url = "/ICRA/Ratingscorporatesector?Rating_Category_Id=" + item.Rating_Category_Id;
+                        if (i <= 4)
+                        {
+                            var urlicon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon;
+                            var urlRatingBaseIcon = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Icon_hover;
+
+                            <a href="@url">
+                                <img src="@urlRatingBaseIcon">
+                                <img src="@urlicon">
+                                <p>@item.Rating_Category_Name</p>
+                                <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                            }
+
+
+                            i = i + 1;
+                        }
+                        var urlotherRating = "/ICRA/Ratingscorporatesector?Rating_Category_Id=OtherRating";
+
+                    <a href="@urlotherRating">
+                        <img src="~/Content/images/icon-tab-other-rating.png">
+                        <img src="~/Content/images/icon-tab-other-rating-hover.png">
+                        <p>Other Ratings</p>
+                        <span class="rv_more">View More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section get_in_touch rating_det_page">
+        @Html.Partial("_AskOurIndustryBusinessRepresentative", "RatingsDetail")
+        <!--<div class="container">
+        <div class="ask_expert">
+            <img src="~/Content/images/banner-ask-expert.jpg" alt="" class="ae_banner">
+            <div class="ae_form_hld">
+                <div class="switch_tab_hld">
+                    <div class="slider"></div>
+                    <div class="tab active">Ask Our Industry Analyst</div>
+                    <div class="tab">Get in touch with our Business Representative</div>
+                </div>-->
+        <!-- <div class="errMsg">You can show error msg here</div> -->
+        <!--<div class="wp_controlers">
+                    <div class="wp_control width_half">
+                        <input type="text" placeholder="Name*" class="textBox" />
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" placeholder="Company Name" class="textBox" />
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" placeholder="Email ID*" class="textBox" />
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" placeholder="Contact Number*" class="textBox" />
+                    </div>
+                    <div class="wp_control width_half">
+                        <input type="text" placeholder="Sector" class="textBox" />
+                    </div>
+                    <div class="wp_control width_half">
+                        <select class="selectBox">
+                            <option>Type of Query</option>
+                            <option>Type of Query</option>
+                            <option>Type of Query</option>
+                        </select>
+                    </div>
+                    <div class="note">(*Denotes ompulsory field)</div>
+                </div>
+                <div class="button"><span>Submit</span></div>
+            </div>
+        </div>
+    </div>-->
+    </section>
+
+}

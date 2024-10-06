@@ -1,0 +1,183 @@
+﻿
+@model ICRA.Models.RatingResponse
+<section class="section">
+    <div class="container">
+        <div class="tiles_hld">
+            <div class="tiles col">
+                <img src="~/Content/images/bg-rating-research-report.jpg" alt="Research Reports" class="bg_img">
+                <h2 class="left_line">Research Reports</h2>
+                <div class="tiles_con">
+                    @if (Model.Research_Section6 != null)
+                    {
+                        int heart = 1;
+
+                        int topFive = 1;
+                        foreach (var item in Model.Research_Section6)
+                        {
+                            if (topFive <= 3)
+                            {
+                                var url = "/ICRA/Researchdetail?Report_Id=" + item.Report_Id + "&Industry_Id=" + item.Industry_Id;
+                                <div class="cpr_blurb">
+                                    <div class="cpr_info">
+                                        <div class="date">
+                                            @item.Report_Date
+
+                                            @if (item.Is_Special_Comments == false)
+                                            {
+                                                <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span>
+
+                                            }
+                                            @if (item.Is_Special_Comments == false)
+                                            {
+
+                                                if (heart == 1)
+                                                {
+                                                    <span class="heart-icon active"><i class="fas fa-heart"></i></span>
+                                                    heart = heart + 1;
+                                                }
+                                                else
+                                                {
+                                                    <span class="heart-icon"><i class="fas fa-heart"></i></span>
+
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                if (heart == 1)
+                                                {
+                                                    <span class="heart-icon space_deed active"><i class="fas fa-heart"></i></span>
+                                                    heart = heart + 1;
+                                                }
+                                                else
+                                                {
+                                                    <span class="heart-icon space_deed"><i class="fas fa-heart"></i></span>
+
+                                                }
+
+
+                                            }
+                                        </div>
+
+                                        <div class="rep_det_con">
+                                            <a href="@url">
+                                                <p>
+                                                    @{
+                                                        const int MaxLength = 152;
+                                                        var FinalTitle = "";
+                                                        if (item.Report_Title.Length > MaxLength)
+                                                        {
+                                                            FinalTitle = item.Report_Title.Substring(0, MaxLength);
+                                                            string dot = " ...";
+                                                            @FinalTitle@dot
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.Report_Title
+                                                        }
+
+                                                    }
+                                                </p>
+                                            </a>
+
+                                            @{
+                                                const int MaxLengthToolTip = 152;
+                                                if (item.Report_Title.Length > MaxLengthToolTip)
+                                                {<div class="tootip_con">
+                                                        @item.Report_Title
+                                                    </div>
+                                                }
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+
+                                    @if (item.Is_Special_Comments == true)
+                                    {
+                                        var name = "Download";
+                                        var urlFull = "";
+                                        if (string.IsNullOrEmpty(item.Summary_Report_Name) == false)
+                                        {
+                                            urlFull = "https://icrabcweb.s3.ap-south-1.amazonaws.com" + item.Summary_Report_Name;
+
+                                        }
+                                        else
+                                        {
+                                            urlFull = "#";
+                                        }
+
+
+                                        <div class="cta_con">
+                                            <a href="@urlFull" class="download" target="_blank"> <img src="~/Content/images/icon-download.png" alt=""> <span>@name</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        var name = "Subscribe";
+                                        <div class="cta_con">
+                                            <a href="#" class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>@name</span></a>
+                                            <div class="sharing_icons_con">
+                                                <span class="icon_blurb"><i class="fab fa-facebook-f"></i></span>
+                                                <span class="icon_blurb"><i class="fab fa-twitter"></i></span>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-instagram"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-youtube"></i></a>
+                                                <a href="#" class="icon_blurb"><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                    }
+
+
+                                </div>
+                            }
+                            topFive = topFive + 1;
+                        }
+                    }
+                </div>
+                @if (Model.Research_Section6 != null)
+                {
+                    if (Model.Research_Section6.Count > 3)
+                    {
+                        <a href="@Url.Action("Allresearchreports","ICRA")" class="link-button">View More</a>
+                    }
+                }
+                <!--<div class="tiles_con">-->
+                @*<a href="#" class="cpr_blurb">
+            <div class="cpr_info">
+                <div class="date">15 Nov 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                <p>Focus on quality likely to provide some respite to producers from the impact of sharp increase in wage rates and declining prices as production recovers</p>
+            </div>
+            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+        </a>
+        <a href="#" class="cpr_blurb">
+            <div class="cpr_info">
+                <div class="date">10 Nov 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                <p>China's plans to steer the economy away from a property-driven model of growth could signal the start of mean-reversion for the steel industry</p>
+            </div>
+            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+        </a>
+        <a href="#" class="cpr_blurb">
+            <div class="cpr_info">
+                <div class="date">04 Nov 2021 <span class="icon_prime"><img src="~/Content/images/icon-prime.png" alt="Prime"></span></div>
+                <p>M&amp;A activity driven by developers' intent to unlock equity to bid for new projects and to improve liquidity; ~/Content worth Rs. 207 billion on the block</p>
+            </div>
+            <div class="subscribe"> <img src="~/Content/images/icon-sbscribe.png" alt=""> <span>Subscribe</span></div>
+        </a>*@
+                <!--</div>
+    <a href="#" class="link-button">View More</a>-->
+            </div>
+        </div>
+    </div>
+</section>
